@@ -5,8 +5,10 @@
 <p>• Successfully integrated the Coingecko API to enhance the user
 experience by providing real-time data on the top 50 cryptocurrencies.
 <br/>
+<br/>
 • Utilized state management techniques in React to enhance the
 application’s performance and userinteractivity.
+<br/>
 <br/>
 • Incorporating techniques such as lazy loading forimages and other
 strategies to improve loading times and user experience.<br/>
