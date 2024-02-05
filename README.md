@@ -1,4 +1,4 @@
-<div align='center'><img style="width:20%" src='https://cdn.discordapp.com/attachments/1201847746638651424/1201879915482324992/Logo-Polestar.png?ex=65cb6ce5&is=65b8f7e5&hm=b4fdbb94502629f4425a356272a3388cdf53651718c9da17f4bf0359fc650a88&'/></div>
+<div align='center'><img style="width:20%" src='https://cdn.discordapp.com/attachments/1187219037537714220/1200704731274809344/logo.png?ex=65c7266b&is=65b4b16b&hm=efa50a707707e30eea3cdfca0ec3fe6eef546ca0d099a63468b6c642d5a76129&'/></div>
 
 <h2>About the project</h2>
 
@@ -7,7 +7,7 @@ experience by providing real-time data on the top 50 cryptocurrencies.
 <br/>
 • Utilized state management techniques in React to enhance the
 application’s performance and userinteractivity.
-<br/>git add
+<br/>
 • Incorporating techniques such as lazy loading forimages and other
 strategies to improve loading times and user experience.<br/>
 
