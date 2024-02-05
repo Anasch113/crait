@@ -2,16 +2,7 @@
 
 <h2>About the project</h2>
 
-<p>• Successfully integrated the Coingecko API to enhance the user
-experience by providing real-time data on the top 50 cryptocurrencies.
-<br/>
-<br/>
-• Utilized state management techniques in React to enhance the
-application’s performance and userinteractivity.
-<br/>
-<br/>
-• Incorporating techniques such as lazy loading forimages and other
-strategies to improve loading times and user experience.<br/>
+<p>The project successfully integrated the Coingecko API to enrich user experience with real-time data on the top 50 cryptocurrencies. State management techniques were applied in React to boost application performance and user interactivity. Additionally, strategies like lazy loading for images and other optimization techniques were incorporated to enhance loading times and overall user experience. These efforts collectively aimed to create a more seamless and responsive platform for users interacting with cryptocurrency data.
 
 </p>
 
