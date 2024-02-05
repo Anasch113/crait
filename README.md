@@ -10,6 +10,7 @@
 
 <h3>Built using:</h3>
 
+» CoinGecko API <br>
 » React JS <br>
 » CSS <br>
 » HTML<br>
