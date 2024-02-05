@@ -1,0 +1,80 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #000016;
+  color: white;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+#root {
+  --primary: #927ce9;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.green-text {
+  color: rgb(12, 189, 51);
+}
+.red-text {
+  color: rgb(212, 16, 16);
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #0b0e36 #ffffff;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #0b0e36;
+  border: 1px solid #ffffff;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #0b0e36;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #0b0e36;
+}
+.floating-coin {
+  animation: bounce 2s ease-in-out infinite;
+  pointer-events: none;
+  width: 80px;
+  @media (max-width: 1000px) {
+    display: none;
+  }
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}

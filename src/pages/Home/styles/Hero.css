@@ -1,0 +1,174 @@
+.hero-section {
+  background-image: url("../images/home/hero.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  height: auto;
+  @media (max-width: 1000px) {
+    background-image: url("../images/home/1000.png");
+  }
+  @media (max-width: 700px) {
+    background-size: cover !important;
+    background-position: center;
+    background-image: url("../images/home/700.png");
+  }
+  @media (max-width: 600px) {
+    background-image: url("../images/home/600.png");
+  }
+  @media (max-width: 540px) {
+    background-image: url("../images/home/500.png");
+  }
+}
+.hero-content {
+  padding: 9rem 2rem 4rem 2rem;
+  text-align: center;
+  @media (max-width: 1000px) {
+    padding-top: 4rem;
+  }
+  @media (max-width: 600px) {
+    padding-left: 1.5rem;
+  }
+  @media (max-width: 350px) {
+    padding-left: 0.5rem;
+  }
+}
+.hero__content__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  @media (max-width: 1000px) {
+    align-items: start;
+  }
+}
+.hero__content__text h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  @media (max-width: 1200px) {
+    font-size: 4rem;
+  }
+  @media (max-width: 1000px) {
+    text-align: start;
+    font-size: 3.5rem;
+  }
+  @media (max-width: 800px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 700px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 330px) {
+    font-size: 2.2rem;
+  }
+}
+.hero__content__text h1 span {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(
+    50deg,
+    #714dff,
+    #9c83ff 31.28%,
+    #e151ff 77.97%,
+    #fff759 95.64%
+  );
+  color: transparent;
+}
+.hero__content__text p {
+  font-size: 1.225rem;
+  font-weight: 400;
+  max-width: 800px;
+  @media (max-width: 1000px) {
+    text-align: start;
+  }
+  @media (max-width: 650px) {
+    font-size: 1rem;
+  }
+}
+
+.hero__arrow__buttons button {
+  cursor: pointer;
+}
+.hero__arrow__buttons p {
+  cursor: pointer;
+}
+.hero__arrow__buttons p {
+  font-size: 1rem;
+}
+.hero__arrow__buttons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  @media (max-width: 350px) {
+    gap: 0.5rem;
+  }
+}
+.hero__arrow__buttons a {
+  display: flex;
+  gap: 0.3rem;
+  font-size: 0.875rem;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #726690;
+  border-radius: 10px;
+  position: relative;
+  color: #f4f0ff;
+  text-align: center;
+  line-height: 20px;
+  font-weight: 500;
+  z-index: 1;
+  cursor: pointer;
+  background: radial-gradient(
+      231.94% 231.94% at 50% 100%,
+      #8a6cff 0,
+      rgba(53, 41, 128, 0) 25.24%
+    ),
+    linear-gradient(180deg, rgba(243, 238, 255, 0), rgba(243, 238, 255, 0.04)),
+    rgba(147, 130, 255, 0.01);
+  box-shadow: 0 0 0 0 rgba(16, 0, 51, 0.4), 0 2px 5px 0 rgba(16, 0, 51, 0.39),
+    0 8px 8px 0 rgba(16, 0, 51, 0.34), 0 19px 11px 0 rgba(16, 0, 51, 0.2),
+    0 34px 14px 0 rgba(16, 0, 51, 0.06), 0 53px 15px 0 rgba(16, 0, 51, 0.01),
+    inset 0 0 12px 0 hsla(0, 0%, 100%, 0.08), inset 0 -8px 32px 0 #1e0d49;
+  padding: 8px 17px;
+  transition: all 0.3s ease-in-out;
+  @media (max-width: 1000px) {
+    text-align: start;
+    padding: 0.7rem 1.5rem;
+  }
+  @media (max-width: 310px) {
+    padding: 0.7rem 1rem;
+  }
+}
+.hero__arrow__buttons a:hover {
+  background-color: #513f96;
+}
+.hero__AI__arrow,
+.hero__invest__arrow {
+  position: relative;
+  left: 0;
+  font-size: 0.7rem;
+  transition: all 0.3s ease-in-out;
+}
+.hero__info {
+  color: grey;
+  margin-top: 9rem;
+  font-size: 0.9rem;
+  @media (max-width: 1000px) {
+    margin-top: 5rem;
+  }
+  @media (max-width: 500px) {
+    margin-top: 10rem;
+  }
+}
+.hero__info a {
+  color: grey;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.hero__info a:hover {
+  color: rgb(218, 214, 214);
+}
