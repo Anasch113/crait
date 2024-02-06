@@ -66,8 +66,8 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection }) {
           </span>
         </div>
       </nav>
-      <div className="burger" id="burger">
-        <Burger burgerOnOrOff={burgerOnOrOff} toSection={toSection} />
+      <div className="burger" id="burger"  burgerOnOrOff={burgerOnOrOff}>
+        <Burger toSection={toSection} />
       </div>
     </>
   );
