@@ -6,7 +6,7 @@ function Burger({ burgerOnOrOff, toSection }) {
     <div className="burger__container">
       <div className="burger__top__container">
         <p>PAGES</p>
-        <div>
+        <div onClick={() => burgerOnOrOff(false)}>
           <IconX
             className="close-mobile"
             onClick={() => burgerOnOrOff(false)}
