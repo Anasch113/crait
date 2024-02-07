@@ -9,7 +9,8 @@ function Burger({ burgerOnOrOff, toSection }) {
         <div onMouseEnter={() => burgerOnOrOff(false)}>
           <IconX
             className="close-mobile"
-            onClick={() => burgerOnOrOff(false)}
+            onClick={() => {burgerOnOrOff(false)
+          toSection("hero-section")}
           />
         </div>
       </div>
