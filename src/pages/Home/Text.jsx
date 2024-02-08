@@ -11,7 +11,7 @@ function Text() {
             <p>MARKET</p>
           </div>
           <h2>
-            Buy Bitcoin, Ethereum, and <br /> 49+ <span>Cryptocurrencies.</span>
+            Buy Bitcoin, Solana, and <br /> 49+ <span>Cryptocurrencies.</span>
           </h2>
         </div>
       </section>
