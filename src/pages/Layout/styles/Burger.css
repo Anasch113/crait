@@ -58,6 +58,12 @@
         width: 20px;
       }
   }
+  .burger__row__item p {
+    transition: all 0.2s ease-in-out;
+  }
+  .burger__row__item p:hover {
+    color: var(--primary);
+  }
   .burger__grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
