@@ -99,7 +99,7 @@ function Terms() {
                 handle your data.
               </p>
               <h3>6. Contact Information</h3>
-              <p>You may contact us by emailing us at Youcoin@gmail.com.</p>
+              <p>You may contact us by emailing us at YouCoin@gmail.com.</p>
             </div>
           </div>
         </div>
