@@ -39,3 +39,10 @@
 <div align='center'>
   <img src='contact.png'/>
 </div>
+<br><br>
+
+<h3 align='center'> Coin 🪙</h3>
+
+<div align='center'>
+  <img src='coin.png'/>
+</div>
