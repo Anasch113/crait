@@ -2,7 +2,7 @@ import "./styles/Crypto.css";
 import React from "react";
 import { useParams } from "react-router-dom";
 function Crypto({topCoins}) {
-  const coinId = useParams().id;
+    const { coinId } = useParams();
   const coinData = topCoins.find((coin) => coin.id === coinId);
   return (
     <>
