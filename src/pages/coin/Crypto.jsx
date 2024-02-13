@@ -1,5 +1,6 @@
-import React from "react";
 
+import React from "react";
+import { useParams } from "react-router-dom";
 function Crypto() {
   const coinId = useParams().id;
   const coinData = topCoins.find((coin) => coin.id === coinId);
