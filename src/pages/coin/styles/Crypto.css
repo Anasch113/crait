@@ -31,9 +31,11 @@
         gap: 0.5rem;
 
       }
+      @media (max-width: 450px) {
+        margin-top: 5rem;
+      }
       @media (max-width: 375px) {
         margin-top: 13rem;
-        
       }
       h2 {
         font-size: 3.3rem;
