@@ -1,4 +1,4 @@
-
+import "./styles/Crypto.css";
 import React from "react";
 import { useParams } from "react-router-dom";
 function Crypto({topCoins}) {
