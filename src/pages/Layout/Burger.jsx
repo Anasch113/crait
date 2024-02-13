@@ -73,7 +73,7 @@ function Burger({ burgerOnOrOff, toSection }) {
       <div className="burger__grid">
         <Link
           className="burger__row__item"
-          to="/"
+          to="/about"
           onClick={() => burgerOnOrOff(false)
         }
         >
@@ -81,7 +81,7 @@ function Burger({ burgerOnOrOff, toSection }) {
             src="https://cdn.discordapp.com/attachments/1187219037537714220/1198808855073796249/image.png?ex=65c040bf&is=65adcbbf&hm=0623bd35cdf3952fd790831ed9f71b836b5a00cad7fe546f28e3a286fef1a766&"
             alt="YouCoin About"
           />
-          <p>About</p>
+          <p>About Us</p>
         </Link>
 
         <Link
