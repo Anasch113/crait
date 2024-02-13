@@ -29,8 +29,12 @@
         width: 90%;
         border: none;
         gap: 0.5rem;
+
       }
-  
+      @media (max-width: 375px) {
+        margin-top: 8rem;
+        
+      }
       h2 {
         font-size: 3.3rem;
         @media (max-width: 600px) {
@@ -45,6 +49,7 @@
       }
       }
     }
+
     .coin__image{
       width: 15rem;
       @media (max-width: 1000px) {
