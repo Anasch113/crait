@@ -86,6 +86,7 @@ function App() {
           />
           <Route path="/demo" element={<Book />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/coin" element={<Terms />} />
         </Route>
       </Routes>
     </Router>
