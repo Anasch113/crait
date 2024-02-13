@@ -43,7 +43,8 @@ function Market({ topCoins, setArrowStyle, resetArrowStyle }) {
           <div className="market-content__coin-list__row">
             {topCoins?.length > 0 ? (
               topCoins.slice(startIndex, endIndex).map((coin) => (
-                <div
+                <Link
+                to='/coin'
                   className="coin-row"
                   key={coin.id}
                 >
@@ -67,7 +68,7 @@ function Market({ topCoins, setArrowStyle, resetArrowStyle }) {
                   <p className="slider-coin__cap">
                     ${coin.market_cap.toLocaleString()}
                   </p>
-                </div>
+                </Link>
               ))
             ) : (
               <div className="market-content__failed">
