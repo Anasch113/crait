@@ -16,7 +16,7 @@
       padding-top: 2rem;
     }
   
-    .coin-contentimg-side {
+    .coin-content__img-side {
       align-items: center;
       border-right: 2px solid white;
       display: flex;
@@ -40,14 +40,14 @@
         font-weight: 500;
       }
     }
-    .coinimage{
+    .coin__image{
       width: 15rem;
       @media (max-width: 1000px) {
         width: 5rem;
       }
   
     }
-    .coin-contenttext-side {
+    .coin-content__text-side {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -59,9 +59,9 @@
         padding: 2rem 1rem;
       }
   
-      .coin-content24h,
-      .coin-contentcurrent,
-      .coin-contentsymbol {
+      .coin-content__24h,
+      .coin-content__current,
+      .coin-content__symbol {
         display: flex;
         gap: 1rem;
         justify-content: center;
