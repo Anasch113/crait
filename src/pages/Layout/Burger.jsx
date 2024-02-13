@@ -38,7 +38,7 @@ function Burger({ burgerOnOrOff, toSection }) {
             src="https://cdn.discordapp.com/attachments/1187219037537714220/1198812630249394226/image.png?ex=65c04443&is=65adcf43&hm=b26743e0982958c056ce8c5a2495a0257bf5b53915815b87dafabd84aa1886e4&"
             alt="YouCoin Market"
           />
-          <p>Market</p>
+          <p>Prices</p>
         </Link>
 
         <Link

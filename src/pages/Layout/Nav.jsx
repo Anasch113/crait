@@ -43,7 +43,7 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection }) {
               <Link to="/">Home</Link>
             </li>
             <li onClick={() => toSection("text-section")}>
-              <Link to="/">Market</Link>
+              <Link to="/">Prices</Link>
             </li>
             <li onClick={() => toSection("slider-section")}>
               <Link to="/">Choose Us</Link>
