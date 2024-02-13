@@ -73,7 +73,7 @@ function Burger({ burgerOnOrOff, toSection }) {
       <div className="burger__grid">
         <Link
           className="burger__row__item"
-          to="/about"
+          to="/"
           onClick={() => burgerOnOrOff(false)
         }
         >
