@@ -87,7 +87,7 @@ function App() {
           />
           <Route path="/demo" element={<Book />} />
           <Route path="/terms" element={<Terms />} />
-          <Route path="/coin" element={<Crypto  topCoins={topCoins}/>} />
+          <Route path="/coin/:coinId" element={<Crypto  topCoins={topCoins}/>} />
         </Route>
       </Routes>
     </Router>

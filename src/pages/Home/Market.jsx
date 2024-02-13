@@ -44,7 +44,7 @@ function Market({ topCoins, setArrowStyle, resetArrowStyle }) {
             {topCoins?.length > 0 ? (
               topCoins.slice(startIndex, endIndex).map((coin) => (
                 <Link
-                to='/coin'
+                to={`/coin${coin.id}`}
                   className="coin-row"
                   key={coin.id}
                 >
