@@ -7,7 +7,7 @@ function Terms() {
       <section id="terms">
         <div className="terms__content">
           <div className="terms__heading">
-            <h2>YouCoin Website Terms and Contact</h2>
+            <h2>YouCoin Website Contact and TOS</h2>
           </div>
           <div className="terms__flex">
             <div className="terms__topics">
