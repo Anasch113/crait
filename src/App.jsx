@@ -10,6 +10,7 @@ import Home from "./pages/Home/Home.jsx";
 import Book from "./pages/book/Book.jsx";
 import Terms from "./pages/terms/Terms.jsx";
 import Crypto from "./pages/coin/Crypto.jsx";
+import Services from "./pages/service/services.jsx";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -87,6 +88,7 @@ function App() {
           />
           <Route path="/demo" element={<Book />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/coin/:coinId" element={<Crypto  topCoins={topCoins}/>} />
         </Route>
       </Routes>

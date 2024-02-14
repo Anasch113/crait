@@ -43,7 +43,7 @@ function Burger({ burgerOnOrOff, toSection }) {
 
         <Link
           className="burger__row__item"
-          to="/"
+          to="/services"
           onClick={() => {burgerOnOrOff(false)
           toSection("join-section")}
         }
@@ -52,7 +52,7 @@ function Burger({ burgerOnOrOff, toSection }) {
             src="https://cdn.discordapp.com/attachments/1187219037537714220/1198812858683756584/image.png?ex=65c0447a&is=65adcf7a&hm=9b07d6b18c2cf260680c7440be103b42cccacba58a4b7deeedecd4f6cb460924&"
             alt="YouCoin Contact"
           />
-          <p>Join</p>
+          <p>Services</p>
         </Link>
 
         <Link
