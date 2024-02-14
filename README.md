@@ -40,7 +40,12 @@
   <img src='contact.png'/>
 </div>
 <br><br>
+<h3 align='center'> Services Page 📞</h3>
 
+<div align='center'>
+  <img src='services.png'/>
+</div>
+<br><br>
 <h3 align='center'> Coin Page 🪙</h3>
 
 <div align='center'>
