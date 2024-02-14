@@ -9,7 +9,7 @@ function Join({ setArrowStyle, resetArrowStyle }) {
         <div className="join__content">
           <div className="join__content__text">
             <h1>
-              The future of crypto <br /> <span>starts here.</span>
+              The future of crypto <br /> <span>Begins here.</span>
             </h1>
             <div className="join__arrow__buttons">
               <Link
