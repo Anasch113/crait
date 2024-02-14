@@ -1,0 +1,25 @@
+.services__title{
+    text-align: center;
+}
+.services__title h2{
+    font-weight: 500;
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+}
+.service__box__topic{
+    margin-bottom: 2rem;
+}
+.service__box__topic h3{
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+.service__box__topic p{
+    color: #afafb1;
+}
+.service__box__reasons{
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
