@@ -88,9 +88,19 @@ function App() {
           />
           <Route path="/demo" element={<Book />} />
           <Route path="/terms" element={<Terms />} />
-          <Route path="/services" element={<Services setArrowStyle={setArrowStyle}
-                resetArrowStyle={resetArrowStyle}/>} />
-          <Route path="/coin/:coinId" element={<Crypto  topCoins={topCoins}/>} />
+          <Route
+            path="/services"
+            element={
+              <Services
+                setArrowStyle={setArrowStyle}
+                resetArrowStyle={resetArrowStyle}
+              />
+            }
+          />
+          <Route
+            path="/coin/:coinId"
+            element={<Crypto topCoins={topCoins} />}
+          />
         </Route>
       </Routes>
     </Router>

@@ -36,6 +36,7 @@
   @media (max-width: 850px) {
     flex-direction: column;
   }
+
 }
 .service__box__topic {
   margin-bottom: 2rem;
