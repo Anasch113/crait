@@ -21,7 +21,7 @@ function Services({ setArrowStyle, resetArrowStyle }) {
           <div className="services__box">
             <div className="services___box__left">
               <div className="service__box__topic">
-                <h3>Consulting</h3>
+                <h3>Consulting & Guidance</h3>
                 <p>Ideal stategies for investments.</p>
               </div>
               <div className="service__box__container">
@@ -32,8 +32,7 @@ function Services({ setArrowStyle, resetArrowStyle }) {
                 <div className="service__box__reasons">
                   <FontAwesomeIcon icon={faCalendar} />
                   <p>
-                    Gain Access to meeting and conferences where you are taught
-                    how to use the AI.{" "}
+                    Gain Access to meeting and conferences.{" "}
                   </p>
                 </div>
                 <div className="service__box__reasons">
@@ -53,8 +52,7 @@ function Services({ setArrowStyle, resetArrowStyle }) {
                     YouCoin Data Collection
                   </h3>
                   <p>
-                    YouCoin provides past and present date for crypto currencies
-                    and all investment strategies
+                    YouCoin provides past and present date for crypto currencies.
                   </p>
                   <Link
                     to="/demo"
@@ -75,9 +73,7 @@ function Services({ setArrowStyle, resetArrowStyle }) {
                     YouCoin AI Intelligence
                   </h3>
                   <p>
-                    Our AI is meticulously trained using a wealth of crypto
-                    knowledge, meticulously curated from data spanning back to
-                    2018.
+                    Our AI is trained using a knowledge of crypto from 01/26/2018.
                   </p>
                   <Link
                     to="/demo"
@@ -94,7 +90,7 @@ function Services({ setArrowStyle, resetArrowStyle }) {
           <div className="services__box">
             <div className="services___box__left">
               <div className="service__box__topic">
-                <h3>Short Term Or Long Term</h3>
+                <h3>Short & Long Term</h3>
                 <p>Strategies for the most ideal results.</p>
               </div>
               <div className="service__box__container">
@@ -146,7 +142,7 @@ function Services({ setArrowStyle, resetArrowStyle }) {
                     Organization Bonus
                   </h3>
                   <p>
-                  Receive complimentary guidance on your initial $10,000 investment.
+                  Receive complimentary guidance on up to $10,000.
                   </p>
                   <Link
                     to="/demo"
