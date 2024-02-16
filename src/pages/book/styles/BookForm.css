@@ -202,5 +202,6 @@ input[type="checkbox"]:checked {
 .book__submitted{
   color: white !important;
   margin-top: 3rem;
+  margin-bottom: 2rem;
 
 }
