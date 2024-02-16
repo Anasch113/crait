@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles/BookForm.css";
+import { Link } from "react-router-dom";
 function BookForm() {
   const [subScreen, setSubScreen] = useState(false);
   const [formData, setFormData] = useState({
@@ -69,6 +70,7 @@ function BookForm() {
           <p className="book__submitted">
             Thanks for reaching out! We'll be in touch shortly.
           </p>
+          <Link to='/' className="book__submit">Back to Home</Link>
         </>
       ) : (
         <form action="" onSubmit={handleSubmit}>
