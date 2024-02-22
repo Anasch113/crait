@@ -216,6 +216,9 @@ input:focus {
     font-size: 0.9rem;
   }
 }
+.login__password__div{
+  display: flex;
+}
 .login__reset{
   margin-bottom: 1rem;
   color: green;

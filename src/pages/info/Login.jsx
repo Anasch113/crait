@@ -33,7 +33,7 @@ function Login() {
                 <h3>Reset your password</h3>
                 <p className="login__reset__des">Type your registered email to reset password</p>
                 <p className="login__reset"> Reset has been sent to email</p>
-                <div className="login__input__div">
+                <div className="login__input__div login__password__div">
                   <label htmlFor="login__email" className="email-label">
                   <FontAwesomeIcon icon={faEnvelope} className="icon__color"/>
                   </label>
