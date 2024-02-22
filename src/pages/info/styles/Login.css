@@ -226,7 +226,7 @@ margin-top: 16px;
 }
 .login__password__email{
   @media (max-width: 400px) {
-    max-width: 200px;
+    max-width: 150px;
   }
   
 }
