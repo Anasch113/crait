@@ -42,7 +42,7 @@ function Login() {
                     type="email"
                     id="login__email"
                     placeholder="Email"
-                    className="login__input"
+                    className="login__input login__password__email"
                   />
                 </div>
 
