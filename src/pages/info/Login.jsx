@@ -25,7 +25,7 @@ function Login() {
             <p className="login__top__text">
               Dont have an account? <Link to='/signup' className="login__link">Sign up</Link>
             </p>
-            <Link className="login__link__lower">Sign up</Link>
+            <Link to='/signup' className="login__link__lower">Sign up</Link>
           </div>
           <div className="login__content">
           {needReset ? (
