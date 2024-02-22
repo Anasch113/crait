@@ -70,6 +70,9 @@ function SignUp() {
         <div className="signup__right">
           <div className="signup__right__content">
             <div className="signup__top">
+            <Link to="/" className="login__back">
+              ← Home
+            </Link>
               <p className="signup__top__larger">
                 Have an account?{" "}
                 <Link to="/login" className="signup__login">

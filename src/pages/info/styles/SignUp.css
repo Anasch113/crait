@@ -47,8 +47,9 @@
   }
 }
 .signup__top {
-  text-align: end;
   margin-bottom: 12rem;
+  display: flex;
+  justify-content: space-between;
 }
 .signup__top__larger {
   @media (max-width: 450px) {
