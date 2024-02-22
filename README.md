@@ -30,14 +30,14 @@
   <img src='book.png'/>
 </div>
 <br><br>
-<h3 align='center'>Login Page 🔒</h3>
+<h3 align='center'>Log In Page 🔒</h3>
 <div align='center'>
   <img src='login.png'/>
 </div>
 <br><br>
-<h3 align='center'>Sign Up Page 📍</h3>
+<h3 align='center'>Sign Up Page 🛎️</h3>
 <div align='center'>
-  <img src='signup.png'/>
+  <img src='signupp.png'/>
 </div>
 <br><br>
 <h3 align='center'> Services Page 📞</h3>
