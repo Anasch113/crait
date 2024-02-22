@@ -22,7 +22,7 @@
 <h3 align='center'>Home Page 🏠</h3>
 
 <div align='center'>
-  <img src='home.png'/>
+  <img src='hero.png'/>
 </div>
 <br><br>
 <h3 align='center'>Book Page 📖</h3>
