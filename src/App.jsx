@@ -101,6 +101,10 @@ function App() {
             path="/coin/:coinId"
             element={<Crypto topCoins={topCoins} />}
           />
+          <Route
+            path="/create"
+            element={<Crypto topCoins={topCoins} />}
+          />
         </Route>
       </Routes>
     </Router>

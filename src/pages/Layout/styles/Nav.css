@@ -30,7 +30,6 @@
   position: relative;
   transition: all 0.3s ease-in-out;
 }
-
 .navbar {
   align-items: center;
   border-bottom: 1px solid #10101E;
@@ -116,6 +115,14 @@
 }
 .nav__button:hover {
   background-color: #513f96;
+}
+.nav__login{
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.nav__login:hover{
+  color: rgb(209, 207, 207);
 }
 .nav__arrow {
   font-size: 0.7rem;

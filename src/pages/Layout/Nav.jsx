@@ -59,9 +59,9 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection }) {
               onMouseOver={setArrowStyle("nav__arrow")}
               onMouseOut={resetArrowStyle("nav__arrow")}
             >
-              Start Investing <span className="nav__arrow">→</span>
+              Start Investing<span className="nav__arrow">→</span>
             </Link>
-
+            <Link className="nav__login">Log In</Link>
             <IconMenu2 className="hamburger-menu"  onClick={()=>burgerOnOrOff(true)}/>
           </span>
         </div>
