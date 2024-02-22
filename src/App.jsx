@@ -12,6 +12,7 @@ import Terms from "./pages/terms/Terms.jsx";
 import Crypto from "./pages/coin/Crypto.jsx";
 import Services from "./pages/service/services.jsx";
 import Login from "./pages/info/Login.jsx";
+import SignUp from "./pages/info/SignUp.jsx";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -107,6 +108,10 @@ function App() {
         <Route
             path="/login"
             element={<Login />}
+          />
+          <Route
+            path="/signup"
+            element={<SignUp />}
           />
       </Routes>
     </Router>

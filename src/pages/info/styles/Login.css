@@ -186,7 +186,8 @@ input:focus {
   font-size: 0.9rem;
   cursor: pointer;
 }
-.login__button, .login__submit {
+.login__button,
+.login__submit {
   background: #000;
   color: #fff;
   font-size: 16px;
@@ -202,34 +203,32 @@ input:focus {
   display: inline-block;
   transition: all 0.2s ease-in-out;
   @media (max-width: 450px) {
-    
     padding: 0rem 6rem;
   }
 }
 .login__button:hover {
   background: #2b2a2a;
 }
-.login__reset__des{
+.login__reset__des {
   margin-bottom: 4rem;
   @media (max-width: 450px) {
     text-align: start;
     font-size: 0.9rem;
   }
 }
-.login__password__div{
+.login__password__div {
   display: flex;
 }
-.login__reset{
+.login__reset {
   margin-bottom: 1rem;
   color: green;
   display: none;
 }
-.login__submit{
-margin-top: 16px;
+.login__submit {
+  margin-top: 16px;
 }
-.login__password__email{
+.login__password__email {
   @media (max-width: 400px) {
     max-width: 150px;
   }
-  
 }

@@ -16,14 +16,14 @@ function Login() {
   };
   return (
     <>
-      <section id="login" className="login">
+      <section id="logIn" className="login">
         <div className="login__container">
           <div className="login__top">
             <Link to="/" className="login__back">
               ← Home
             </Link>
             <p className="login__top__text">
-              Dont have an account? <Link className="login__link">Sign up</Link>
+              Dont have an account? <Link to='/signup' className="login__link">Sign up</Link>
             </p>
             <Link className="login__link__lower">Sign up</Link>
           </div>

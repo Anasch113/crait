@@ -1,0 +1,41 @@
+.signup__container {
+  display: flex;
+  color: black;
+}
+.signup__left {
+  background: radial-gradient(
+      55.87%55.87%at 35.49%-18.37%,
+      #d1aad7 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      70.81%48.44%at -24.53%-16.02%,
+      #c88bc4 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      91.61%92.58%at 104.86%-43.36%,
+      #7b8fdd 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      50.59%55.55%at -2.99%-8.69%,
+      #86bff2 9.06%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #f7fafc;
+  height: 100vh;
+  width: 50%;
+  color: black;
+}
+.signup__right {
+  height: 100vh;
+  width: 50%;
+  background-color: white;
+}
+.signup__login {
+  color: black;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: end;
+}
