@@ -281,6 +281,11 @@ function Burger({ burgerOnOrOff, toSection }) {
           <p>Content & Languages</p>
         </Link>
       </div>
+      <div className="burger__links">
+        <Link to='/demo' className="burger__book">Book Demo</Link>
+        <Link to='/login' className="burger__login">Log In</Link>
+      </div>
+      
     </div>
   );
 }
