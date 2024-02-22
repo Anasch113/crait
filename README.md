@@ -35,7 +35,7 @@
   <img src='login.png'/>
 </div>
 <br><br>
-<h3 align='center'>Sign Up Page 🔒</h3>
+<h3 align='center'>Sign Up Page 📍</h3>
 <div align='center'>
   <img src='signup.png'/>
 </div>

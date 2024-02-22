@@ -63,7 +63,7 @@ function SignUp() {
                   </p>
                 </div>
               </div>
-              <button className="signup__button">Book Demo</button>
+              <Link to='/demo' className="signup__button">Book Demo</Link>
             </div>
           </div>
         </div>
