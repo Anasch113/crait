@@ -22,38 +22,38 @@
 <h3 align='center'>Home Page 🏠</h3>
 
 <div align='center'>
-  <img src='hero.png'/>
+  <img src='./readme/hero.png'/>
 </div>
 <br><br>
 <h3 align='center'>Book Page 📖</h3>
 <div align='center'>
-  <img src='book.png'/>
+  <img src='./readme/book.png'/>
 </div>
 <br><br>
 <h3 align='center'>Log In Page 🔒</h3>
 <div align='center'>
-  <img src='login.png'/>
+  <img src='./readme/login.png'/>
 </div>
 <br><br>
 <h3 align='center'>Sign Up Page 🛎️</h3>
 <div align='center'>
-  <img src='signupp.png'/>
+  <img src='./readme/signupp.png'/>
 </div>
 <br><br>
 <h3 align='center'> Services Page 📞</h3>
 
 <div align='center'>
-  <img src='service.png'/>
+  <img src='./readme/service.png'/>
 </div>
 <br><br>
 <h3 align='center'> Coin Page 🪙</h3>
 
 <div align='center'>
-  <img src='coin.png'/>
+  <img src='./readme/coin.png'/>
 </div>
 <h3 align='center'> Contact Page 📱</h3>
 
 <div align='center'>
-  <img src='contact.png'/>
+  <img src='./readme/contact.png'/>
 </div>
 <br><br>
