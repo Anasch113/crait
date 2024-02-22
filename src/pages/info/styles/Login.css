@@ -1,0 +1,111 @@
+.login {
+  background: radial-gradient(
+      55.87%55.87%at 35.49%-18.37%,
+      #d1aad7 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      70.81%48.44%at -24.53%-16.02%,
+      #c88bc4 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      91.61%92.58%at 104.86%-43.36%,
+      #7b8fdd 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      50.59%55.55%at -2.99%-8.69%,
+      #86bff2 9.06%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #f7fafc;
+  height: 100vh;
+  width: auto;
+  padding: 3.5rem 0rem;
+  color: black;
+}
+.login__container {
+  max-width: 1500px;
+  margin: auto;
+  text-align: right;
+}
+.login__top {
+  text-align: right;
+}
+.login__link {
+  color: black;
+  font-weight: 500;
+}
+.login__form {
+  max-width: 400px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login__form h3 {
+  font-weight: 400;
+  text-align: start;
+  margin-bottom: 2rem;
+}
+.login__form p {
+  color: #515152;
+  margin-bottom: 1rem;
+}
+.login__form__flex{
+  display: flex;
+  margin-bottom: 1rem;
+}
+.login__form__options {
+  height: 42px;
+  background-color: white;
+  padding-left: 0.5rem;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.google__image{
+  padding-left: 0.7rem;
+  padding-right: 0.4rem;
+}
+.login__form__option__image {
+  width: 20px;
+  margin-right: 0.5rem;
+}
+.login__form__github__image{
+  width: 30px;
+  margin-right: 0.5rem;
+}
+.login__form__option__text {
+  color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.7rem;
+  max-width: 270px;
+  padding-left: 1.3rem;
+  padding-right: 5rem;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+.google__color {
+  background-color: #2f80ed;
+  transition: all 0.2s ease-in-out;
+  padding-right: 4.64rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.google__color:hover {
+  background-color: #246dcc;
+}
+.github__color {
+  background-color: #222222;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.github__color:hover {
+  background-color: #333232;
+}
