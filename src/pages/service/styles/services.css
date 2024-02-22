@@ -136,3 +136,9 @@
 .service__right__content a:hover {
   background-color: #513f96;
 }
+.service__arrow_1,.service__arrow_2,.service__arrow_3{
+  position: relative;
+  left: 0;
+  font-size: 0.7rem;
+  transition: all 0.3s ease-in-out;
+}

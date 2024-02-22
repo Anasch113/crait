@@ -81,10 +81,10 @@ function Services({ setArrowStyle, resetArrowStyle }) {
                   </p>
                   <Link
                     to="/demo"
-                    onMouseOver={setArrowStyle("hero__invest__arrow")}
-                    onMouseOut={resetArrowStyle("hero__invest__arrow")}
+                    onMouseOver={setArrowStyle("service__arrow_1")}
+                    onMouseOut={resetArrowStyle("service__arrow_1")}
                   >
-                    Book a Demo<span className="hero__invest__arrow">→</span>
+                    Book a Demo<span className="service__arrow_1">→</span>
                   </Link>
                 </div>
               </div>
@@ -129,10 +129,10 @@ function Services({ setArrowStyle, resetArrowStyle }) {
                   </p>
                   <Link
                     to="/demo"
-                    onMouseOver={setArrowStyle("hero__invest__arrow")}
-                    onMouseOut={resetArrowStyle("hero__invest__arrow")}
+                    onMouseOver={setArrowStyle("service__arrow_2")}
+                    onMouseOut={resetArrowStyle("service__arrow_2")}
                   >
-                    Book a Demo<span className="hero__invest__arrow">→</span>
+                    Book a Demo<span className="service__arrow_2">→</span>
                   </Link>
                 </div>
               </div>
@@ -150,10 +150,10 @@ function Services({ setArrowStyle, resetArrowStyle }) {
                   </p>
                   <Link
                     to="/demo"
-                    onMouseOver={setArrowStyle("hero__invest__arrow")}
-                    onMouseOut={resetArrowStyle("hero__invest__arrow")}
+                    onMouseOver={setArrowStyle("service__arrow_3")}
+                    onMouseOut={resetArrowStyle("service__arrow_3")}
                   >
-                    Book a Demo<span className="hero__invest__arrow">→</span>
+                    Book a Demo<span className="service__arrow_3">→</span>
                   </Link>
                 </div>
               </div>
