@@ -5,24 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 function Login() {
   const [needReset, setNeedReset] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    companyName: "",
-    jobTitle: "",
-    workEmail: "",
-    phoneNumber: "",
-    budget: "",
-    preferences: [],
-    description: "",
-    termsAccepted: false,
-  });
+
   const passwordSubmit = (e) => {
     window.scrollTo(0, 0);
     e.preventDefault();
     document.querySelector('.login__reset').style.display = 'block'
-    setFormData({
-      login__email: ""
+    document.querySelectorAll('input[type="email"]').forEach((input) => {
+      input.value = "";
     });
   };
   return (
