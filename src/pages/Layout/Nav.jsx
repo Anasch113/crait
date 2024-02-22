@@ -61,7 +61,7 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection }) {
             >
               Start Investing<span className="nav__arrow">→</span>
             </Link>
-            <Link to='/create' className="nav__login">Log In</Link>
+            <Link to='/login' className="nav__login">Log In</Link>
             <IconMenu2 className="hamburger-menu"  onClick={()=>burgerOnOrOff(true)}/>
           </span>
         </div>

@@ -26,19 +26,53 @@
   color: black;
 }
 .login__container {
-  max-width: 1500px;
+  max-width: 1300px;
   margin: auto;
   text-align: right;
+  padding: 0rem 2rem;
+  @media (max-width: 450px) {
+    padding: 0rem 1rem;
+  }
+  @media (max-width: 300px) {
+    padding: 0rem 0.5rem;
+  }
 }
+.login__content {
+  display: flex;
+  justify-content: center;
+  padding-top: 10rem;
+}
+
 .login__top {
+  display: flex;
+  justify-content: space-between;
   text-align: right;
 }
+.login__back {
+  font-weight: 500;
+  font-size: 1rem;
+  color: black;
+}
+
 .login__link {
   color: black;
   font-weight: 500;
 }
+.login__top__text {
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
+.login__link__lower {
+  color: black;
+  font-weight: 500;
+  display: none;
+  @media (max-width: 500px) {
+    display: block;
+  }
+}
 .login__form {
-  max-width: 400px;
+  width: 400px;
   color: black;
   display: flex;
   flex-direction: column;
@@ -50,11 +84,11 @@
   text-align: start;
   margin-bottom: 2rem;
 }
-.login__form p {
+.login__or {
   color: #515152;
   margin-bottom: 1rem;
 }
-.login__form__flex{
+.login__form__flex {
   display: flex;
   margin-bottom: 1rem;
 }
@@ -67,8 +101,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-.google__image{
+.google__image {
   padding-left: 0.7rem;
   padding-right: 0.4rem;
 }
@@ -76,7 +111,7 @@
   width: 20px;
   margin-right: 0.5rem;
 }
-.login__form__github__image{
+.login__form__github__image {
   width: 30px;
   margin-right: 0.5rem;
 }
@@ -91,12 +126,18 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   cursor: pointer;
+  @media (max-width: 450px) {
+    padding: 0.7rem 2rem 0.7rem 1rem;
+  }
 }
 .google__color {
   background-color: #2f80ed;
   transition: all 0.2s ease-in-out;
   padding-right: 4.64rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  @media (max-width: 450px) {
+    padding: 0.7rem 2rem 0.7rem 0.6rem;
+  }
 }
 .google__color:hover {
   background-color: #246dcc;
@@ -108,4 +149,78 @@
 }
 .github__color:hover {
   background-color: #333232;
+}
+.icon__color {
+  color: #404040;
+}
+.login__input {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  margin-left: 0.8rem;
+  padding-right: 5rem;
+  @media (max-width: 450px) {
+    max-width: 200px;
+    padding-right: 2rem;
+  }
+}
+input:focus {
+  outline: none;
+}
+.login__input__div {
+  background-color: #edf2f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease-in-out;
+  @media (max-width: 450px) {
+    padding: 0.7rem 0.5rem;
+  }
+}
+.login__input__div:hover {
+  background-color: #edebf4;
+}
+.login__forgot {
+  color: #3d87f5;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.login__button, .login__submit {
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 46px;
+  text-align: center;
+  height: 46px;
+  margin: 32px 0 0;
+  padding: 0rem 9rem;
+  border: 0;
+  border-radius: 24px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  @media (max-width: 450px) {
+    
+    padding: 0rem 6rem;
+  }
+}
+.login__button:hover {
+  background: #2b2a2a;
+}
+.login__reset__des{
+  margin-bottom: 4rem;
+  @media (max-width: 450px) {
+    text-align: start;
+    font-size: 0.9rem;
+  }
+}
+.login__reset{
+  margin-bottom: 1rem;
+  color: green;
+  display: none;
+}
+.login__submit{
+margin-top: 16px;
 }

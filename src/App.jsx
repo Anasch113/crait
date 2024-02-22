@@ -105,7 +105,7 @@ function App() {
           
         </Route>
         <Route
-            path="/create"
+            path="/login"
             element={<Login />}
           />
       </Routes>
