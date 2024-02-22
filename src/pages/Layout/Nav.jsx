@@ -3,7 +3,7 @@ import "./styles/Nav.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
-
+import logo from './images/logo.png'
 function Nav({ setArrowStyle, resetArrowStyle, toSection }) {
   function burgerOnOrOff(val) {
     if(val === false){
@@ -17,7 +17,7 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection }) {
       <nav>
         <div className="nav__intro">
           <img
-            src="https://cdn.discordapp.com/attachments/1187219037537714220/1196572950921494539/logo-379817d2.png?ex=65b81e66&is=65a5a966&hm=5caf9f4ab5e702b6b816712dea1c23bc5cae948d7ee0bb47328fcf39c3691ffc&"
+            src={logo}
             alt="logo"
             width={25}
           />

@@ -9,6 +9,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Join from "../Home/Join";
+import light from './images/light.png'
+import cir from './images/cir.png'
+import data from './images/data.png'
+import octo from './images/octo.png'
 function Services({ setArrowStyle, resetArrowStyle }) {
   return (
     <section className="services" id="services">
@@ -44,7 +48,7 @@ function Services({ setArrowStyle, resetArrowStyle }) {
             <div className="services___box__right">
               <div className="service__right__div">
                 <img
-                  src="https://cdn.discordapp.com/attachments/1187219037537714220/1198803051448901662/image.png?ex=65dbead8&is=65c975d8&hm=276d99fa248df603dc6f48c6c5cc6d98e32aa1af6ca4e61ed1938f0b800a29d4&"
+                  src={light}
                   alt="Lighting Bolt"
                 />
                 <div className="service__right__content">
@@ -65,7 +69,7 @@ function Services({ setArrowStyle, resetArrowStyle }) {
               </div>
               <div className="service__right__div">
                 <img
-                  src="https://cdn.discordapp.com/attachments/1187219037537714220/1198812328255295558/image.png?ex=65dbf37b&is=65c97e7b&hm=70739198a2424198b3eea69ed1dd577fef8e48338e01dd80e5f32cb61a5bbbb2&"
+                  src={octo}
                   alt="Colorful circle"
                 />
                 <div className="service__right__content">
@@ -113,7 +117,7 @@ function Services({ setArrowStyle, resetArrowStyle }) {
             <div className="services___box__right">
               <div className="service__right__div">
                 <img
-                  src="https://cdn.discordapp.com/attachments/1187219037537714220/1207421736682004480/image.png?ex=65df961e&is=65cd211e&hm=75a2c40a2977789c5f56721abbe6536db85466523c690e24c56aee555df414bf&"
+                  src={data}
                   alt="Colorfull Database"
                 />
                 <div className="service__right__content">
@@ -134,7 +138,7 @@ function Services({ setArrowStyle, resetArrowStyle }) {
               </div>
               <div className="service__right__div">
                 <img
-                  src="https://cdn.discordapp.com/attachments/1187219037537714220/1198803876766285895/image.png?ex=65dbeb9c&is=65c9769c&hm=2e60b03cc63ad46ece1832d9b3e5ce67f39866e29025aefa8466951ec4eabb46&"
+                  src={cir}
                   alt="Colorfull Octagon"
                 />
                 <div className="service__right__content">
