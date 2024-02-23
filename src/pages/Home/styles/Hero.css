@@ -154,9 +154,10 @@
   transition: all 0.3s ease-in-out;
 }
 .hero__info {
-  color: grey;
+  color: rgb(163, 162, 162);
   margin-top: 9rem;
   font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   @media (max-width: 1000px) {
     margin-top: 5rem;
   }
@@ -165,10 +166,11 @@
   }
 }
 .hero__info a {
-  color: grey;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: rgb(163, 162, 162);
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }
 .hero__info a:hover {
-  color: rgb(218, 214, 214);
+  color: rgb(233, 233, 233);
 }
