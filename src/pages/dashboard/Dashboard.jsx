@@ -3,13 +3,16 @@ import DashNav from './DashNav'
 import DashFooter from './DashFooter'
 import DashTop from './DashTop'
 import DashBottom from './DashBottom'
-
+import { useParams } from "react-router-dom";
 function Dashboard() {
+  let { username } = useParams();
+  console.log(username)
   return (
     <>
-    <DashNav />
+
+    <DashNav username={username}/>
     <DashTop />
-    <DashBottom />
+    <DashBottom username={username}/>
     <DashFooter />
     </>
   )

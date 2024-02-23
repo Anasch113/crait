@@ -4,8 +4,7 @@ import initials from "./images/initials.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-function DashTop() {
-
+function DashTop({username}) {
   return (
     <section className="dashtop" id="dashtop">
       <div className="dashtop__container">

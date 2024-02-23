@@ -9,7 +9,7 @@ import {
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-function DashNav() {
+function DashNav({username}) {
   const [dropdown, setDropDown] = useState(false);
   useEffect(() => {
     if (dropdown === true) {
@@ -40,7 +40,7 @@ function DashNav() {
                   onClick={() => setDropDown(!dropdown)}
                 />
                 <div className="dashnav__right__info">
-                  <p className="dashnav__right__name">First Last</p>
+                  <p className="dashnav__right__name">{username}</p>
                   <p className="dashnav__right__type">All Investments</p>
                 </div>
                 <FontAwesomeIcon

@@ -3,7 +3,7 @@ import "./styles/bottomdash.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus,faChevronLeft ,faChevronRight, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-function DashBottom() {
+function DashBottom({username}) {
   return (
     <section className="dashbottom" id="dashbottom">
       <div className="dash__content">
@@ -19,14 +19,14 @@ function DashBottom() {
             <div className="dashbottom__box">
               <div className="dashbottom__box__text">
                 <span>NO INVESTMENTS</span>
-                <p>Username</p>
+                <p>{username}</p>
               </div>
               <p className="dashbottom__box__location">Boston</p>
             </div>
             <div className="dashbottom__box">
               <div className="dashbottom__box__text">
                 <span>NO INVESTMENTS</span>
-                <p>Username</p>
+                <p>{username}</p>
               </div>
               <p className="dashbottom__box__location">Boston</p>
             </div>
