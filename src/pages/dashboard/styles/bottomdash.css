@@ -1,0 +1,138 @@
+.dashbottom {
+  background-color: #131315;
+  padding: 0rem 0rem 8rem 0rem;
+}
+.dashbottom__container {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: auto;
+}
+.dashbottom__one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+}
+.dashbottom__one p {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.dashbottom__purchase {
+  border-radius: 5px;
+  border: 1px solid #776b96;
+  color: #f4f0ff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  gap: 0.5rem;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  background: radial-gradient(
+      231.94% 231.94% at 50% 100%,
+      #8a6cff 0,
+      rgba(53, 41, 128, 0) 25.24%
+    ),
+    linear-gradient(180deg, rgba(175, 29, 219, 0), rgba(243, 238, 255, 0.04)),
+    rgba(147, 130, 255, 0.01);
+  box-shadow: 0 0 0 0 rgba(16, 0, 51, 0.4), 0 2px 5px 0 rgba(16, 0, 51, 0.39),
+    0 8px 8px 0 rgba(16, 0, 51, 0.34), 0 19px 11px 0 rgba(16, 0, 51, 0.2),
+    0 34px 14px 0 rgba(16, 0, 51, 0.06), 0 53px 15px 0 rgba(16, 0, 51, 0.01),
+    inset 0 0 12px 0 hsla(0, 0%, 100%, 0.08), inset 0 -8px 32px 0 #361b7a;
+  padding: 8px 20px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+}
+.dashbottom__purchase:hover {
+  background-color: #513f96;
+}
+.dashbottom__two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.dashbottom__box {
+  max-width: 100%;
+  min-height: 300px;
+  height: 100%;
+  padding: 32px;
+  background-color: rgb(28, 28, 33);
+  border: 1px solid rgb(44, 44, 48);
+  border-radius: 16px;
+  display: grid;
+  grid-template-areas:
+    "start-start start-end"
+    "end-start end-end";
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
+  column-gap: 1rem;
+  row-gap: 3rem;
+  position: relative;
+}
+.dashbottom__box__location {
+  color: #c3c3c6;
+  font-weight: 400;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 2rem 2rem;
+}
+.dashbottom__box__text span {
+  color: #c3c3c6;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.dashbottom__box__text p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.1rem;
+}
+.dashbottom__three{
+    display: flex;
+    justify-content: space-between;
+}
+.dashbottom__three__options{
+display: flex;
+gap: 2rem;
+margin-right: 1rem;
+}
+.dashbottom__option{
+    display: flex;
+    align-items: center;
+    color: rgb(114, 114, 119);
+    font-weight: 500;
+    gap: 0.7rem;
+    cursor: default;
+}
+.dashbottom__three__options button{
+    background-color: rgb(66, 66, 72);
+    block-size: 32px;
+    border: 1px solid rgb(66, 66, 72);
+    color: rgb(195, 195, 198);
+    padding: 0px 12px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.dashbottom__icon{
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+.dashbottom__selector{
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+    padding: 9.5px;
+    background-color: rgb(24, 24, 27);
+    border: 1px solid rgb(66, 66, 72);
+    color: rgb(195, 195, 198);
+    font-weight: 600;
+    border-radius: 4px;
+}
