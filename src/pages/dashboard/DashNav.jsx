@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles/DashNav.css";
 import logo from "./images/logo.png";
+import initials from "./images/initials.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDown,
@@ -34,7 +35,7 @@ function DashNav() {
             <div className="dashnav__right__container">
               <div className="dashnav__right__flex">
                 <img
-                  src="https://cloud.appwrite.io/v1/avatars/initials?name=Hery+Ruiz&width=80&height=80&project=console"
+                  src={initials}
                   alt="Avatar"
                 />
                 <div className="dashnav__right__info">

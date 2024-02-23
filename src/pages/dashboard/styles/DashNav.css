@@ -34,7 +34,7 @@
   padding: 4px 12px;
   background-color: #424248;
   margin-left: 0.7rem;
-  @media (max-width: 300px) {
+  @media (max-width: 320px) {
     display: none;
   }
 }
@@ -89,6 +89,7 @@
   padding-left: 1.5rem;
 }
 .dashnav__right__flex img {
+  cursor: pointer;
   block-size: 40px;
   border-radius: 50%;
 }
