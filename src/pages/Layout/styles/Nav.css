@@ -7,7 +7,7 @@
 }
 .nav__intro {
   align-items: center;
-  background-color: #040210;
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   height: 4rem;
   justify-content: center;
