@@ -18,7 +18,7 @@ function Login() {
 
   const navigate = useNavigate();
   const [loginFormData, setloginFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -32,12 +32,19 @@ function Login() {
   const logInSubmit = (e) => {
     e.preventDefault();
     if (
-      loginFormData.email === "herytest123@Gmail.com" &&
+      loginFormData.username === "herytest" &&
       loginFormData.password === "hi"
     ) {
-      console.log("Email:", loginFormData.email);
-      console.log("Password:", loginFormData.password);
-      
+      document.querySelectorAll('input[type="email"]').forEach((input) => {
+        input.value = "";
+      });
+      document.querySelectorAll('input[type="password"]').forEach((input) => {
+        input.value = "";
+      });
+      document.querySelector(".login__wrong").style.display = "none";
+      navigate(`/dashboard`);
+    }else{
+      document.querySelector(".login__wrong").style.display = "block";
     }
   };
 
@@ -117,18 +124,19 @@ function Login() {
                   </div>
                 </div>
                 <p className="login__or">or</p>
+                <p className="login__wrong">Wrong email or password</p>
                 <div className="login__input__div">
-                  <label htmlFor="login__email" className="email-label">
+                  <label htmlFor="login__username" className="Username-label">
                     <FontAwesomeIcon icon={faUser} className="icon__color" />
                   </label>
                   <input
                     required
-                    type="email"
-                    id="login__email"
-                    name="email"
-                    placeholder="Email"
+                    type="text"
+                    id="login__username"
+                    name="username"
+                    placeholder="username"
                     className="login__input"
-                    value={loginFormData.email}
+                    value={loginFormData.userName}
                     onChange={handleChange}
                   />
                 </div>

@@ -188,6 +188,11 @@ input:focus {
   font-size: 0.9rem;
   cursor: pointer;
 }
+.login__wrong{
+  color: red;
+  margin-bottom: 1rem;
+  display: none;
+}
 .login__button,
 .login__submit {
   background: #000;
