@@ -17,10 +17,11 @@
   overflow-x: auto;
   white-space: nowrap;
   width: 80%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .market-content__coin-list__top {
-  background-color: #08011a;
+  background-color: #0a0122;
   border-bottom: none;
   border-radius: 7px 7px 0px 0px;
   border: 1px solid #0f0227;
@@ -95,7 +96,7 @@
 /* COIN ROWS */
 
 .market-content__coin-list__row {
-  background-color: rgba(43, 42, 42, 0.2);
+  background-color: rgba(58, 58, 58, 0.2);
   box-shadow: 0px 10px 5px 0px rgba(46, 46, 46, 0.2);
   display: flex;
   flex-direction: column;
