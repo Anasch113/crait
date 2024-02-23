@@ -3,17 +3,33 @@ import "./styles/Login.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+
 function Login() {
   const [needReset, setNeedReset] = useState(false);
-
   const passwordSubmit = (e) => {
     window.scrollTo(0, 0);
     e.preventDefault();
-    document.querySelector('.login__reset').style.display = 'block'
+    document.querySelector(".login__reset").style.display = "block";
     document.querySelectorAll('input[type="email"]').forEach((input) => {
       input.value = "";
     });
   };
+
+  let userName = "hi";
+  const navigate = useNavigate();
+  const logInSubmit = (e) => {
+    console.log(
+      document.querySelectorAll('input[type="password"]').value)
+      window.scrollTo(0, 0);
+      navigate(`/${userName}/dashboard`);
+      e.preventDefault();
+      document.querySelectorAll('input[type="password"]').forEach((input) => {
+        input.value = "";
+      });
+    
+  };
+
   return (
     <>
       <section id="logIn" className="login">
@@ -23,19 +39,29 @@ function Login() {
               ← Home
             </Link>
             <p className="login__top__text">
-              Dont have an account? <Link to='/signup' className="login__link">Sign up</Link>
+              Dont have an account?{" "}
+              <Link to="/signup" className="login__link">
+                Sign up
+              </Link>
             </p>
-            <Link to='/signup' className="login__link__lower">Sign up</Link>
+            <Link to="/signup" className="login__link__lower">
+              Sign up
+            </Link>
           </div>
           <div className="login__content">
-          {needReset ? (
+            {needReset ? (
               <form className="login__form" onSubmit={passwordSubmit}>
                 <h3>Reset your password</h3>
-                <p className="login__reset__des">Type your registered email to reset password</p>
+                <p className="login__reset__des">
+                  Type your registered email to reset password
+                </p>
                 <p className="login__reset"> Reset has been sent to email</p>
                 <div className="login__input__div login__password__div">
                   <label htmlFor="login__email" className="email-label">
-                  <FontAwesomeIcon icon={faEnvelope} className="icon__color"/>
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      className="icon__color"
+                    />
                   </label>
                   <input
                     required
@@ -46,10 +72,10 @@ function Login() {
                   />
                 </div>
 
-                <button className="login__submit" >Submit</button>
+                <button className="login__submit">Submit</button>
               </form>
             ) : (
-              <form className="login__form">
+              <form className="login__form" onSubmit={logInSubmit}>
                 <h3>Log in to your account</h3>
                 <div className="login__form__option__container">
                   <div className="login__form__flex">
@@ -94,7 +120,7 @@ function Login() {
                 </div>
                 <div className="login__input__div">
                   <label htmlFor="login__password" className="password-label">
-                    <FontAwesomeIcon icon={faLock} className="icon__color"/>
+                    <FontAwesomeIcon icon={faLock} className="icon__color" />
                   </label>
                   <input
                     required
@@ -104,7 +130,9 @@ function Login() {
                     className="login__input"
                   />
                 </div>
-                <p className="login__forgot" onClick={()=>setNeedReset(true)}>Don't remember your password?</p>
+                <p className="login__forgot" onClick={() => setNeedReset(true)}>
+                  Don't remember your password?
+                </p>
                 <button className="login__button">Log In</button>
               </form>
             )}

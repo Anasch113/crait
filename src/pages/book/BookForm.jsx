@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/BookForm.css";
 import { Link } from "react-router-dom";
 function BookForm() {
@@ -8,55 +8,49 @@ function BookForm() {
     lastName: "",
     companyName: "",
     jobTitle: "",
-    workEmail: "",
+    email: "",
     phoneNumber: "",
     budget: "",
     preferences: [],
     description: "",
-    termsAccepted: false,
+    agreedToTerms: false,
   });
-  const handleInputChange = (e) => {
+
+  const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]:
-        type === "checkbox"
-          ? checked
-            ? [...prevData[name], value]
-            : prevData[name].filter((item) => item !== value)
-          : value,
-    }));
+    if (type === "checkbox") {
+      if (name === "preference") {
+        setFormData((prevData) => ({
+          ...prevData,
+          preferences: checked
+            ? [...prevData.preferences, value]
+            : prevData.preferences.filter((item) => item !== value),
+        }));
+      } else {
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: checked,
+        }));
+      }
+    } else if (type === "radio") {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
   };
   const handleSubmit = (e) => {
-    window.scrollTo(0, 0);
     e.preventDefault();
-    setFormData({
-      firstName: "",
-      lastName: "",
-      companyName: "",
-      jobTitle: "",
-      workEmail: "",
-      phoneNumber: "",
-      budget: "",
-      preferences: [],
-      description: "",
-      termsAccepted: false,
-    });
-    document.querySelectorAll('input[type="radio"]').forEach((radio) => {
-      radio.checked = false;
-    });
-
-    document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
-      checkbox.checked = false;
-    });
-    document.querySelectorAll('input[type="text"]').forEach((input) => {
-      input.value = "";
-    });
-    document.querySelectorAll("textarea").forEach((textarea) => {
-      textarea.value = "";
-    });
+    window.scrollTo(0, 0); 
+    console.log(formData)
     setSubScreen(true);
   };
+
   return (
     <div className="book__info">
       <h2>Let's Invest Together</h2>
@@ -70,7 +64,9 @@ function BookForm() {
           <p className="book__submitted">
             Thanks for reaching out! We'll be in touch shortly.
           </p>
-          <Link to='/' className="book__submit">Back to Home</Link>
+          <Link to="/" className="book__submit">
+            Back to Home
+          </Link>
         </>
       ) : (
         <form action="" onSubmit={handleSubmit}>
@@ -79,97 +75,127 @@ function BookForm() {
               type="text"
               placeholder="First Name*"
               className="book__input"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
             />
             <input
               type="text"
               placeholder="Last Name*"
               className="book__input"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
               required
             />
             <input
               type="text"
               placeholder="Company name"
               className="book__input"
+              name="companyName"
+              value={formData.companyName}
+              onChange={handleChange}
             />
             <input
               type="text"
               placeholder="Job title"
               className="book__input"
+              name="jobTitle"
+              value={formData.jobTitle}
+              onChange={handleChange}
             />
             <input
               type="text"
               placeholder="Work Email"
               className="book__input"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
             />
             <input
               type="text"
               placeholder="Phone number"
               className="book__input"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleChange}
             />
           </div>
           <p className="book__category">Project Budget</p>
           <div className="book__input__flex">
-            <div className="book__input__div">
+            <div className="book__input__div2">
               <input
                 type="radio"
                 id="radio1"
                 className="book__radio"
                 name="budget"
+                value="$0 - 50k"
+                onChange={handleChange}
               />
               <label htmlFor="radio1" className="book__label">
                 $0 - 50k
               </label>
             </div>
-            <div className="book__input__div">
+            <div className="book__input__div2">
               <input
                 type="radio"
                 id="radio2"
                 className="book__radio"
                 name="budget"
+                value="$50k-100k"
+                onChange={handleChange}
               />
               <label htmlFor="radio2" className="book__label">
                 $50k-100k
               </label>
             </div>
-            <div className="book__input__div">
+            <div className="book__input__div2">
               <input
                 type="radio"
                 id="radio3"
                 className="book__radio"
                 name="budget"
+                value="$100k-250k"
+                onChange={handleChange}
               />
               <label htmlFor="radio3" className="book__label">
                 $100k-250k
               </label>
             </div>
-            <div className="book__input__div">
+            <div className="book__input__div2">
               <input
                 type="radio"
                 id="radio4"
                 className="book__radio"
                 name="budget"
+                value="$250k-$500k"
+                onChange={handleChange}
               />
-              <label htmlFor="radio5" className="book__label">
+              <label htmlFor="radio4" className="book__label">
                 $250k-$500k
               </label>
             </div>
-            <div className="book__input__div">
+            <div className="book__input__div2">
               <input
                 type="radio"
                 id="radio5"
                 className="book__radio"
                 name="budget"
+                value="$500k-$1M"
+                onChange={handleChange}
               />
               <label htmlFor="radio5" className="book__label">
                 $500k-$1M
               </label>
             </div>
-            <div className="book__input__div">
+            <div className="book__input__div2">
               <input
                 type="radio"
                 id="radio6"
                 className="book__radio"
                 name="budget"
+                value="$1M+"
+                onChange={handleChange}
               />
               <label htmlFor="radio6" className="book__label">
                 $1M+
@@ -181,48 +207,58 @@ function BookForm() {
           </p>
           <div className="book__input__flex">
             <div className="book__input__div">
-              <input
-                type="checkbox"
-                id="check1"
-                className="book__radio"
-                name="preference"
-              />
-              <label htmlFor="check1" className="book__label">
-                Currency Exchange
-              </label>
-            </div>
-            <div className="book__input__div">
-              <input
-                type="checkbox"
-                id="check2"
-                className="book__radio"
-                name="preference"
-              />
-              <label htmlFor="check2" className="book__label">
-                Short term Investments
-              </label>
-            </div>
-            <div className="book__input__div">
-              <input
-                type="checkbox"
-                id="check3"
-                className="book__radio"
-                name="preference"
-              />
-              <label htmlFor="check3" className="book__label">
-                Long term Investments
-              </label>
-            </div>
-            <div className="book__input__div">
-              <input
-                type="checkbox"
-                id="check4"
-                className="book__radio"
-                name="preference"
-              />
-              <label htmlFor="check4" className="book__label">
-                Other
-              </label>
+              <div>
+                <input
+                  type="checkbox"
+                  id="check1"
+                  className="book__radio"
+                  name="preference"
+                  value="Currency Exchange"
+                  onChange={handleChange}
+                />
+                <label htmlFor="check1" className="book__label">
+                  Currency Exchange
+                </label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="check2"
+                  className="book__radio"
+                  name="preference"
+                  value="Short term Investments"
+                  onChange={handleChange}
+                />
+                <label htmlFor="check2" className="book__label">
+                  Short term Investments
+                </label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="check3"
+                  className="book__radio"
+                  name="preference"
+                  value="Long term Investments"
+                  onChange={handleChange}
+                />
+                <label htmlFor="check3" className="book__label">
+                  Long term Investments
+                </label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="check4"
+                  className="book__radio"
+                  name="preference"
+                  value="Other"
+                  onChange={handleChange}
+                />
+                <label htmlFor="check4" className="book__label">
+                  Other
+                </label>
+              </div>
             </div>
           </div>
           <textarea
@@ -230,16 +266,20 @@ function BookForm() {
             id="textarea1"
             placeholder="Please describe your goals and thoughts in detail (volume, budget, etc.)*"
             className="book__textarea"
+            value={formData.description}
+            onChange={handleChange}
             required
           ></textarea>
           <div className="book__bottom">
-            <div className="book__input__div">
+            <div className="book__input__div2">
               <input
+                required
                 type="checkbox"
                 id="terms"
                 className="book__radio"
-                name="preference"
-                required
+                name="agreedToTerms"
+                checked={formData.agreedToTerms}
+                onChange={handleChange}
               />
               <label htmlFor="terms" className="book__label book__tos">
                 I agree and accept Terms of Service.*
