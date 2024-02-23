@@ -29,6 +29,7 @@ function SignUp() {
     },)
     setUsername("");
     setPassword("");
+    document.querySelector('.signup__reset').style.display ='block'
   };
   return (
     <section className="signup" id="signUp">
@@ -138,7 +139,7 @@ function SignUp() {
                     minLength={6}
                     required
                     type="password"
-                    id="login__password"
+                    id="signup__password"
                     name="password"
                     placeholder="Password"
                     className="signup__input"
@@ -148,7 +149,7 @@ function SignUp() {
                 </div>
                 <p className="signup__reset">
                   {" "}
-                  Register link has been sent to email
+                  Account has been created
                 </p>
                 <button className="signup__button">Register</button>
               </form>

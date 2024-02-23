@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./styles/topdash.css";
-import initials from "./images/initials.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-
-function DashTop({username}) {
+function DashTop({ avatar }) {
   return (
     <section className="dashtop" id="dashtop">
       <div className="dashtop__container">
@@ -14,7 +12,7 @@ function DashTop({username}) {
             <p className="dashtop__free">FREE</p>
           </div>
           <div className="dashtop__right">
-            <img src={initials} alt="Avatar" />
+            <img src={avatar} alt="Avatar" />
             <button
               className="dashtop__button"
             >

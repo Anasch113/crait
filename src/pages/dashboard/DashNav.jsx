@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles/DashNav.css";
 import logo from "./images/logo.png";
-import initials from "./images/initials.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDown,
@@ -9,7 +8,7 @@ import {
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-function DashNav({username}) {
+function DashNav({username, avatar}) {
   const [dropdown, setDropDown] = useState(false);
   useEffect(() => {
     if (dropdown === true) {
@@ -35,7 +34,7 @@ function DashNav({username}) {
             <div className="dashnav__right__container">
               <div className="dashnav__right__flex">
                 <img
-                  src={initials}
+                  src={avatar}
                   alt="Avatar"
                   onClick={() => setDropDown(!dropdown)}
                 />
