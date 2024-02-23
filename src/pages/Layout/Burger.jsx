@@ -282,8 +282,8 @@ function Burger({ burgerOnOrOff, toSection }) {
         </Link>
       </div>
       <div className="burger__links">
-        <Link to='/demo' className="burger__book" onClick={() => {burgerOnOrOff(false)>Book Demo</Link>
-        <Link to='/login' className="burger__login" onClick={() => {burgerOnOrOff(false) >Log In</Link>
+        <Link to='/demo' className="burger__book" onClick={() => {burgerOnOrOff(false)}>Book Demo</Link>
+        <Link to='/login' className="burger__login" onClick={() => {burgerOnOrOff(false)} >Log In</Link>
       </div>
       
     </div>
