@@ -12,7 +12,7 @@ function DashBottom() {
             <p>Investments</p>
             <Link to='/demo' className="dashbottom__purchase">
               <FontAwesomeIcon icon={faPlus} />
-              Purchase
+              Upgrade
             </Link>
           </div>
           <div className="dashbottom__two">
