@@ -18,8 +18,6 @@ function DashTop() {
             <img src={initials} alt="Avatar" />
             <button
               className="dashtop__button"
-              onMouseEnter={() => setShowTooltip(true)}
-              onMouseLeave={() => setShowTooltip(false)}
             >
               <FontAwesomeIcon icon={faPlus} />
               <span>Invite</span>

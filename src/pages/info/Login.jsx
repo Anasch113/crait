@@ -6,7 +6,6 @@ import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { createdAccounts } from "../AccountData/data.js";
 function Login() {
-  console.log(createdAccounts)
   const [needReset, setNeedReset] = useState(false);
   const passwordSubmit = (e) => {
     window.scrollTo(0, 0);
