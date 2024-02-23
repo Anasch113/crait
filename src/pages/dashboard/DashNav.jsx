@@ -37,6 +37,7 @@ function DashNav() {
                 <img
                   src={initials}
                   alt="Avatar"
+                  onClick={() => setDropDown(!dropdown)}
                 />
                 <div className="dashnav__right__info">
                   <p className="dashnav__right__name">First Last</p>
