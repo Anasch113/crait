@@ -8,8 +8,8 @@ function Dashboard() {
     <>
     <DashNav />
     <DashTop />
-    <div>Dashboard</div>
-    < DashFooter />
+    
+    <DashFooter />
     </>
   )
 }
