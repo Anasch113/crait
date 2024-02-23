@@ -1,5 +1,6 @@
 import React from 'react'
 import DashNav from './DashNav'
+import DashFooter from './DashFooter'
 
 function Dashboard() {
   return (
@@ -7,6 +8,7 @@ function Dashboard() {
     <DashNav />
     
     <div>Dashboard</div>
+    < DashFooter />
     </>
   )
 }
