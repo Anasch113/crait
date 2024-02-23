@@ -138,68 +138,73 @@ input:focus {
 /* left */
 
 .signup__left {
-    padding-top: 4.12rem;
-    background: radial-gradient(
-        55.87%55.87%at 35.49%-18.37%,
-        #d1aad7 0%,
-        rgba(255, 255, 255, 0) 100%
-      ),
-      radial-gradient(
-        70.81%48.44%at -24.53%-16.02%,
-        #c88bc4 0%,
-        rgba(255, 255, 255, 0) 100%
-      ),
-      radial-gradient(
-        91.61%92.58%at 104.86%-43.36%,
-        #7b8fdd 0%,
-        rgba(255, 255, 255, 0) 100%
-      ),
-      radial-gradient(
-        50.59%55.55%at -2.99%-8.69%,
-        #86bff2 9.06%,
-        rgba(255, 255, 255, 0) 100%
-      ),
-      #f7fafc;
-    height: 100vh;
-    width: 50%;
-    color: black;
-    @media (max-width: 850px) {
-      display: none;
-    }
+  padding-top: 4.12rem;
+  background: radial-gradient(
+      55.87%55.87%at 35.49%-18.37%,
+      #d1aad7 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      70.81%48.44%at -24.53%-16.02%,
+      #c88bc4 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      91.61%92.58%at 104.86%-43.36%,
+      #7b8fdd 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      50.59%55.55%at -2.99%-8.69%,
+      #86bff2 9.06%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #f7fafc;
+  height: 100vh;
+  width: 50%;
+  color: black;
+  @media (max-width: 850px) {
+    display: none;
   }
-  .signup__left__content{
-    display: flex;
-    justify-content: center;
-  }
-  .signup__left__flex{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 500px;
-  }
-  .signup__left__title h3{
-    font-weight: 500;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .signup__left__title p{
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    max-width: 400px;
-  }
-  .signup__box{
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 2rem;
-  }
-  .signup__box__title{
-    font-weight: 600;
-    color: #000;
-    margin-bottom: 1rem;
-  }
-  .signup__box__des{
-    margin-bottom: 0.5rem;
-  }
+}
+.signup__left__content {
+  display: flex;
+  justify-content: center;
+}
+.signup__left__flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 500px;
+}
+.signup__left__title h3 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.signup__left__title p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+.signup__box {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.signup__box__title {
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 1rem;
+}
+.signup__box__des {
+  margin-bottom: 0.5rem;
+}
+.signup__reset {
+  margin-bottom: 1rem;
+  color: green;
+  display: none;
+}

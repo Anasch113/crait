@@ -3,7 +3,18 @@ import "./styles/SignUp.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 function SignUp() {
+  const [needReset, setNeedReset] = useState(false);
+
+  const createSubmit = (e) => {
+    window.scrollTo(0, 0);
+    e.preventDefault();
+    document.querySelector(".signup__reset").style.display = "block";
+    document.querySelectorAll('input[type="email"]').forEach((input) => {
+      input.value = "";
+    });
+  };
   return (
     <section className="signup" id="signUp">
       <div className="signup__container">
@@ -63,16 +74,18 @@ function SignUp() {
                   </p>
                 </div>
               </div>
-              <Link to='/demo' className="signup__button">Book Demo</Link>
+              <Link to="/demo" className="signup__button">
+                Book Demo
+              </Link>
             </div>
           </div>
         </div>
         <div className="signup__right">
           <div className="signup__right__content">
             <div className="signup__top">
-            <Link to="/" className="login__back">
-              ← Home
-            </Link>
+              <Link to="/" className="login__back">
+                ← Home
+              </Link>
               <p className="signup__top__larger">
                 Have an account?{" "}
                 <Link to="/login" className="signup__login">
@@ -84,7 +97,7 @@ function SignUp() {
               </Link>
             </div>
             <div className="signup__form__container">
-              <form action="" className="signup__form">
+              <form action="" onSubmit={createSubmit} className="signup__form">
                 <h3>Create your account</h3>
                 <div className="signup__form__options">
                   <div className="login__form__flex">
@@ -129,6 +142,7 @@ function SignUp() {
                     className="signup__input"
                   />
                 </div>
+                <p className="signup__reset"> Register link has been sent to email</p>
                 <button className="signup__button">Get Link</button>
               </form>
             </div>

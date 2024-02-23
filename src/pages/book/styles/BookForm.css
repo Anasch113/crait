@@ -1,7 +1,7 @@
 .book__info {
   width: auto;
   height: auto;
-  background-color: #0f101b;
+  background: #10111f;
   border: 1px solid #2a2a30;
   max-width: 600px;
   padding: 2rem;
@@ -199,9 +199,8 @@ input[type="checkbox"]:checked {
 .book__submit:hover {
   background-color: #513f96;
 }
-.book__submitted{
+.book__submitted {
   color: white !important;
   margin-top: 3rem;
   margin-bottom: 2rem;
-
 }
