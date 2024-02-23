@@ -47,7 +47,6 @@ function BookForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     window.scrollTo(0, 0); 
-    console.log(formData)
     setSubScreen(true);
   };
 
