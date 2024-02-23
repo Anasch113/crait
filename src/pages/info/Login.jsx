@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-
+import { createdAccounts } from "../AccountData/data.js";
 function Login() {
+  console.log(createdAccounts)
   const [needReset, setNeedReset] = useState(false);
   const passwordSubmit = (e) => {
     window.scrollTo(0, 0);
@@ -31,17 +32,22 @@ function Login() {
   };
   const logInSubmit = (e) => {
     e.preventDefault();
-    if (
-      loginFormData.username === "herytest" &&
-      loginFormData.password === "hi"
-    ) {
-      document.querySelectorAll('input[type="email"]').forEach((input) => {
+
+    const isValidLogin = createdAccounts.some(
+      (account) =>
+        account.username === loginFormData.username &&
+        account.password === loginFormData.password
+    );
+
+    if (isValidLogin) {
+      document.querySelectorAll('input[type="text"]').forEach((input) => {
         input.value = "";
       });
       document.querySelectorAll('input[type="password"]').forEach((input) => {
         input.value = "";
       });
       document.querySelector(".login__wrong").style.display = "none";
+
       navigate(`/dashboard/${loginFormData.username}`);
     } else {
       document.querySelector(".login__wrong").style.display = "block";

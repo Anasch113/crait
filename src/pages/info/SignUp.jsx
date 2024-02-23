@@ -8,6 +8,7 @@ import {
   faLock,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { createdAccounts } from "../AccountData/data.js";
 function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -22,8 +23,10 @@ function SignUp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Username:", username);
-    console.log("Password:", password);
+    createdAccounts.push({
+      username : username,
+      password: password
+    },)
     setUsername("");
     setPassword("");
   };
