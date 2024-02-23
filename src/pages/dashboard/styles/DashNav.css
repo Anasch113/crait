@@ -2,25 +2,28 @@
   background-color: #131315;
   border-bottom: 1px solid #2c2c30;
   padding: 0rem 2rem;
+  @media (max-width: 500px) {
+    padding: 0rem 1rem;
+  }
 }
-.nav__container{
-    display: flex;
-    justify-content: space-between;
+.dashnav__container {
+  display: flex;
+  justify-content: space-between;
 }
-.nav__left__logo {
+.dashnav__left__logo {
   display: flex;
   align-items: center;
   gap: 0.3rem;
   padding: 1rem 0rem;
 }
-.nav__left__logo img {
+.dashnav__left__logo img {
   width: 20px;
 }
-.nav__left__logo__name {
+.dashnav__left__logo__name {
   font-size: 1.2rem;
   font-weight: 500;
 }
-.nav__beta {
+.dashnav__beta {
   block-size: 28.5469px 25px;
   font-weight: 500;
   letter-spacing: 1.68px;
@@ -31,12 +34,73 @@
   padding: 4px 12px;
   background-color: #424248;
   margin-left: 0.7rem;
+  @media (max-width: 300px) {
+    display: none;
+  }
 }
-.nav__right{
-    border-left: 1px solid #2c2c30;
-    padding-left: 1.5rem;
+.dashnav__right {
+  border-left: 1px solid #2c2c30;
+  padding-left: 1.5rem;
+  @media (max-width: 500px) {
+    padding-left: 1rem;
+  }
 }
-.nav__right__flex img{
-block-size: 40px;
-border-radius: 50%;
+.dashnav__right__flex img {
+  block-size: 40px;
+  border-radius: 50%;
+}
+.dashnav__right__flex {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 0rem;
+  gap: 1rem;
+}
+.dashnav__right__type {
+  color: #bdbdbd;
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+}
+.dashnav__right__info {
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
+.dashnav__drop {
+  color: #bdbdbd;
+  cursor: pointer;
+}
+/* Drop Down */
+.dropdown__div {
+  display: flex;
+  justify-content: end;
+}
+.dropdown {
+  display: none;
+  width: 214px;
+  background-color: #131315;
+  border: 1px solid #2c2c30;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-right: 2rem;
+  position: fixed;
+  padding: 1rem;
+  @media (max-width: 500px) {
+    margin-right: 1rem;
+  }
+}
+.dropdown__item {
+  margin: auto;
+  max-width: 170px;
+  color: #bdbdbd;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 0.5rem;
+  transition: all 0.1s ease-in-out;
+}
+.dropdown__item:hover {
+  background-color: #2c2c30;
+  padding: 0.5rem;
 }
