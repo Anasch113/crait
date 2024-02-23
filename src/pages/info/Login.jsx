@@ -16,18 +16,29 @@ function Login() {
     });
   };
 
-  let userName = "hi";
   const navigate = useNavigate();
+  const [loginFormData, setloginFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setloginFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
   const logInSubmit = (e) => {
-    console.log(
-      document.querySelectorAll('input[type="password"]').value)
-      window.scrollTo(0, 0);
-      navigate(`/${userName}/dashboard`);
-      e.preventDefault();
-      document.querySelectorAll('input[type="password"]').forEach((input) => {
-        input.value = "";
-      });
-    
+    e.preventDefault();
+    if (
+      loginFormData.email === "herytest123@Gmail.com" &&
+      loginFormData.password === "hi"
+    ) {
+      console.log("Email:", loginFormData.email);
+      console.log("Password:", loginFormData.password);
+      
+    }
   };
 
   return (
@@ -114,8 +125,11 @@ function Login() {
                     required
                     type="email"
                     id="login__email"
+                    name="email"
                     placeholder="Email"
                     className="login__input"
+                    value={loginFormData.email}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="login__input__div">
@@ -126,8 +140,11 @@ function Login() {
                     required
                     type="password"
                     id="login__password"
+                    name="password"
                     placeholder="Password"
                     className="login__input"
+                    value={loginFormData.password}
+                    onChange={handleChange}
                   />
                 </div>
                 <p className="login__forgot" onClick={() => setNeedReset(true)}>
