@@ -43,7 +43,7 @@ function Login() {
       });
       document.querySelector(".login__wrong").style.display = "none";
       navigate(`/dashboard/${loginFormData.username}`);
-    }else{
+    } else {
       document.querySelector(".login__wrong").style.display = "block";
     }
   };
@@ -95,35 +95,7 @@ function Login() {
             ) : (
               <form className="login__form" onSubmit={logInSubmit}>
                 <h3>Log in to your account</h3>
-                <div className="login__form__option__container">
-                  <div className="login__form__flex">
-                    <div className="login__form__options google__image">
-                      <img
-                        className="login__form__option__image"
-                        src="https://cdn.discordapp.com/attachments/1187219037537714220/1210032566271217664/2048px-Google_22G22_logo.png?ex=65e915a5&is=65d6a0a5&hm=1d888ddec63d56e978045eadb0b374e0a2f7e35147e2a4be2576c4e3e566ab8e&"
-                        alt="Google Logo"
-                      />
-                    </div>
-                    <div className="login__form__option__text google__color">
-                      LOG IN WITH GOOGLE
-                    </div>
-                  </div>
-
-                  <div className="login__form__flex">
-                    <div className="login__form__options">
-                      <img
-                        className="login__form__github__image"
-                        src="https://cdn.discordapp.com/attachments/1187219037537714220/1210036151323197440/github_PNG58.png?ex=65e918fb&is=65d6a3fb&hm=002e846e38165acd6faf16c4c173287c262892335e6ce12997701b4f2a750082&"
-                        alt="GitHub Logo"
-                      />
-                    </div>
-
-                    <div className="login__form__option__text github__color">
-                      LOG IN WITH GITHUB
-                    </div>
-                  </div>
-                </div>
-                <p className="login__or">or</p>
+                <div className="login__form__option__container"></div>
                 <p className="login__wrong">Wrong email or password</p>
                 <div className="login__input__div">
                   <label htmlFor="login__username" className="Username-label">
@@ -134,7 +106,7 @@ function Login() {
                     type="text"
                     id="login__username"
                     name="username"
-                    placeholder="username"
+                    placeholder="Username"
                     className="login__input"
                     value={loginFormData.userName}
                     onChange={handleChange}
