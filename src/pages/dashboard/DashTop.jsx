@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function DashTop() {
-  const [showTooltip, setShowTooltip] = useState(false);
 
   return (
     <section className="dashtop" id="dashtop">
