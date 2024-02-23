@@ -13,6 +13,7 @@ import Crypto from "./pages/coin/Crypto.jsx";
 import Services from "./pages/service/services.jsx";
 import Login from "./pages/info/Login.jsx";
 import SignUp from "./pages/info/SignUp.jsx";
+import Dashboard from "./pages/dashboard/Dashboard.jsx";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -103,15 +104,14 @@ function App() {
             path="/coin/:coinId"
             element={<Crypto topCoins={topCoins} />}
           />
-          
         </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        {"private routes"}
+
         <Route
-            path="/login"
-            element={<Login />}
-          />
-          <Route
-            path="/signup"
-            element={<SignUp />}
+            path="/dashboard/:username"
+            element={<Dashboard />}
           />
       </Routes>
     </Router>

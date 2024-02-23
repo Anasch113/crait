@@ -42,7 +42,7 @@ function Login() {
         input.value = "";
       });
       document.querySelector(".login__wrong").style.display = "none";
-      navigate(`/dashboard`);
+      navigate(`/dashboard/${loginFormData.username}`);
     }else{
       document.querySelector(".login__wrong").style.display = "block";
     }
