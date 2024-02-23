@@ -109,7 +109,6 @@
   transition: all 0.3s ease-in-out;
   font-weight: 500;
   @media (max-width: 500px) {
-    padding: 8px 17px !important;
     display: none;
   }
 }

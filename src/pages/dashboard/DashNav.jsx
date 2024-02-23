@@ -10,15 +10,14 @@ import {
 import { Link } from "react-router-dom";
 function DashNav() {
   const [dropdown, setDropDown] = useState(false);
-  useEffect(()=>{
+  useEffect(() => {
     if (dropdown === true) {
-        document.querySelector(".dropdown").style.display = "block";
-      } else {
-        document.querySelector(".dropdown").style.display = "none";
-      }
-  }, [dropdown]
-  )
- 
+      document.querySelector(".dropdown").style.display = "block";
+    } else {
+      document.querySelector(".dropdown").style.display = "none";
+    }
+  }, [dropdown]);
+
   return (
     <>
       <nav className="dashnav" id="dashNav">
@@ -31,20 +30,23 @@ function DashNav() {
             </div>
           </div>
           <div className="dashnav__right">
-            <div className="dashnav__right__flex">
-              <img
-                src="https://cloud.appwrite.io/v1/avatars/initials?name=Hery+Ruiz&width=80&height=80&project=console"
-                alt="Avatar"
-              />
-              <div className="dashnav__right__info">
-                <p className="dashnav__right__name">First Last</p>
-                <p className="dashnav__right__type">All Investments</p>
+            <Link to='/demo' className="dashnav__button" >Purchase</Link>
+            <div className="dashnav__right__container">
+              <div className="dashnav__right__flex">
+                <img
+                  src="https://cloud.appwrite.io/v1/avatars/initials?name=Hery+Ruiz&width=80&height=80&project=console"
+                  alt="Avatar"
+                />
+                <div className="dashnav__right__info">
+                  <p className="dashnav__right__name">First Last</p>
+                  <p className="dashnav__right__type">All Investments</p>
+                </div>
+                <FontAwesomeIcon
+                  icon={dropdown ? faAngleUp : faAngleDown}
+                  className="dashnav__drop"
+                  onClick={() => setDropDown(!dropdown)}
+                />
               </div>
-              <FontAwesomeIcon
-                icon={dropdown ? faAngleUp : faAngleDown}
-                className="dashnav__drop"
-                onClick={() => setDropDown(!dropdown)}
-              />
             </div>
           </div>
         </div>
