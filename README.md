@@ -45,6 +45,11 @@
   <img src='./readme/dashboard.png'/>
 </div>
 <br><br>
+<h3 align='center'>Purchases Page 💳</h3>
+<div align='center'>
+  <img src='./readme/dashboard.png'/>
+</div>
+<br><br>
 <h3 align='center'> Services Page 📞</h3>
 <div align='center'>
   <img src='./readme/service.png'/>
