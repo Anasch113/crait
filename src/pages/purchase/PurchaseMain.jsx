@@ -157,12 +157,12 @@ function PurchaseMain() {
                 ) : (
                   <>
                     <div className="purchase__buttons__div">
-                      <button
+                      <Link 
                         className={"purchase__button__next"}
-                        onClick={() => setNext(false)}
+                        onClick={() => window.history.back()}
                       >
                         Cancel
-                      </button>
+                      </Link>
                       <button
                         className={"purchase__button__next"}
                         onClick={() => setNext(true)}
