@@ -150,9 +150,10 @@ function PurchaseMain() {
                   </div>
                 </div>
                 <div className="purchase__buttons__div">
-                  <Link to="/" className="purchase__button__cancel">
+                  <button  className="purchase__button__cancel"
+                  onClick={() => setNext(false)}>
                     Cancel
-                  </Link>
+                  </button>
                   <button
                     className="purchase__button__next"
                     onClick={() => setNext(true)}
