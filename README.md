@@ -25,11 +25,7 @@
   <img src='./readme/hero.png'/>
 </div>
 <br><br>
-<h3 align='center'>Book Page 📖</h3>
-<div align='center'>
-  <img src='./readme/book.png'/>
-</div>
-<br><br>
+
 <h3 align='center'>Log In Page 🔒</h3>
 <div align='center'>
   <img src='./readme/login.png'/>
@@ -48,6 +44,11 @@
 <h3 align='center'>Purchase Page 💳</h3>
 <div align='center'>
   <img src='./readme/purchases.png'/>
+</div>
+<br><br>
+  <h3 align='center'>Book Page 📖</h3>
+<div align='center'>
+  <img src='./readme/book.png'/>
 </div>
 <br><br>
 <h3 align='center'> Services Page 📞</h3>
