@@ -8,9 +8,9 @@ function PurchaseNav() {
     <>
       <nav className="purchasenav" id="purchasenav">
         <div className="purchasenav__container">
-          <p>Changle Plan</p>
+          <p>Change Plan</p>
           <Link to="/">
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon icon={faXmark} className="purchasenav__close"/>
           </Link>
         </div>
       </nav>
