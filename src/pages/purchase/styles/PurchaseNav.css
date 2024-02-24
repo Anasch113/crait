@@ -3,10 +3,10 @@
   border-bottom: 1px solid #2c2c30;
 }
 .purchasenav__container {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: auto;
   display: flex;
-  font-weight: 600;
+  font-weight: 500;
   justify-content: space-between;
   color: rgb(195, 195, 198);
   padding: 1.3rem 0rem;
