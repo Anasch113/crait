@@ -151,7 +151,7 @@ function PurchaseMain() {
                 </div>
 
                 {next ? (
-                  <Link to="/login" className="purchase__button__next">
+                  <Link to="/login" className="purchase__button__next purchase__button__login">
                     Log In
                   </Link>
                 ) : (
