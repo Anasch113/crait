@@ -63,8 +63,8 @@ function BookForm() {
           <p className="book__submitted">
             Thanks for reaching out! We'll be in touch shortly.
           </p>
-          <Link to="/" className="book__submit">
-            Back to Home
+          <Link to="/login" className="book__submit">
+            Log In
           </Link>
         </>
       ) : (
