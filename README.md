@@ -45,9 +45,9 @@
   <img src='./readme/dashboard.png'/>
 </div>
 <br><br>
-<h3 align='center'>Purchases Page 💳</h3>
+<h3 align='center'>Purchase Page 💳</h3>
 <div align='center'>
-  <img src='./readme/dashboard.png'/>
+  <img src='./readme/purchase.png'/>
 </div>
 <br><br>
 <h3 align='center'> Services Page 📞</h3>
