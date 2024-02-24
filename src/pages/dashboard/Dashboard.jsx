@@ -4,7 +4,6 @@ import DashFooter from "./DashFooter";
 import DashTop from "./DashTop";
 import DashBottom from "./DashBottom";
 import { useParams } from "react-router-dom";
-
 import blue from "./images/blue.jpg";
 import brown from "./images/brown.jpg";
 import green from "./images/green.jpg";
