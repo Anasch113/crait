@@ -150,7 +150,7 @@ function PurchaseMain() {
                   </div>
                 </div>
                 <div className="purchase__buttons__div">
-                  <button  className="purchase__button__cancel"
+                  <button  className="purchase__button__next"
                   onClick={() => setNext(false)}>
                     Cancel
                   </button>
