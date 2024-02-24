@@ -43,6 +43,7 @@
 .purchase__left__button__inside{
     height: 12.5px;
     width: 12.5px; 
+    margin: 1px 1px 0px 0px;
     background-color: #8a6cff;
     border-radius: 100%;
 }
