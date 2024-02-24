@@ -25,7 +25,7 @@ function DashNav({username, avatar}) {
           <div className="dashnav__left">
             <div className="dashnav__left__logo">
               <img src={logo} alt="YouCoin Logo" />
-              <p className="dashnav__left__logo__name">YouCoin</p>
+              <Link to='/' className="dashnav__left__logo__name">YouCoin</Link>
               <p className="dashnav__beta">BETA</p>
             </div>
           </div>
