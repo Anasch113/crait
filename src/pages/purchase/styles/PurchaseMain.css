@@ -41,9 +41,8 @@
     color: #c3c3c6;
 }
 .purchase__left__button__inside{
-    height: 12.5px;
-    width: 12.5px; 
-    margin: 1px 1px 0px 0px;
+    height: 13px;
+    width: 13px; 
     background-color: #8a6cff;
     border-radius: 100%;
 }
