@@ -226,7 +226,7 @@
 .purchase__buttons__div {
   display: flex;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   justify-content: end;
   max-width: 700px;
 }
