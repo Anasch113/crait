@@ -83,12 +83,12 @@ function PurchaseMain() {
                       ""
                     )}
                   </div>
-                  <p>Demo</p>
+                  <p>Click Next</p>
                 </div>
                 <div className="purchase__left__divider"></div>
                 <div className="purchase__left__item">
                   <div className="purchase__left__button__full"></div>
-                  <p>Review</p>
+                  <p>Login</p>
                 </div>
               </div>
             </div>
@@ -149,18 +149,29 @@ function PurchaseMain() {
                     <p className="purchase__box__right">COMING SOON</p>
                   </div>
                 </div>
-                <div className="purchase__buttons__div">
-                  <button  className="purchase__button__next"
-                  onClick={() => setNext(false)}>
-                    Cancel
-                  </button>
-                  <button
-                    className="purchase__button__next"
-                    onClick={() => setNext(true)}
-                  >
-                    Next
-                  </button>
-                </div>
+
+                {next ? (
+                  <Link to="/login" className="purchase__button__next">
+                    Log In
+                  </Link>
+                ) : (
+                  <>
+                    <div className="purchase__buttons__div">
+                      <button
+                        className={"purchase__button__next"}
+                        onClick={() => setNext(false)}
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        className={"purchase__button__next"}
+                        onClick={() => setNext(true)}
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
