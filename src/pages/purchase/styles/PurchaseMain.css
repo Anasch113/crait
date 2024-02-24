@@ -256,6 +256,7 @@
   padding: 8px 17px;
   transition: all 0.3s ease-in-out;
   font-weight: 500;
+  margin-top: 0.5rem;
 }
 .purchase__button__next:hover {
   background-color: #8a6cff;
