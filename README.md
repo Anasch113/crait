@@ -47,7 +47,7 @@
 <br><br>
 <h3 align='center'>Purchase Page 💳</h3>
 <div align='center'>
-  <img src='./readme/purchase.png'/>
+  <img src='./readme/purchases.png'/>
 </div>
 <br><br>
 <h3 align='center'> Services Page 📞</h3>
