@@ -10,7 +10,7 @@ function DashBottom({username}) {
         <div className="dashbottom__container">
           <div className="dashbottom__one">
             <p>Investments</p>
-            <Link to='/demo' className="dashbottom__purchase">
+            <Link to='/purchase' className="dashbottom__purchase">
               <FontAwesomeIcon icon={faPlus} />
               Upgrade
             </Link>

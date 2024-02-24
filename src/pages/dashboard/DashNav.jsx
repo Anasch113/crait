@@ -30,7 +30,7 @@ function DashNav({username, avatar}) {
             </div>
           </div>
           <div className="dashnav__right">
-            <Link to='/demo' className="dashnav__button" >Purchase</Link>
+            <Link to='/purchase' className="dashnav__button" >Purchase</Link>
             <div className="dashnav__right__container">
               <div className="dashnav__right__flex">
                 <img
