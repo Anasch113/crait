@@ -9,7 +9,10 @@
   font-weight: 500;
   justify-content: space-between;
   color: rgb(195, 195, 198);
-  padding: 1.3rem 0rem;
+  padding: 1.3rem 2rem;
+  @media (max-width: 650px) {
+    padding: 1.3rem 1rem;
+  }
 }
 .purchasenav__close {
   color: rgb(195, 195, 198);
