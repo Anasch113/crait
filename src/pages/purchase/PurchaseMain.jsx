@@ -1,14 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/PurchaseMain.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 function PurchaseMain() {
+  const [next, setNext] = useState(false);
   return (
     <>
       <section className="purchase" id="purchase">
         <div className="purchase__container">
-          <div className="purchase__left"></div>
+          <div className="purchase__left">
+            <div className="purchase__left__content">
+              <div className="purchase__left__events">
+                <div className="purchase__left__item">
+                  <div className="purchase__left__button__full purchase__left__button__full2">
+                    <div className="purchase__left__button__inside"></div>
+                  </div>
+                  <p>Plans</p>
+                </div>
+                <div className="purchase__left__divider"></div>
+                <div className="purchase__left__item">
+                  <div
+                    className={
+                      next
+                        ? "purchase__left__button__full purchase__left__button__full2"
+                        : "purchase__left__button__full"
+                    }
+                  >
+                    {next ? (
+                      <div className="purchase__left__button__inside"></div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                  <p>Account</p>
+                </div>
+                <div className="purchase__left__divider"></div>
+
+                <div className="purchase__left__item">
+                  <div
+                    className={
+                      next
+                        ? "purchase__left__button__full purchase__left__button__full2"
+                        : "purchase__left__button__full"
+                    }
+                  >
+                    {next ? (
+                      <div className="purchase__left__button__inside"></div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                  <p>Pricing</p>
+                </div>
+                <div className="purchase__left__divider"></div>
+                <div className="purchase__left__item">
+                  <div
+                    className={
+                      next
+                        ? "purchase__left__button__full purchase__left__button__full2"
+                        : "purchase__left__button__full"
+                    }
+                  >
+                    {next ? (
+                      <div className="purchase__left__button__inside"></div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                  <p>Terms</p>
+                </div>
+                <div className="purchase__left__divider"></div>
+                <div className="purchase__left__item">
+                  <div
+                    className={
+                      next
+                        ? "purchase__left__button__full purchase__left__button__full2"
+                        : "purchase__left__button__full"
+                    }
+                  >
+                    {next ? (
+                      <div className="purchase__left__button__inside"></div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                  <p>Demo</p>
+                </div>
+                <div className="purchase__left__divider"></div>
+                <div className="purchase__left__item">
+                  <div className="purchase__left__button__full"></div>
+                  <p>Review</p>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="purchase__right">
             <div className="purchase__right__container">
               <div className="purchase__right__content">
@@ -29,7 +113,7 @@ function PurchaseMain() {
                           Starter - $0.00/month
                         </p>
                         <p className="purchase__box__des">
-                          For personal, private projects.
+                          For personal, private use.
                         </p>
                       </div>
                     </div>
@@ -44,7 +128,7 @@ function PurchaseMain() {
                           Pro - $15.00/month
                         </p>
                         <p className="purchase__box__des2">
-                          Made for proffesional to learn the ins and outs.
+                          Made for proffesionals to invest.
                         </p>
                       </div>
                     </div>
@@ -66,8 +150,15 @@ function PurchaseMain() {
                   </div>
                 </div>
                 <div className="purchase__buttons__div">
-                  <button className="purchase__button__cancel">Cancel</button>
-                  <button className="purchase__button__next">Next</button>
+                  <Link to="/" className="purchase__button__cancel">
+                    Cancel
+                  </Link>
+                  <button
+                    className="purchase__button__next"
+                    onClick={() => setNext(true)}
+                  >
+                    Next
+                  </button>
                 </div>
               </div>
             </div>
