@@ -8,71 +8,57 @@ function PurchaseMain() {
     <>
       <section className="purchase" id="purchase">
         <div className="purchase__container">
-          <div className="purchase__left">
-            <div className="purchase__left__content">
-              <div className="purchase__left__flex">
-                <div className="purchase__left__title">
-                  <h3>YouCoin</h3>
-                  <p>Create a YouCoin account and begin investing smart!</p>
-                </div>
-                <div className="purchase__box">
-                  <FontAwesomeIcon
-                    icon={faCircleCheck}
-                    style={{ color: "#000" }}
-                    className="purchase__icon"
-                  />
+          <div className="purchase__left"></div>
+          <div className="purchase__right">
+            <p className="purchase__title">Choose a plan</p>
+            <div className="purchase__pricing">
+              <p className="purchase__price">Plan</p>
+              <p className="purchase__price__des">
+                For more details on our plans, visit our{" "}
+                <Link to="/demo">demo page</Link>.
+              </p>
+            </div>
+            <div className="purchase__box__container">
+              <div className="purchase__box">
+                <div className="purchase__box__left">
+                  <div className="purchase__box__button__not"></div>
                   <div className="purchase__box__text">
                     <p className="purchase__box__title">
-                      Apply Our AI Cryptocurrency
+                      Starter - $0.00/month
                     </p>
                     <p className="purchase__box__des">
-                      Learn from your mistake with our AI
-                    </p>
-                    <p className="purchase__box__des">
-                      Understand Uptrends in investing
+                      For personal, private projects.
                     </p>
                   </div>
                 </div>
-                <div className="purchase__box">
-                  <FontAwesomeIcon
-                    icon={faCircleCheck}
-                    style={{ color: "#000" }}
-                    className="purchase__icon"
-                  />
-                  <div className="purchase__box__text">
-                    <p className="purchase__box__title">
-                      Use Automated investments
-                    </p>
-                    <p className="purchase__box__des">
-                      Sit back and relax while our AI invest
-                    </p>
-                    <p className="purchase__box__des">
-                      Learn what i feels like to do nothing
-                    </p>
-                  </div>
-                </div>
-                <div className="purchase__box">
-                  <FontAwesomeIcon
-                    icon={faCircleCheck}
-                    style={{ color: "#000" }}
-                    className="purchase__icon"
-                  />
-                  <div className="purchase__box__text">
-                    <p className="purchase__box__title">
-                      Gain Access To Classes
-                    </p>
-                    <p className="purchase__box__des">
-                      Instructors will guide you to learn the market
-                    </p>
-                    <p className="purchase__box__des">
-                      Participate online lectures{" "}
-                    </p>
-                  </div>
-                </div>
+                <p className="purchase__box__right">CURRENT PLAN</p>
               </div>
             </div>
+            <div className="purchase__box">
+              <div className="purchase__box__left">
+                <div className="purchase__box__button__not"></div>
+                <div className="purchase__box__text">
+                  <p className="purchase__box__title2">Pro - $15.00/month</p>
+                  <p className="purchase__box__des2">
+                  For pro developers and production projects
+                  </p>
+                </div>
+              </div>
+              <p className="purchase__box__right2">1 MONTH FREE TRIAL</p>
+            </div>
+            <div className="purchase__box">
+              <div className="purchase__box__left">
+                <div className="purchase__box__button__not"></div>
+                <div className="purchase__box__text">
+                  <p className="purchase__box__title">Corporation - $15.00/month per member</p>
+                  <p className="purchase__box__des">
+                    For teams that need 24/7 support.
+                  </p>
+                </div>
+              </div>
+              <p className="purchase__box__right">COMING SOON</p>
+            </div>
           </div>
-          <div className="purchase__right"></div>
         </div>
       </section>
     </>
