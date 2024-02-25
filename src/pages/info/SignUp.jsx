@@ -24,12 +24,12 @@ function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     createdAccounts.push({
-      username : username,
-      password: password
-    },)
+      username: username,
+      password: password,
+    });
     setUsername("");
     setPassword("");
-    document.querySelector('.signup__reset').style.display ='block'
+    document.querySelector(".signup__reset").style.display = "block";
   };
   return (
     <section className="signup" id="signUp">
@@ -147,10 +147,7 @@ function SignUp() {
                     onChange={handlePasswordChange}
                   />
                 </div>
-                <p className="signup__reset">
-                  {" "}
-                  Account has been created
-                </p>
+                <p className="signup__reset"> Account has been created</p>
                 <button className="signup__button">Register</button>
               </form>
             </div>
