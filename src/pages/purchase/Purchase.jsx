@@ -8,7 +8,7 @@ const Purchase = () => {
     <>
       <PurchaseNav />
       <PurchaseMain />
-      <DashFooter/>
+      <DashFooter />
     </>
   );
 };

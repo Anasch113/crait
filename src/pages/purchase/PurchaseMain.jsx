@@ -151,13 +151,16 @@ function PurchaseMain() {
                 </div>
 
                 {next ? (
-                  <Link to="/login" className="purchase__button__next purchase__button__login">
+                  <Link
+                    to="/login"
+                    className="purchase__button__next purchase__button__login"
+                  >
                     Log In
                   </Link>
                 ) : (
                   <>
                     <div className="purchase__buttons__div">
-                      <Link 
+                      <Link
                         className={"purchase__button__next"}
                         onClick={() => window.history.back()}
                       >
