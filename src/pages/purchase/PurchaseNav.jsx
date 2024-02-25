@@ -10,7 +10,7 @@ function PurchaseNav() {
         <div className="purchasenav__container">
           <p>Change plan</p>
           <Link to="/">
-            <FontAwesomeIcon icon={faXmark} className="purchasenav__close"/>
+            <FontAwesomeIcon icon={faXmark} className="purchasenav__close" />
           </Link>
         </div>
       </nav>
