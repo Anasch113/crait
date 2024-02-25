@@ -1,46 +1,180 @@
 .login {
   background: radial-gradient(
-      55.87%55.87%at 35.49%-18.37%,
+      50.59% 55.55% at -2.99% -8.69%,
+      #86bff2 9.06%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      55.87% 55.87% at 35.49% -18.37%,
       #d1aad7 0%,
       rgba(255, 255, 255, 0) 100%
     ),
     radial-gradient(
-      70.81%48.44%at -24.53%-16.02%,
+      70.81% 48.44% at -24.53% -16.02%,
       #c88bc4 0%,
       rgba(255, 255, 255, 0) 100%
     ),
     radial-gradient(
-      91.61%92.58%at 104.86%-43.36%,
+      91.61% 92.58% at 104.86% -43.36%,
       #7b8fdd 0%,
       rgba(255, 255, 255, 0) 100%
     ),
-    radial-gradient(
-      50.59%55.55%at -2.99%-8.69%,
-      #86bff2 9.06%,
-      rgba(255, 255, 255, 0) 100%
-    ),
     #f7fafc;
-  height: 100vh;
-  width: auto;
-  padding: 3.5rem 0rem;
   color: black;
+  height: 100vh;
+  padding: 3.5rem 0rem;
+  width: auto;
 }
+
+.login__back {
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .login__container {
-  max-width: 1300px;
   margin: auto;
-  text-align: right;
+  max-width: 1300px;
   padding: 0rem 2rem 5rem 2rem;
-  @media (max-width: 450px) {
-    padding: 0rem 1rem;
-  }
-  @media (max-width: 300px) {
-    padding: 0rem 0.5rem;
-  }
+  text-align: right;
 }
+
 .login__content {
   display: flex;
   justify-content: center;
   padding-top: 10rem;
+}
+
+.login__forgot {
+  color: #3d87f5;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.login__form {
+  align-items: center;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+}
+
+.login__form__flex {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.login__form__github__image {
+  margin-right: 0.5rem;
+  width: 30px;
+}
+
+.login__form__option__image {
+  margin-right: 0.5rem;
+  width: 20px;
+}
+
+.login__form__option__text {
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  max-width: 270px;
+  padding: 0.7rem;
+  padding-left: 1.3rem;
+  padding-right: 5rem;
+}
+
+.login__form__options {
+  align-items: center;
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  height: 42px;
+  justify-content: center;
+  padding-left: 0.5rem;
+}
+
+.login__input {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  margin-left: 0.8rem;
+  padding-right: 5rem;
+}
+
+.login__input__div {
+  background-color: #edf2f7;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  padding: 0.7rem 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.login__input__div:hover {
+  background-color: #edebf4;
+}
+
+.login__link {
+  color: black;
+  font-weight: 500;
+}
+
+.login__link__lower {
+  color: black;
+  display: none;
+  font-weight: 500;
+}
+
+.login__or {
+  color: #515152;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.login__password__div {
+  display: flex;
+}
+
+.login__password__email {
+  max-width: 150px;
+}
+
+.login__reset {
+  color: green;
+  display: none;
+  margin-bottom: 1rem;
+}
+
+.login__reset__des {
+  margin-bottom: 4rem;
+}
+
+.login__submit {
+  background: #000;
+  border: 0;
+  border-radius: 24px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  height: 46px;
+  line-height: 46px;
+  margin: 32px 0 0;
+  padding: 0rem 9rem;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.login__submit:hover {
+  background: #2b2a2a;
 }
 
 .login__top {
@@ -48,194 +182,67 @@
   justify-content: space-between;
   text-align: right;
 }
-.login__back {
-  font-weight: 500;
-  font-size: 1rem;
-  color: black;
+
+.login__top__text {
+  display: none;
 }
 
-.login__link {
-  color: black;
-  font-weight: 500;
-}
-.login__top__text {
-  @media (max-width: 500px) {
-    display: none;
-  }
-}
-.login__link__lower {
-  color: black;
-  font-weight: 500;
+.login__wrong {
+  color: red;
   display: none;
-  @media (max-width: 500px) {
-    display: block;
-  }
-}
-.login__form {
-  width: 400px;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.login__form h3 {
-  font-weight: 400;
-  text-align: start;
-  margin-bottom: 2rem;
-}
-.login__or {
-  color: #515152;
-  text-align: center;
   margin-bottom: 1rem;
 }
-.login__form__flex {
-  display: flex;
-  margin-bottom: 1rem;
-}
-.login__form__options {
-  height: 42px;
-  background-color: white;
-  padding-left: 0.5rem;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-.google__image {
-  padding-left: 0.7rem;
-  padding-right: 0.4rem;
-}
-.login__form__option__image {
-  width: 20px;
-  margin-right: 0.5rem;
-}
-.login__form__github__image {
-  width: 30px;
-  margin-right: 0.5rem;
-}
-.login__form__option__text {
-  color: white;
-  font-weight: 500;
-  font-size: 0.95rem;
-  padding: 0.7rem;
-  max-width: 270px;
-  padding-left: 1.3rem;
-  padding-right: 5rem;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  cursor: pointer;
-  @media (max-width: 450px) {
-    padding: 0.7rem 2rem 0.7rem 1rem;
-    font-size: 0.9rem;
+
+@media (max-width: 300px) {
+  .login__container {
+    padding: 0rem 0.5rem;
   }
 }
-.google__color {
-  background-color: #2f80ed;
-  transition: all 0.2s ease-in-out;
-  padding-right: 4.64rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  @media (max-width: 450px) {
+
+@media (max-width: 400px) {
+  .login__password__email {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 450px) {
+  .google__color {
+    background-color: #2f80ed;
     padding: 0.7rem 2rem 0.7rem 0.6rem;
   }
-}
-.google__color:hover {
-  background-color: #246dcc;
-}
-.github__color {
-  background-color: #222222;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.github__color:hover {
-  background-color: #333232;
-}
-.icon__color {
-  color: #404040;
-}
-.login__input {
-  background-color: transparent;
-  border: none;
-  font-size: 1rem;
-  margin-left: 0.8rem;
-  padding-right: 5rem;
-  @media (max-width: 450px) {
+
+  .google__color:hover {
+    background-color: #246dcc;
+  }
+
+  .github__color {
+    background-color: #222222;
+  }
+
+  .github__color:hover {
+    background-color: #333232;
+  }
+
+  .icon__color {
+    color: #404040;
+  }
+
+  .login__button,
+  .login__submit {
+    padding: 0rem 6rem;
+  }
+
+  .login__form__option__text {
+    font-size: 0.9rem;
+    padding: 0.7rem 2rem 0.7rem 1rem;
+  }
+
+  .login__input {
     max-width: 200px;
     padding-right: 2rem;
   }
-}
-input:focus {
-  outline: none;
-}
-.login__input__div {
-  background-color: #edf2f7;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 0.7rem 1rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease-in-out;
-  @media (max-width: 450px) {
+
+  .login__input__div {
     padding: 0.7rem 0.5rem;
-  }
-}
-.login__input__div:hover {
-  background-color: #edebf4;
-}
-.login__forgot {
-  color: #3d87f5;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-.login__wrong{
-  color: red;
-  margin-bottom: 1rem;
-  display: none;
-}
-.login__button,
-.login__submit {
-  background: #000;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 46px;
-  text-align: center;
-  height: 46px;
-  margin: 32px 0 0;
-  padding: 0rem 9rem;
-  border: 0;
-  border-radius: 24px;
-  cursor: pointer;
-  display: inline-block;
-  transition: all 0.2s ease-in-out;
-  @media (max-width: 450px) {
-    padding: 0rem 6rem;
-  }
-}
-.login__button:hover {
-  background: #2b2a2a;
-}
-.login__reset__des {
-  margin-bottom: 4rem;
-  @media (max-width: 450px) {
-    text-align: start;
-    font-size: 0.9rem;
-  }
-}
-.login__password__div {
-  display: flex;
-}
-.login__reset {
-  margin-bottom: 1rem;
-  color: green;
-  display: none;
-}
-.login__submit {
-  margin-top: 16px;
-}
-.login__password__email {
-  @media (max-width: 400px) {
-    max-width: 150px;
   }
 }
