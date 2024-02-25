@@ -8,7 +8,7 @@ import {
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-function DashNav({username, avatar}) {
+function DashNav({ username, avatar }) {
   const [dropdown, setDropDown] = useState(false);
   useEffect(() => {
     if (dropdown === true) {
@@ -25,12 +25,16 @@ function DashNav({username, avatar}) {
           <div className="dashnav__left">
             <div className="dashnav__left__logo">
               <img src={logo} alt="YouCoin Logo" />
-              <Link to='/' className="dashnav__left__logo__name">YouCoin</Link>
+              <Link to="/" className="dashnav__left__logo__name">
+                YouCoin
+              </Link>
               <p className="dashnav__beta">BETA</p>
             </div>
           </div>
           <div className="dashnav__right">
-            <Link to='/purchase' className="dashnav__button" >Purchase</Link>
+            <Link to="/purchase" className="dashnav__button">
+              Purchase
+            </Link>
             <div className="dashnav__right__container">
               <div className="dashnav__right__flex">
                 <img

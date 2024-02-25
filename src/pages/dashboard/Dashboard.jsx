@@ -24,7 +24,7 @@ function Dashboard() {
   return (
     <>
       <DashNav username={username} avatar={avatar} />
-      <DashTop avatar={avatar}/>
+      <DashTop avatar={avatar} />
       <DashBottom username={username} />
       <DashFooter />
     </>

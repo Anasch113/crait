@@ -13,9 +13,7 @@ function DashTop({ avatar }) {
           </div>
           <div className="dashtop__right">
             <img src={avatar} alt="Avatar" />
-            <button
-              className="dashtop__button"
-            >
+            <button className="dashtop__button">
               <FontAwesomeIcon icon={faPlus} />
               <span>Invite</span>
             </button>
