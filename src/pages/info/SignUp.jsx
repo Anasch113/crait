@@ -7,8 +7,8 @@ import {
   faCircleCheck,
   faLock,
 } from "@fortawesome/free-solid-svg-icons";
+import { auth } from '../firebase/firebase';
 import { useState } from "react";
-import { createdAccounts } from "../AccountData/data.js";
 function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,15 +21,17 @@ function SignUp() {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    createdAccounts.push({
-      username: username,
-      password: password,
-    });
-    setUsername("");
-    setPassword("");
-    document.querySelector(".signup__reset").style.display = "block";
+    try {
+      await auth.createUserWithEmailAndPassword(email, password);
+      console.log('User signed up successfully!');
+      setUsername('');
+      setPassword('');
+      document.querySelector(".signup__reset").style.display = "block";
+    } catch (error) {
+      console.error('Error signing up:', error.message);
+    }
   };
   return (
     <section className="signup" id="signUp">
