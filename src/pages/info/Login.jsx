@@ -18,7 +18,7 @@ function Login() {
 
   const navigate = useNavigate();
   const [loginFormData, setloginFormData] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
@@ -34,7 +34,7 @@ function Login() {
 
     const isValidLogin = createdAccounts.some(
       (account) =>
-        account.username === loginFormData.username &&
+        account.username === loginFormData.email &&
         account.password === loginFormData.password
     );
 
@@ -47,7 +47,7 @@ function Login() {
       });
       document.querySelector(".login__wrong").style.display = "none";
 
-      navigate(`/dashboard/${loginFormData.username}`);
+      navigate(`/dashboard/${loginFormData.email}`);
     } else {
       document.querySelector(".login__wrong").style.display = "block";
     }
@@ -103,17 +103,17 @@ function Login() {
                 <div className="login__form__option__container"></div>
                 <p className="login__wrong">Wrong email or password</p>
                 <div className="login__input__div">
-                  <label htmlFor="login__username" className="Username-label">
+                  <label htmlFor="login__email" className="email-label">
                     <FontAwesomeIcon icon={faUser} className="icon__color" />
                   </label>
                   <input
                     required
                     type="text"
-                    id="login__username"
-                    name="username"
-                    placeholder="Username"
+                    id="login__email"
+                    name="email"
+                    placeholder="Email"
                     className="login__input"
-                    value={loginFormData.userName}
+                    value={loginFormData.email}
                     onChange={handleChange}
                   />
                 </div>

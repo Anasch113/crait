@@ -7,10 +7,11 @@ import {
   faCircleCheck,
   faLock,
 } from "@fortawesome/free-solid-svg-icons";
-import { auth } from '../firebase/firebase';
+import { auth } from "../firebase/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 function SignUp() {
-  const [username, setUsername] = useState("");
+  const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleUsernameChange = (event) => {
@@ -21,18 +22,17 @@ function SignUp() {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSignUp = async (e) => {
+    e.preventDefault();
     try {
-      await auth.createUserWithEmailAndPassword(email, password);
-      console.log('User signed up successfully!');
-      setUsername('');
-      setPassword('');
-      document.querySelector(".signup__reset").style.display = "block";
+      await createUserWithEmailAndPassword(auth, email, password);
+      console.log("User signed up successfully!");
+      
     } catch (error) {
-      console.error('Error signing up:', error.message);
+      console.error("Error signing up:", error.message);
     }
   };
+
   return (
     <section className="signup" id="signUp">
       <div className="signup__container">
@@ -115,21 +115,20 @@ function SignUp() {
               </Link>
             </div>
             <div className="signup__form__container">
-              <form action="" onSubmit={handleSubmit} className="signup__form">
+              <form action="" onSubmit={handleSignUp} className="signup__form">
                 <h3>Create your account</h3>
                 <div className="signup__form__options"></div>
                 <div className="signup__input__div">
-                  <label htmlFor="signup__username" className="username-label">
+                  <label htmlFor="signup__email" className="email-label">
                     <FontAwesomeIcon icon={faUser} className="icon__color" />
                   </label>
                   <input
-                    minLength={6}
                     required
-                    type="text"
-                    id="signup__username"
-                    placeholder="Username"
+                    type="email"
+                    id="signup__email"
+                    placeholder="Email"
                     className="signup__input"
-                    value={username}
+                    value={email}
                     onChange={handleUsernameChange}
                   />
                 </div>
