@@ -58,7 +58,7 @@ function DashNav({ username, avatar }) {
       </nav>
       <div className="dropdown__div">
         <div className="dropdown">
-          <Link to="/" className="dropdown__item">
+          <Link to="/login" className="dropdown__item">
             <p>Sign Out</p>
             <FontAwesomeIcon icon={faRightFromBracket} />
           </Link>
