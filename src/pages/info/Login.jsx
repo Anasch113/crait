@@ -1,12 +1,38 @@
 import React, { useState } from "react";
 import "./styles/Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../firebase/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth"; // Import signInWithEmailAndPassword function
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
-import { createdAccounts } from "../AccountData/data.js";
+
 function Login() {
   const [needReset, setNeedReset] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      console.log("User logged in successfully!");
+      navigate("/dashboard");
+    } catch (error) {
+      setError(error.message);
+      console.error("Error logging in:", error.message);
+    }
+  };
+
   const passwordSubmit = (e) => {
     window.scrollTo(0, 0);
     e.preventDefault();
@@ -15,44 +41,6 @@ function Login() {
       input.value = "";
     });
   };
-
-  const navigate = useNavigate();
-  const [loginFormData, setloginFormData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setloginFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-  const logInSubmit = (e) => {
-    e.preventDefault();
-
-    const isValidLogin = createdAccounts.some(
-      (account) =>
-        account.username === loginFormData.email &&
-        account.password === loginFormData.password
-    );
-
-    if (isValidLogin) {
-      document.querySelectorAll('input[type="text"]').forEach((input) => {
-        input.value = "";
-      });
-      document.querySelectorAll('input[type="password"]').forEach((input) => {
-        input.value = "";
-      });
-      document.querySelector(".login__wrong").style.display = "none";
-
-      navigate(`/dashboard/${loginFormData.email}`);
-    } else {
-      document.querySelector(".login__wrong").style.display = "block";
-    }
-  };
-
   return (
     <>
       <section id="logIn" className="login">
@@ -62,14 +50,11 @@ function Login() {
               ← Home
             </Link>
             <p className="login__top__text">
-              Dont have an account?{" "}
+              Don't have an account?{" "}
               <Link to="/signup" className="login__link">
                 Sign up
               </Link>
             </p>
-            <Link to="/signup" className="login__link__lower">
-              Sign up
-            </Link>
           </div>
           <div className="login__content">
             {needReset ? (
@@ -98,23 +83,24 @@ function Login() {
                 <button className="login__submit">Submit</button>
               </form>
             ) : (
-              <form className="login__form" onSubmit={logInSubmit}>
+              <form className="login__form" onSubmit={handleLogin}>
                 <h3>Log in to your account</h3>
-                <div className="login__form__option__container"></div>
-                <p className="login__wrong">Wrong email or password</p>
+                {error && <p className="login__error">{error}</p>}
                 <div className="login__input__div">
                   <label htmlFor="login__email" className="email-label">
-                    <FontAwesomeIcon icon={faUser} className="icon__color" />
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      className="icon__color"
+                    />
                   </label>
                   <input
                     required
-                    type="text"
+                    type="email"
                     id="login__email"
-                    name="email"
                     placeholder="Email"
                     className="login__input"
-                    value={loginFormData.email}
-                    onChange={handleChange}
+                    value={email}
+                    onChange={handleEmailChange}
                   />
                 </div>
                 <div className="login__input__div">
@@ -125,17 +111,18 @@ function Login() {
                     required
                     type="password"
                     id="login__password"
-                    name="password"
                     placeholder="Password"
                     className="login__input"
-                    value={loginFormData.password}
-                    onChange={handleChange}
+                    value={password}
+                    onChange={handlePasswordChange}
                   />
                 </div>
                 <p className="login__forgot" onClick={() => setNeedReset(true)}>
                   Don't remember your password?
                 </p>
-                <button className="login__button">Log In</button>
+                <button type="submit" className="login__button">
+                  Log In
+                </button>
               </form>
             )}
           </div>

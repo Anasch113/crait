@@ -26,10 +26,19 @@ function SignUp() {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+      document.querySelector('.signup__reset').style.display = 'block'
+      document.querySelector(".login__wrong").style.display = "none";
       console.log("User signed up successfully!");
-      
+      document.querySelectorAll('input[type="email"]').forEach((input) => {
+        input.value = "";
+      });
+      document.querySelectorAll('input[type="password"]').forEach((input) => {
+        input.value = "";
+      });
     } catch (error) {
       console.error("Error signing up:", error.message);
+      document.querySelector('.signup__reset').style.display = 'none'
+      document.querySelector(".login__wrong").style.display = "block";
     }
   };
 
@@ -148,6 +157,7 @@ function SignUp() {
                     onChange={handlePasswordChange}
                   />
                 </div>
+                <p className="login__wrong">Invalid email information</p>
                 <p className="signup__reset"> Account has been created</p>
                 <button className="signup__button">Register</button>
               </form>
