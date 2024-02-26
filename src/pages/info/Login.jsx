@@ -9,8 +9,8 @@ import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 function Login() {
   const [needReset, setNeedReset] = useState(false);
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
@@ -25,7 +25,6 @@ function Login() {
     event.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      console.log("User logged in successfully!");
       navigate("/dashboard");
     } catch (error) {
       setError(error.message);
@@ -85,7 +84,6 @@ function Login() {
             ) : (
               <form className="login__form" onSubmit={handleLogin}>
                 <h3>Log in to your account</h3>
-                {error && <p className="login__error">{error}</p>}
                 <div className="login__input__div">
                   <label htmlFor="login__email" className="email-label">
                     <FontAwesomeIcon

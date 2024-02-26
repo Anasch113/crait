@@ -28,7 +28,6 @@ function SignUp() {
       await createUserWithEmailAndPassword(auth, email, password);
       document.querySelector('.signup__reset').style.display = 'block'
       document.querySelector(".login__wrong").style.display = "none";
-      console.log("User signed up successfully!");
       document.querySelectorAll('input[type="email"]').forEach((input) => {
         input.value = "";
       });
