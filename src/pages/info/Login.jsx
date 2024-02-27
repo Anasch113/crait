@@ -48,7 +48,11 @@ function Login() {
   const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      if (user) {
+        navigate(`/dashboard/${user.email}`);
+      }
     } catch (error) {
       console.error("Error signing in with Google: ", error);
     }
@@ -99,7 +103,10 @@ function Login() {
               <form className="login__form" onSubmit={handleLogin}>
                 <h3>Log in to your account</h3>
                 <div className="login__form__option__container">
-                  <div className="login__form__flex" onClick={handleGoogleSignIn}>
+                  <div
+                    className="login__form__flex"
+                    onClick={handleGoogleSignIn}
+                  >
                     <div className="login__form__options google__image">
                       <img
                         className="login__form__option__image"

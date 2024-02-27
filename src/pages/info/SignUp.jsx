@@ -149,7 +149,7 @@ function SignUp() {
                       />
                     </div>
                     <div className="login__form__option__text google__color">
-                      LOG IN WITH GOOGLE
+                      SIGN UP WITH GOOGLE
                     </div>
                   </div>
                 </div>
