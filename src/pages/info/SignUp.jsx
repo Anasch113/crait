@@ -11,6 +11,7 @@ import { auth } from "../firebase/firebase";
 import {
   GoogleAuthProvider,
   signInWithPopup,
+  createUserWithEmailAndPassword
 } from "firebase/auth";
 import { useState } from "react";
 function SignUp() {
@@ -135,12 +136,11 @@ function SignUp() {
             </div>
             <div
               className="signup__form__container"
-              onClick={handleGoogleSignIn}
             >
               <form action="" onSubmit={handleSignUp} className="signup__form">
                 <h3>Create your account</h3>
                 <div className="login__form__option__container">
-                  <div className="login__form__flex">
+                  <div className="login__form__flex" onClick={handleGoogleSignIn}>
                     <div className="login__form__options google__image">
                       <img
                         className="login__form__option__image"
@@ -149,7 +149,7 @@ function SignUp() {
                       />
                     </div>
                     <div className="login__form__option__text google__color">
-                      SIGN UP WITH GOOGLE
+                    SIGN UP WITH GOOGLE
                     </div>
                   </div>
                 </div>

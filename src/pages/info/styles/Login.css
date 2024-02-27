@@ -112,10 +112,6 @@
   margin-right: 0.5rem;
   width: 20px;
 }
-.login__form__github__image {
-  margin-right: 0.5rem;
-  width: 30px;
-}
 .login__form__option__text {
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
@@ -123,7 +119,7 @@
   cursor: pointer;
   font-size: 0.95rem;
   font-weight: 500;
-  max-width: 270px;
+  max-width: 290px;
   padding-left: 1.3rem;
   padding-right: 5rem;
   padding: 0.7rem;
@@ -135,7 +131,7 @@
 .google__color {
   background-color: #2f80ed;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding-right: 4.64rem;
+  padding-right: 4.6rem;
   transition: all 0.2s ease-in-out;
   @media (max-width: 450px) {
     padding: 0.7rem 2rem 0.7rem 0.6rem;
@@ -143,15 +139,6 @@
 }
 .google__color:hover {
   background-color: #246dcc;
-}
-.github__color {
-  background-color: #222222;
-  padding-right: 4.8rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease-in-out;
-}
-.github__color:hover {
-  background-color: #333232;
 }
 .icon__color {
   color: #404040;

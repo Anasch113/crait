@@ -120,8 +120,9 @@ function Login() {
                   </div>
                 </div>
                 <p className="login__or">or</p>
+                <p className="login__wrong">Invalid account information</p>
                 <div className="login__input__div">
-                  <p className="login__wrong">Invalid account information</p>
+                  
                   <label htmlFor="login__email" className="email-label">
                     <FontAwesomeIcon
                       icon={faEnvelope}
