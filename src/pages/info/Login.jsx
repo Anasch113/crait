@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import google from './images/google.png'
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -115,7 +116,7 @@ function Login() {
                     <div className="login__form__options google__image">
                       <img
                         className="login__form__option__image"
-                        src="https://cdn.discordapp.com/attachments/1187219037537714220/1210032566271217664/2048px-Google_22G22_logo.png?ex=65e915a5&is=65d6a0a5&hm=1d888ddec63d56e978045eadb0b374e0a2f7e35147e2a4be2576c4e3e566ab8e&"
+                        src={google}
                         alt="Google Logo"
                       />
                     </div>
