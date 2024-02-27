@@ -22,8 +22,12 @@ function SignUp() {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
+      document.querySelector(".signup__reset").style.display = "block";
+      document.querySelector(".login__wrong").style.display = "none";
     } catch (error) {
       console.error("Error signing in with Google: ", error);
+      document.querySelector(".signup__reset").style.display = "none";
+      document.querySelector(".login__wrong").style.display = "block";
     }
   };
   const handleUsernameChange = (event) => {
