@@ -8,7 +8,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 function Login() {
@@ -127,7 +127,6 @@ function Login() {
                 <p className="login__or">or</p>
                 <p className="login__wrong">Invalid account information</p>
                 <div className="login__input__div">
-                  
                   <label htmlFor="login__email" className="email-label">
                     <FontAwesomeIcon
                       icon={faEnvelope}
