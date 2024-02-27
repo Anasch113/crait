@@ -8,6 +8,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail
 } from "firebase/auth";
 
 function Login() {
@@ -36,13 +37,17 @@ function Login() {
     }
   };
 
-  const passwordSubmit = (e) => {
-    window.scrollTo(0, 0);
+  const passwordSubmit = async (e) => {
     e.preventDefault();
-    document.querySelector(".login__reset").style.display = "block";
-    document.querySelectorAll('input[type="email"]').forEach((input) => {
-      input.value = "";
-    });
+    const emailInput = document.querySelector(".login__password__email");
+    const email = emailInput.value.trim();
+    try {
+      await sendPasswordResetEmail(auth, email);
+      document.querySelector(".login__reset").style.display = "block";
+    } catch (error) {
+      console.error("Error sending password reset email: ", error);
+    }
+    emailInput.value = "";
   };
 
   const handleGoogleSignIn = async () => {
