@@ -28,6 +28,7 @@ function Login() {
       navigate("/dashboard");
     } catch (error) {
       setError(error.message);
+      document.querySelector(".login__wrong").style.display = "block";
       console.error("Error logging in:", error.message);
     }
   };
@@ -85,6 +86,7 @@ function Login() {
               <form className="login__form" onSubmit={handleLogin}>
                 <h3>Log in to your account</h3>
                 <div className="login__input__div">
+                <p className="login__wrong">Invalid account information</p>
                   <label htmlFor="login__email" className="email-label">
                     <FontAwesomeIcon
                       icon={faEnvelope}
@@ -118,6 +120,7 @@ function Login() {
                 <p className="login__forgot" onClick={() => setNeedReset(true)}>
                   Don't remember your password?
                 </p>
+                
                 <button type="submit" className="login__button">
                   Log In
                 </button>

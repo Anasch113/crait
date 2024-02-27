@@ -189,6 +189,7 @@ input:focus {
   font-size: 0.9rem;
 }
 .login__wrong{
+  text-align: center;
   color: red;
   display: none;
   margin-bottom: 1rem;
