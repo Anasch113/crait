@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth"; // Import signInWithEmailAndPassword function
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
@@ -25,11 +25,10 @@ function Login() {
     event.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard");
+      navigate(`/dashboard/${email}`);
     } catch (error) {
       setError(error.message);
       document.querySelector(".login__wrong").style.display = "block";
-      console.error("Error logging in:", error.message);
     }
   };
 

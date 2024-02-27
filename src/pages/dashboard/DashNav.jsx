@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./styles/DashNav.css";
 import logo from "./images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { auth } from "../firebase/firebase";
+import { signOut } from "firebase/auth";
 import {
   faAngleDown,
   faRightFromBracket,
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate }  from "react-router-dom";
 function DashNav({ username, avatar }) {
   const [dropdown, setDropDown] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
     if (dropdown === true) {
       document.querySelector(".dropdown").style.display = "block";
@@ -17,7 +20,14 @@ function DashNav({ username, avatar }) {
       document.querySelector(".dropdown").style.display = "none";
     }
   }, [dropdown]);
-
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      navigate(`/login`);
+    } catch (error) {
+      console.error("Error signing out:", error.message);
+    }
+  };
   return (
     <>
       <nav className="dashnav" id="dashNav">
@@ -58,10 +68,10 @@ function DashNav({ username, avatar }) {
       </nav>
       <div className="dropdown__div">
         <div className="dropdown">
-          <Link to="/login" className="dropdown__item">
+          <div to="/login" className="dropdown__item"  onClick={handleSignOut}>
             <p>Sign Out</p>
             <FontAwesomeIcon icon={faRightFromBracket} />
-          </Link>
+          </div>
         </div>
       </div>
     </>
