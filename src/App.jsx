@@ -15,7 +15,6 @@ import Login from "./pages/info/Login.jsx";
 import SignUp from "./pages/info/SignUp.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Purchase from "./pages/purchase/Purchase.jsx";
-import Payment from "./pages/Payment/Payment.jsx";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -113,7 +112,6 @@ function App() {
 
         <Route path="/dashboard/:username" element={<Dashboard />} />
         <Route path="/purchase" element={<Purchase />} />
-        <Route path="/payment" element={<Payment />} />
       </Routes>
     </Router>
   );
