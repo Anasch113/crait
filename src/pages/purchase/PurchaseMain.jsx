@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles/PurchaseMain.css";
 import { Link } from "react-router-dom";
+import Payment from "./Payment";
 function PurchaseMain() {
   const [next, setNext] = useState(false);
   return (
@@ -96,14 +97,29 @@ function PurchaseMain() {
           <div className="purchase__right">
             <div className="purchase__right__container">
               <div className="purchase__right__content">
-                <p className="purchase__title">Choose a plan</p>
+                <p className="purchase__title">
+                  {next ? "Payment details" : "Choose a plan"}
+                </p>
                 <div className="purchase__pricing">
                   <p className="purchase__price">Plan</p>
-                  <p className="purchase__price__des">
-                    For more details on our plans, visit our{" "}
-                    <Link to="/demo">demo page</Link>.
-                  </p>
+                  {next ? (
+                    <p className="purchase__price__des">
+                      {" "}
+                      Confirm the payment method
+                    </p>
+                  ) : (
+                    <p className="purchase__price__des">
+                      For more details on our plans, visit our{" "}
+                      <Link to="/demo">demo page</Link>.
+                    </p>
+                  )}
                 </div>
+                {next? 
+                 (
+                  <Payment />
+                 )
+                :
+                (
                 <div className="purchase__box__container">
                   <div className="purchase__box">
                     <div className="purchase__box__left">
@@ -149,32 +165,26 @@ function PurchaseMain() {
                     <p className="purchase__box__right">COMING SOON</p>
                   </div>
                 </div>
-
-                {next ? (
-                  <Link
-                    to="/login"
-                    className="purchase__button__next purchase__button__login"
-                  >
-                    Log In
-                  </Link>
-                ) : (
-                  <>
-                    <div className="purchase__buttons__div">
-                      <Link
-                        className={"purchase__button__next"}
-                        onClick={() => window.history.back()}
-                      >
-                        Cancel
-                      </Link>
-                      <button
-                        className={"purchase__button__next"}
-                        onClick={() => setNext(true)}
-                      >
-                        Next
-                      </button>
-                    </div>
-                  </>
                 )}
+                <div className="purchase__buttons__div">
+                  {next === false ?
+                  '' : (
+                    <button
+                    className={"purchase__button__next"}
+                    onClick={() => setNext(false)}
+                  >
+                    Cancel
+                  </button>
+                  )
+                }
+                 
+                  <button
+                    className={"purchase__button__next"}
+                    onClick={() => setNext(true)}
+                  >
+                    Next
+                  </button>
+                </div>
               </div>
             </div>
           </div>
