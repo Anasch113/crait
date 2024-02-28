@@ -173,7 +173,7 @@ function PurchaseMain() {
                     className={"purchase__button__next"}
                     onClick={() => setNext(false)}
                   >
-                    Cancel
+                    Back
                   </button>
                   )
                 }
