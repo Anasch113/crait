@@ -112,6 +112,7 @@ function App() {
 
         <Route path="/dashboard/:username" element={<Dashboard />} />
         <Route path="/purchase" element={<Purchase />} />
+        <Route path="/payment" element={<Purchase />} />
       </Routes>
     </Router>
   );
