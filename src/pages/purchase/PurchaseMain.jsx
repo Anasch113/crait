@@ -88,7 +88,7 @@ function PurchaseMain() {
                 <div className="purchase__left__divider"></div>
                 <div className="purchase__left__item">
                   <div className="purchase__left__button__full"></div>
-                  <p>Login</p>
+                  <p>Pay</p>
                 </div>
               </div>
             </div>
