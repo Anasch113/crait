@@ -15,6 +15,7 @@ import Login from "./pages/info/Login.jsx";
 import SignUp from "./pages/info/SignUp.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Purchase from "./pages/purchase/Purchase.jsx";
+import Payment from "./pages/Payment/Payment.jsx";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
