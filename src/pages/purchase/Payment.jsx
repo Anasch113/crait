@@ -14,7 +14,7 @@ function Payment() {
           <p className="purchase__box__title2">Pro - 1 Month Free</p>
         </div>
       </div>
-      <div className="payment__new" onClick={() => setCode(false)}>
+      <div className="payment__new">
         <div className="payment__flex">
           <div
             className={

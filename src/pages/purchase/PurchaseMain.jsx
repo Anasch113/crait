@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Payment from "./Payment";
 function PurchaseMain() {
   const [next, setNext] = useState(false);
+  const [purchase, setPurchase] = useState(false);
   return (
     <>
       <section className="purchase" id="purchase">
@@ -115,7 +116,11 @@ function PurchaseMain() {
                   )}
                 </div>
                 {next ? (
-                  <Payment />
+                  purchase ? (
+                    <Payment />
+                  ) : (
+                    <Payment />
+                  )
                 ) : (
                   <div className="purchase__box__container">
                     <div className="purchase__box">
@@ -176,13 +181,21 @@ function PurchaseMain() {
                       Back
                     </button>
                   )}
-
-                  <button
-                    className={"purchase__button__next"}
-                    onClick={() => setNext(true)}
-                  >
-                    {next ? "Purchase" : "Next"}
-                  </button>
+                  {next === true ? (
+                    <button
+                      className={"purchase__button__next"}
+                      onClick={() => setNext(true)}
+                    >
+                      Purchase
+                    </button>
+                  ) : (
+                    <button
+                      className={"purchase__button__next"}
+                      onClick={() => setNext(true)}
+                    >
+                      Next
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
