@@ -171,30 +171,36 @@ function PurchaseMain() {
                   </div>
                 )}
                 <div className="purchase__buttons__div">
-                  {next === false ? (
+                  {purchase ? (
                     ""
                   ) : (
-                    <button
-                      className={"purchase__button__next"}
-                      onClick={() => setNext(false)}
-                    >
-                      Back
-                    </button>
-                  )}
-                  {next === true ? (
-                    <button
-                      className={"purchase__button__next"}
-                      onClick={() => setNext(true)}
-                    >
-                      Purchase
-                    </button>
-                  ) : (
-                    <button
-                      className={"purchase__button__next"}
-                      onClick={() => setNext(true)}
-                    >
-                      Next
-                    </button>
+                    <>
+                      {next === false ? (
+                        ""
+                      ) : (
+                        <button
+                          className={"purchase__button__next"}
+                          onClick={() => setNext(false)}
+                        >
+                          Back
+                        </button>
+                      )}
+                      {next === true ? (
+                        <button
+                          className={"purchase__button__next"}
+                          onClick={() => setNext(true)}
+                        >
+                          Purchase
+                        </button>
+                      ) : (
+                        <button
+                          className={"purchase__button__next"}
+                          onClick={() => setNext(true)}
+                        >
+                          Next
+                        </button>
+                      )}
+                    </>
                   )}
                 </div>
               </div>
