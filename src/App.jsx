@@ -49,7 +49,7 @@ function App() {
         setTopCoins(data);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
+        return error
       });
   }, []);
 

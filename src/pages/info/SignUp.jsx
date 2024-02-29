@@ -6,14 +6,21 @@ import {
   faUser,
   faCircleCheck,
   faLock,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
+import { auth, firestore, database } from "../firebase/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { collection } from "firebase/firestore";
+import {ref, set } from "firebase/database";
 import { useState } from "react";
-
 function SignUp() {
   const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -24,8 +31,44 @@ function SignUp() {
   const handleLastChange = (event) => {
     setLastName(event.target.value);
   };
+  const handleUserChange = (event) => {
+    setUserName(event.target.value);
+  };
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
+      const userRef = ref(database, "users/" + user.uid);
+
+      await set(userRef, {
+        username: userName,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        purchased: false,
+      });
+
+      setEmail("");
+      setUserName("");
+      setFirstName("");
+      setLastName("");
+      setPassword("");
+      setError(null);
+      setSuccess(true);
+    } catch (error) {
+      setSuccess(false);
+      console.log(error.message)
+    }
   };
 
   return (
@@ -110,7 +153,7 @@ function SignUp() {
               </Link>
             </div>
             <div className="signup__form__container">
-              <form action="" className="signup__form">
+              <form action="" className="signup__form" onSubmit={handleSubmit}>
                 <h3>Create your account</h3>
                 <div className="signup__input__div">
                   <label htmlFor="signup__fName" className="fName-label">
@@ -136,13 +179,30 @@ function SignUp() {
                     id="signup__lName"
                     placeholder="Last Name"
                     className="signup__input"
-                    value={firstName}
+                    value={lastName}
                     onChange={handleLastChange}
                   />
                 </div>
                 <div className="signup__input__div">
-                  <label htmlFor="signup__email" className="email-label">
+                  <label htmlFor="signup__username" className="username-label">
                     <FontAwesomeIcon icon={faUser} className="icon__color" />
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    id="signup__username"
+                    placeholder="Username"
+                    className="signup__input"
+                    value={userName}
+                    onChange={handleUserChange}
+                  />
+                </div>
+                <div className="signup__input__div">
+                  <label htmlFor="signup__email" className="email-label">
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      className="icon__color"
+                    />
                   </label>
                   <input
                     required
@@ -172,7 +232,9 @@ function SignUp() {
                 </div>
                 <p className="login__wrong">Invalid email information</p>
                 <p className="signup__reset"> Account has been created</p>
-                <button className="signup__button">Register</button>
+                <button type="submit" className="signup__button">
+                  Register
+                </button>
               </form>
             </div>
           </div>
