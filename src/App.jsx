@@ -110,7 +110,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         {"private routes"}
 
-        <Route path="/dashboard/:username" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/purchase" element={<Purchase />} />
       </Routes>
     </Router>

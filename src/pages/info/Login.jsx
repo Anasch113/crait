@@ -1,22 +1,38 @@
 import React, { useState } from "react";
 import "./styles/Login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/firebase";
+import { useNavigate } from "react-router-dom";
 function Login() {
   const [needReset, setNeedReset] = useState(false);
   const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-
+  const [error, setError] = useState(null);
+  const navigate = useNavigate(); 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      setEmail("");
+      setPassword("");
+      setError(null);
+      navigate("/dashboard");
+    } catch (error) {
+      event.preventDefault();
+      setError(error.message);
+      console.log(error);
+    }
   };
 
   return (
@@ -62,7 +78,7 @@ function Login() {
                 <button className="login__submit">Submit</button>
               </form>
             ) : (
-              <form className="login__form">
+              <form className="login__form" onSubmit={handleSubmit}>
                 <h3>Log in to your account</h3>
                 <p className="login__wrong">Invalid account information</p>
                 <div className="login__input__div">
