@@ -31,7 +31,7 @@ const ScrollToTop = () => {
 function App() {
   const [topCoins, setTopCoins] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
-  const [signedin, SetSignedIn] = useState(false);
+  const [signedin, setSignedIn] = useState(false);
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
@@ -40,8 +40,9 @@ function App() {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       setCurrentUser(user);
-      SetSignedIn(true);
+      setSignedIn(true);
     } else {
+      setSignedIn(false);
       console.log('Not Signed In');
     }
   });
