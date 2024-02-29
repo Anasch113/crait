@@ -5,12 +5,11 @@ import DashTop from "./DashTop";
 import DashBottom from "./DashBottom";
 import { useParams } from "react-router-dom";
 
-import purple from "./images/purple.jpg";
+import initials from "./images/initials.jpg";
 
 function Dashboard() {
   const { username } = useParams();
-  const [avatar, setAvatar] = useState(purple);
-
+  const [avatar, setAvatar] = useState(initials);
 
   return (
     <>
