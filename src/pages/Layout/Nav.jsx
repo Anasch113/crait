@@ -58,7 +58,7 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection, signedin }) {
             >
               Start Investing<span className="nav__arrow">→</span>
             </Link>
-            <Link to="/dashboard" className="nav__login">
+            <Link to={signedin? "/dashboard" : '/login'} className="nav__login">
               {signedin? "Dashboard" : 'Log In'}
             </Link>
             <IconMenu2

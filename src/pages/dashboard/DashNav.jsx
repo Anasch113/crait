@@ -8,8 +8,10 @@ import {
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate }  from "react-router-dom";
+import { auth } from "../firebase/firebase";
 
 function DashNav({ avatar }) {
+  const navigate = useNavigate();
   const [dropdown, setDropDown] = useState(false);
   useEffect(() => {
     if (dropdown === true) {
@@ -18,6 +20,17 @@ function DashNav({ avatar }) {
       document.querySelector(".dropdown").style.display = "none";
     }
   }, [dropdown]);
+
+  const handleSignOut = () => {
+    auth.signOut()
+      .then(() => {
+        navigate("/login");
+        return
+      })
+      .catch((error) => {
+        console.error("Error signing out:", error);
+      });
+  };
   return (
     <>
       <nav className="dashnav" id="dashNav">
@@ -36,11 +49,11 @@ function DashNav({ avatar }) {
               Purchase
             </Link>
             <div className="dashnav__right__container">
-              <div className="dashnav__right__flex">
+              <div className="dashnav__right__flex" onClick={() => setDropDown(!dropdown)}>
                 <img
                   src={avatar}
                   alt="Avatar"
-                  onClick={() => setDropDown(!dropdown)}
+                  
                 />
                 <div className="dashnav__right__info">
                   <p className="dashnav__right__name"></p>
@@ -58,7 +71,7 @@ function DashNav({ avatar }) {
       </nav>
       <div className="dropdown__div">
         <div className="dropdown">
-          <div className="dropdown__item">
+          <div className="dropdown__item" onClick={handleSignOut}>
             <p>Sign Out</p>
             <FontAwesomeIcon icon={faRightFromBracket} />
           </div>
