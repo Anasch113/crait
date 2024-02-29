@@ -1,17 +1,18 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./styles/PurchaseNav.css";
 function PurchaseNav() {
+  const navigate = useNavigate();
   return (
     <>
       <nav className="purchasenav" id="purchasenav">
         <div className="purchasenav__container">
           <p>Change plan</p>
-          <Link to="/">
+          <button onClick={''}>
             <FontAwesomeIcon icon={faXmark} className="purchasenav__close" />
-          </Link>
+          </button>
         </div>
       </nav>
     </>

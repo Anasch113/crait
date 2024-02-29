@@ -3,7 +3,7 @@ import PurchaseNav from "./PurchaseNav";
 import DashFooter from "../dashboard/DashFooter";
 import PurchaseMain from "./PurchaseMain";
 
-const Purchase = () => {
+function Purchase() {
   return (
     <>
       <PurchaseNav />
@@ -11,6 +11,6 @@ const Purchase = () => {
       <DashFooter />
     </>
   );
-};
+}
 
 export default Purchase;

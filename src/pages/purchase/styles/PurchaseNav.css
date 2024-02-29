@@ -14,10 +14,16 @@
     padding: 1.3rem 1rem;
   }
 }
+.purchasenav__container button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+}
 .purchasenav__close {
   color: rgb(195, 195, 198);
   transition: all 0.2s ease-in-out;
 }
-.purchasenav__close:hover{
-    color: white;
+.purchasenav__close:hover {
+  color: white;
 }

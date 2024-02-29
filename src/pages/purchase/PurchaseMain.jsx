@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import "./styles/PurchaseMain.css";
 import { Link } from "react-router-dom";
 import Payment from "./Payment";
-import Congrats from "./Congrats";
 function PurchaseMain() {
   const [next, setNext] = useState(false);
-  const [purchase, setPurchase] = useState(false);
   return (
     <>
       <section className="purchase" id="purchase">
@@ -99,31 +97,23 @@ function PurchaseMain() {
           <div className="purchase__right">
             <div className="purchase__right__container">
               <div className="purchase__right__content">
-                {purchase === false? (
-                  <>
-                    <p className="purchase__title">Payment details</p>
-                    <div className="purchase__pricing">
-                      <p className="purchase__price">Plan</p>
-                      {next ? (
-                        <p className="purchase__price__des">
-                          Confirm the payment method
-                        </p>
-                      ) : (
-                        <p className="purchase__price__des">
-                          For more details on our plans, visit our{" "}
-                          <Link to="/demo">demo page</Link>.
-                        </p>
-                      )}
-                    </div>
-                  </>
-                ) : null}
+                <p className="purchase__title">Payment details</p>
+                <div className="purchase__pricing">
+                  <p className="purchase__price">Plan</p>
+                  {next ? (
+                    <p className="purchase__price__des">
+                      Confirm the payment method
+                    </p>
+                  ) : (
+                    <p className="purchase__price__des">
+                      For more details on our plans, visit our{" "}
+                      <Link to="/demo">demo page</Link>.
+                    </p>
+                  )}
+                </div>
 
                 {next ? (
-                  purchase ? (
-                    <Congrats />
-                  ) : (
-                    <Payment />
-                  )
+                  <Payment />
                 ) : (
                   <div className="purchase__box__container">
                     <div className="purchase__box">
@@ -173,36 +163,27 @@ function PurchaseMain() {
                   </div>
                 )}
                 <div className="purchase__buttons__div">
-                  {purchase ? (
+                  {next === false ? (
                     ""
                   ) : (
-                    <>
-                      {next === false ? (
-                        ""
-                      ) : (
-                        <button
-                          className={"purchase__button__next"}
-                          onClick={() => setNext(false)}
-                        >
-                          Back
-                        </button>
-                      )}
-                      {next === true ? (
-                        <button
-                          className={"purchase__button__next"}
-                          onClick={() => setPurchase(true)}
-                        >
-                          Purchase
-                        </button>
-                      ) : (
-                        <button
-                          className={"purchase__button__next"}
-                          onClick={() => setNext(true)}
-                        >
-                          Next
-                        </button>
-                      )}
-                    </>
+                    <button
+                      className={"purchase__button__next"}
+                      onClick={() => setNext(false)}
+                    >
+                      Back
+                    </button>
+                  )}
+                  {next === true ? (
+                    <button className={"purchase__button__next"}>
+                      Purchase
+                    </button>
+                  ) : (
+                    <button
+                      className={"purchase__button__next"}
+                      onClick={() => setNext(true)}
+                    >
+                      Next
+                    </button>
                   )}
                 </div>
               </div>
