@@ -50,7 +50,7 @@
 .signup__top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12rem;
+  margin-bottom: 6rem;
 }
 .signup__top__larger {
   @media (max-width: 450px) {
