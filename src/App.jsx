@@ -15,7 +15,7 @@ import Login from "./pages/info/Login.jsx";
 import SignUp from "./pages/info/SignUp.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Purchase from "./pages/purchase/Purchase.jsx";
-import { auth } from "./pages/firebase/firebase.js";
+import { auth, getUserByUID, activeUser } from "./pages/firebase/firebase.js";
 import { onAuthStateChanged } from "firebase/auth";
 
 const ScrollToTop = () => {
@@ -32,6 +32,7 @@ function App() {
   const [topCoins, setTopCoins] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [signedin, setSignedIn] = useState(false);
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
@@ -41,6 +42,9 @@ function App() {
     if (user) {
       setCurrentUser(user);
       setSignedIn(true);
+      setTimeout(() => {
+        getUserByUID(currentUser.uid);
+      }, 500);
     } else {
       setSignedIn(false);
     }
@@ -125,9 +129,9 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        {"private routes"}
 
-        <Route path="/dashboard" element={<Dashboard  user={currentUser}/>} />
+        {"private routes"}
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/purchase" element={<Purchase />} />
       </Routes>
     </Router>

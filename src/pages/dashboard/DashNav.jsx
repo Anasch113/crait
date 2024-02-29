@@ -8,11 +8,12 @@ import {
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../firebase/firebase";
+import { auth, username } from "../firebase/firebase";
 
-function DashNav({ avatar }) {
+function DashNav({ avatar, name }) {
   const navigate = useNavigate();
   const [dropdown, setDropDown] = useState(false);
+
   useEffect(() => {
     if (dropdown === true) {
       document.querySelector(".dropdown").style.display = "block";
@@ -32,6 +33,7 @@ function DashNav({ avatar }) {
         return;
       });
   };
+
   return (
     <>
       <nav className="dashnav" id="dashNav">
@@ -56,7 +58,10 @@ function DashNav({ avatar }) {
               >
                 <img src={avatar} alt="Avatar" />
                 <div className="dashnav__right__info">
-                  <p className="dashnav__right__name"></p>
+                  <p className="dashnav__right__name">
+                    {username.charAt(0).toUpperCase() + username.slice(1)}
+                  </p>
+
                   <p className="dashnav__right__type">All Investments</p>
                 </div>
                 <FontAwesomeIcon

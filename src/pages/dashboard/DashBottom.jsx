@@ -8,6 +8,7 @@ import {
   faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { username } from "../firebase/firebase";
 function DashBottom() {
   return (
     <section className="dashbottom" id="dashbottom">
@@ -24,14 +25,14 @@ function DashBottom() {
             <div className="dashbottom__box">
               <div className="dashbottom__box__text">
                 <span>NO INVESTMENTS</span>
-                <p>name</p>
+                <p>{username.charAt(0).toUpperCase() + username.slice(1)}</p>
               </div>
               <p className="dashbottom__box__location">Boston</p>
             </div>
             <div className="dashbottom__box">
               <div className="dashbottom__box__text">
                 <span>NO INVESTMENTS</span>
-                <p>name</p>
+                <p>{username.charAt(0).toUpperCase() + username.slice(1)}</p>
               </div>
               <p className="dashbottom__box__location">Boston</p>
             </div>
