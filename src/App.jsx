@@ -43,7 +43,6 @@ function App() {
       setSignedIn(true);
     } else {
       setSignedIn(false);
-      console.log('Not Signed In');
     }
   });
 
