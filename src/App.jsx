@@ -15,6 +15,8 @@ import Login from "./pages/info/Login.jsx";
 import SignUp from "./pages/info/SignUp.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Purchase from "./pages/purchase/Purchase.jsx";
+import { auth } from "./pages/firebase/firebase.js";
+import { onAuthStateChanged } from "firebase/auth";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -28,6 +30,21 @@ const ScrollToTop = () => {
 
 function App() {
   const [topCoins, setTopCoins] = useState([]);
+  const [currentUser, setCurrentUser] = useState({});
+  const [signedin, SetSignedIn] = useState(false);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+    });
+  }, []);
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      setCurrentUser(user);
+      SetSignedIn(true);
+    } else {
+      console.log('Not Signed In');
+    }
+  });
 
   useEffect(() => {
     const apiKey = "CG-QnB4KjkznzXPHBQYHU3is4v7";
@@ -49,7 +66,7 @@ function App() {
         setTopCoins(data);
       })
       .catch((error) => {
-        return error
+        return error;
       });
   }, []);
 
@@ -65,7 +82,6 @@ function App() {
     const sectionElement = document.querySelector(`.${section}`);
     sectionElement.scrollIntoView({ behavior: "smooth" });
   }
-
   return (
     <Router>
       <ScrollToTop />
@@ -76,6 +92,7 @@ function App() {
               toSection={toSection}
               setArrowStyle={setArrowStyle}
               resetArrowStyle={resetArrowStyle}
+              signedin={signedin}
             />
           }
         >
@@ -110,7 +127,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         {"private routes"}
 
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard  user={currentUser}/>} />
         <Route path="/purchase" element={<Purchase />} />
       </Routes>
     </Router>

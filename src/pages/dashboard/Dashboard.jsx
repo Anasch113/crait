@@ -3,13 +3,10 @@ import DashNav from "./DashNav";
 import DashFooter from "./DashFooter";
 import DashTop from "./DashTop";
 import DashBottom from "./DashBottom";
-import { useParams } from "react-router-dom";
-
 import initials from "./images/initials.jpg";
 
-function Dashboard() {
+function Dashboard({ user }) {
   const [avatar, setAvatar] = useState(initials);
-
   return (
     <>
       <DashNav avatar={avatar} />

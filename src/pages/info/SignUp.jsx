@@ -8,9 +8,8 @@ import {
   faLock,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { auth, firestore, database } from "../firebase/firebase";
+import { auth, database } from "../firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { collection } from "firebase/firestore";
 import {ref, set } from "firebase/database";
 import { useState } from "react";
 function SignUp() {

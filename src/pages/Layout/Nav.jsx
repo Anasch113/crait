@@ -1,26 +1,23 @@
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import "./styles/Nav.css";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
-import logo from './images/logo.png'
-function Nav({ setArrowStyle, resetArrowStyle, toSection }) {
+import logo from "./images/logo.png";
+
+function Nav({ setArrowStyle, resetArrowStyle, toSection, signedin }) {
+
   function burgerOnOrOff(val) {
-    if(val === false){
-        document.querySelector('.burger__container').style.display = 'none'
-    }else{
-      document.querySelector('.burger__container').style.display = 'block'
+    if (val === false) {
+      document.querySelector(".burger__container").style.display = "none";
+    } else {
+      document.querySelector(".burger__container").style.display = "block";
     }
   }
   return (
     <>
       <nav>
         <div className="nav__intro">
-          <img
-            src={logo}
-            alt="logo"
-            width={25}
-          />
+          <img src={logo} alt="logo" width={25} />
           <p className="nav__intro__text">
             Introducing YouCoin’s Personally Automated Investments
             <span
@@ -61,12 +58,17 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection }) {
             >
               Start Investing<span className="nav__arrow">→</span>
             </Link>
-            <Link to='/login' className="nav__login">Log In</Link>
-            <IconMenu2 className="hamburger-menu"  onClick={()=>burgerOnOrOff(true)}/>
+            <Link to="/dashboard" className="nav__login">
+              {signedin? "Dashboard" : 'Log In'}
+            </Link>
+            <IconMenu2
+              className="hamburger-menu"
+              onClick={() => burgerOnOrOff(true)}
+            />
           </span>
         </div>
       </nav>
-      <div className="burger" id="burger"  burgerOnOrOff={burgerOnOrOff}>
+      <div className="burger" id="burger" burgerOnOrOff={burgerOnOrOff}>
         <Burger toSection={toSection} />
       </div>
     </>
