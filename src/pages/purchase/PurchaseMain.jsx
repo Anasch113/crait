@@ -99,23 +99,25 @@ function PurchaseMain() {
           <div className="purchase__right">
             <div className="purchase__right__container">
               <div className="purchase__right__content">
-                <p className="purchase__title">
-                  {next ? "Payment details" : "Choose a plan"}
-                </p>
-                <div className="purchase__pricing">
-                  <p className="purchase__price">Plan</p>
-                  {next ? (
-                    <p className="purchase__price__des">
-                      
-                      Confirm the payment method
-                    </p>
-                  ) : (
-                    <p className="purchase__price__des">
-                      For more details on our plans, visit our{" "}
-                      <Link to="/demo">demo page</Link>.
-                    </p>
-                  )}
-                </div>
+                {purchase === false? (
+                  <>
+                    <p className="purchase__title">Payment details</p>
+                    <div className="purchase__pricing">
+                      <p className="purchase__price">Plan</p>
+                      {next ? (
+                        <p className="purchase__price__des">
+                          Confirm the payment method
+                        </p>
+                      ) : (
+                        <p className="purchase__price__des">
+                          For more details on our plans, visit our{" "}
+                          <Link to="/demo">demo page</Link>.
+                        </p>
+                      )}
+                    </div>
+                  </>
+                ) : null}
+
                 {next ? (
                   purchase ? (
                     <Congrats />
@@ -138,7 +140,6 @@ function PurchaseMain() {
                       </div>
                       <p className="purchase__box__right">CURRENT PLAN</p>
                     </div>
-
                     <div className="purchase__box purchase__box2">
                       <div className="purchase__box__left">
                         <div className="purchase__box__button__sel"></div>
