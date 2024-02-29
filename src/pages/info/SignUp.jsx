@@ -10,12 +10,20 @@ import {
 import { useState } from "react";
 
 function SignUp() {
-  const [email, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
 
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+  const handleFirstChange = (event) => {
+    setFirstName(event.target.value);
+  };
+  const handleLastChange = (event) => {
+    setLastName(event.target.value);
+  };
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
@@ -105,6 +113,34 @@ function SignUp() {
               <form action="" className="signup__form">
                 <h3>Create your account</h3>
                 <div className="signup__input__div">
+                  <label htmlFor="signup__fName" className="fName-label">
+                    <FontAwesomeIcon icon={faUser} className="icon__color" />
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    id="signup__fName"
+                    placeholder="First Name"
+                    className="signup__input"
+                    value={firstName}
+                    onChange={handleFirstChange}
+                  />
+                </div>
+                <div className="signup__input__div">
+                  <label htmlFor="signup__lName" className="lName-label">
+                    <FontAwesomeIcon icon={faUser} className="icon__color" />
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    id="signup__lName"
+                    placeholder="Last Name"
+                    className="signup__input"
+                    value={firstName}
+                    onChange={handleLastChange}
+                  />
+                </div>
+                <div className="signup__input__div">
                   <label htmlFor="signup__email" className="email-label">
                     <FontAwesomeIcon icon={faUser} className="icon__color" />
                   </label>
@@ -115,7 +151,7 @@ function SignUp() {
                     placeholder="Email"
                     className="signup__input"
                     value={email}
-                    onChange={handleUsernameChange}
+                    onChange={handleEmailChange}
                   />
                 </div>
                 <div className="signup__input__div">
