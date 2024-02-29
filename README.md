@@ -46,6 +46,11 @@
   <img src='./readme/purchases.png'/>
 </div>
 <br><br>
+<h3 align='center'>Payment Page 💸</h3>
+<div align='center'>
+  <img src='./readme/payment.png'/>
+</div>
+<br><br>
   <h3 align='center'>Book Page 📖</h3>
 <div align='center'>
   <img src='./readme/book.png'/>
