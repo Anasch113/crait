@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import "./styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../firebase/firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import google from './images/google.png'
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail,
-} from "firebase/auth";
+import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
   const [needReset, setNeedReset] = useState(false);
@@ -27,42 +19,6 @@ function Login() {
     setPassword(event.target.value);
   };
 
-  const handleLogin = async (event) => {
-    event.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate(`/dashboard/${email}`);
-    } catch (error) {
-      setError(error.message);
-      document.querySelector(".login__wrong").style.display = "block";
-    }
-  };
-
-  const passwordSubmit = async (e) => {
-    e.preventDefault();
-    const emailInput = document.querySelector(".login__password__email");
-    const email = emailInput.value.trim();
-    try {
-      await sendPasswordResetEmail(auth, email);
-      document.querySelector(".login__reset").style.display = "block";
-    } catch (error) {
-      console.error("Error sending password reset email: ", error);
-    }
-    emailInput.value = "";
-  };
-
-  const handleGoogleSignIn = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      if (user) {
-        navigate(`/dashboard/${user.email}`);
-      }
-    } catch (error) {
-      console.error("Error signing in with Google: ", error);
-    }
-  };
   return (
     <>
       <section id="logIn" className="login">
@@ -80,7 +36,7 @@ function Login() {
           </div>
           <div className="login__content">
             {needReset ? (
-              <form className="login__form" onSubmit={passwordSubmit}>
+              <form className="login__form">
                 <h3>Reset your password</h3>
                 <p className="login__reset__des">
                   Type your registered email to reset password
@@ -106,26 +62,8 @@ function Login() {
                 <button className="login__submit">Submit</button>
               </form>
             ) : (
-              <form className="login__form" onSubmit={handleLogin}>
+              <form className="login__form">
                 <h3>Log in to your account</h3>
-                <div className="login__form__option__container">
-                  <div
-                    className="login__form__flex"
-                    onClick={handleGoogleSignIn}
-                  >
-                    <div className="login__form__options google__image">
-                      <img
-                        className="login__form__option__image"
-                        src={google}
-                        alt="Google Logo"
-                      />
-                    </div>
-                    <div className="login__form__option__text google__color">
-                      LOG IN WITH GOOGLE
-                    </div>
-                  </div>
-                </div>
-                <p className="login__or">or</p>
                 <p className="login__wrong">Invalid account information</p>
                 <div className="login__input__div">
                   <label htmlFor="login__email" className="email-label">

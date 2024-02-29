@@ -8,14 +8,13 @@ import { useParams } from "react-router-dom";
 import initials from "./images/initials.jpg";
 
 function Dashboard() {
-  const { username } = useParams();
   const [avatar, setAvatar] = useState(initials);
 
   return (
     <>
-      <DashNav username={username} avatar={avatar} />
+      <DashNav avatar={avatar} />
       <DashTop avatar={avatar} />
-      <DashBottom username={username} />
+      <DashBottom />
       <DashFooter />
     </>
   );

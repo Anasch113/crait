@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./styles/DashNav.css";
 import logo from "./images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { auth } from "../firebase/firebase";
-import { signOut } from "firebase/auth";
 import {
   faAngleDown,
   faRightFromBracket,
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate }  from "react-router-dom";
-function DashNav({ username, avatar }) {
+
+function DashNav({ avatar }) {
   const [dropdown, setDropDown] = useState(false);
-  const navigate = useNavigate();
   useEffect(() => {
     if (dropdown === true) {
       document.querySelector(".dropdown").style.display = "block";
@@ -20,14 +18,6 @@ function DashNav({ username, avatar }) {
       document.querySelector(".dropdown").style.display = "none";
     }
   }, [dropdown]);
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-      navigate(`/login`);
-    } catch (error) {
-      console.error("Error signing out:", error.message);
-    }
-  };
   return (
     <>
       <nav className="dashnav" id="dashNav">
@@ -53,7 +43,7 @@ function DashNav({ username, avatar }) {
                   onClick={() => setDropDown(!dropdown)}
                 />
                 <div className="dashnav__right__info">
-                  <p className="dashnav__right__name">{username}</p>
+                  <p className="dashnav__right__name"></p>
                   <p className="dashnav__right__type">All Investments</p>
                 </div>
                 <FontAwesomeIcon
@@ -68,7 +58,7 @@ function DashNav({ username, avatar }) {
       </nav>
       <div className="dropdown__div">
         <div className="dropdown">
-          <div to="/login" className="dropdown__item"  onClick={handleSignOut}>
+          <div className="dropdown__item">
             <p>Sign Out</p>
             <FontAwesomeIcon icon={faRightFromBracket} />
           </div>

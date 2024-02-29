@@ -7,55 +7,17 @@ import {
   faCircleCheck,
   faLock,
 } from "@fortawesome/free-solid-svg-icons";
-import { auth } from "../firebase/firebase";
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
-import google from './images/google.png'
 import { useState } from "react";
+
 function SignUp() {
   const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleGoogleSignIn = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      await signInWithPopup(auth, provider);
-      document.querySelector(".signup__reset").style.display = "block";
-      document.querySelector(".login__wrong").style.display = "none";
-    } catch (error) {
-      console.error("Error signing in with Google: ", error);
-      document.querySelector(".signup__reset").style.display = "none";
-      document.querySelector(".login__wrong").style.display = "block";
-    }
-  };
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
-  };
-
-  const handleSignUp = async (e) => {
-    e.preventDefault();
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      document.querySelector(".signup__reset").style.display = "block";
-      document.querySelector(".login__wrong").style.display = "none";
-      document.querySelectorAll('input[type="email"]').forEach((input) => {
-        input.value = "";
-      });
-      document.querySelectorAll('input[type="password"]').forEach((input) => {
-        input.value = "";
-      });
-    } catch (error) {
-      console.error("Error signing up:", error.message);
-      document.querySelector(".signup__reset").style.display = "none";
-      document.querySelector(".login__wrong").style.display = "block";
-    }
   };
 
   return (
@@ -140,26 +102,8 @@ function SignUp() {
               </Link>
             </div>
             <div className="signup__form__container">
-              <form action="" onSubmit={handleSignUp} className="signup__form">
+              <form action="" className="signup__form">
                 <h3>Create your account</h3>
-                <div className="login__form__option__container">
-                  <div
-                    className="login__form__flex"
-                    onClick={handleGoogleSignIn}
-                  >
-                    <div className="login__form__options google__image">
-                      <img
-                        className="login__form__option__image"
-                        src={google}
-                        alt="Google Logo"
-                      />
-                    </div>
-                    <div className="login__form__option__text google__color">
-                      SIGN UP WITH GOOGLE
-                    </div>
-                  </div>
-                </div>
-                <p className="login__or">or</p>
                 <div className="signup__input__div">
                   <label htmlFor="signup__email" className="email-label">
                     <FontAwesomeIcon icon={faUser} className="icon__color" />

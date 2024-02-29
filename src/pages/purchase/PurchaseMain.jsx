@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import "./styles/PurchaseMain.css";
 import { Link } from "react-router-dom";
 import Payment from "./Payment";
-import { auth } from "../firebase/firebase";
 function PurchaseMain() {
   const [next, setNext] = useState(false);
-  const currentUser = auth.currentUser;
-  const userEmail = currentUser ? currentUser.email : "";
 
   return (
     <>
@@ -178,12 +175,11 @@ function PurchaseMain() {
                     </button>
                   )}
                   {next === true ? (
-                    <Link
-                      to={`/dashboard/${userEmail}`}
+                    <button
                       className={"purchase__button__next"}
                     >
                       Purchase
-                    </Link>
+                    </button>
                   ) : (
                     <button
                       className={"purchase__button__next"}

@@ -8,7 +8,7 @@ import {
   faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-function DashBottom({ username }) {
+function DashBottom() {
   return (
     <section className="dashbottom" id="dashbottom">
       <div className="dash__content">
@@ -24,14 +24,14 @@ function DashBottom({ username }) {
             <div className="dashbottom__box">
               <div className="dashbottom__box__text">
                 <span>NO INVESTMENTS</span>
-                <p>{username}</p>
+                <p>name</p>
               </div>
               <p className="dashbottom__box__location">Boston</p>
             </div>
             <div className="dashbottom__box">
               <div className="dashbottom__box__text">
                 <span>NO INVESTMENTS</span>
-                <p>{username}</p>
+                <p>name</p>
               </div>
               <p className="dashbottom__box__location">Boston</p>
             </div>
