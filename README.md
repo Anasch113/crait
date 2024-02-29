@@ -1,4 +1,4 @@
-<div align='center'><img style="width:20%" src='https://cdn.discordapp.com/attachments/1187219037537714220/1200704731274809344/logo.png?ex=65c7266b&is=65b4b16b&hm=efa50a707707e30eea3cdfca0ec3fe6eef546ca0d099a63468b6c642d5a76129&'/></div>
+<div align='center'><img style="width:20%" src='logo.png'/></div>
 
 <h2>About the project</h2>
 
@@ -11,6 +11,7 @@
 <h3>Built using:</h3>
 
 » CoinGecko API <br>
+» Firebase <br>
 » React JS <br>
 » CSS <br>
 » HTML<br>
