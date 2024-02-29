@@ -105,7 +105,7 @@ function PurchaseMain() {
                   <p className="purchase__price">Plan</p>
                   {next ? (
                     <p className="purchase__price__des">
-                      {" "}
+                      
                       Confirm the payment method
                     </p>
                   ) : (
@@ -188,7 +188,7 @@ function PurchaseMain() {
                       {next === true ? (
                         <button
                           className={"purchase__button__next"}
-                          onClick={() => setNext(true)}
+                          onClick={() => setPurchase(true)}
                         >
                           Purchase
                         </button>
