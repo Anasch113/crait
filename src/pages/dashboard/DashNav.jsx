@@ -7,7 +7,7 @@ import {
   faRightFromBracket,
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link, useNavigate }  from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
 
 function DashNav({ avatar }) {
@@ -22,13 +22,14 @@ function DashNav({ avatar }) {
   }, [dropdown]);
 
   const handleSignOut = () => {
-    auth.signOut()
+    auth
+      .signOut()
       .then(() => {
         navigate("/login");
-        return
+        return;
       })
       .catch((error) => {
-        console.error("Error signing out:", error);
+        return;
       });
   };
   return (
@@ -49,12 +50,11 @@ function DashNav({ avatar }) {
               Purchase
             </Link>
             <div className="dashnav__right__container">
-              <div className="dashnav__right__flex" onClick={() => setDropDown(!dropdown)}>
-                <img
-                  src={avatar}
-                  alt="Avatar"
-                  
-                />
+              <div
+                className="dashnav__right__flex"
+                onClick={() => setDropDown(!dropdown)}
+              >
+                <img src={avatar} alt="Avatar" />
                 <div className="dashnav__right__info">
                   <p className="dashnav__right__name"></p>
                   <p className="dashnav__right__type">All Investments</p>
