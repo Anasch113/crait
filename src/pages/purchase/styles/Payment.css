@@ -1,0 +1,7 @@
+.payment__container{
+    max-width: 700px;
+    padding: 2rem 0rem;
+    margin-top: 2rem;
+    border-bottom: 1px solid #3c3c3f;
+    border-top: 1px solid #3c3c3f;
+}

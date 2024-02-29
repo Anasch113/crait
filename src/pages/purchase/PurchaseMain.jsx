@@ -114,75 +114,74 @@ function PurchaseMain() {
                     </p>
                   )}
                 </div>
-                {next? 
-                 (
+                {next ? (
                   <Payment />
-                 )
-                :
-                (
-                <div className="purchase__box__container">
-                  <div className="purchase__box">
-                    <div className="purchase__box__left">
-                      <div className="purchase__box__button__not"></div>
-                      <div className="purchase__box__text">
-                        <p className="purchase__box__title">
-                          Starter - $0.00/month
-                        </p>
-                        <p className="purchase__box__des">
-                          For personal, private use.
-                        </p>
+                ) : (
+                  <div className="purchase__box__container">
+                    <div className="purchase__box">
+                      <div className="purchase__box__left">
+                        <div className="purchase__box__button__not"></div>
+                        <div className="purchase__box__text">
+                          <p className="purchase__box__title">
+                            Starter - $0.00/month
+                          </p>
+                          <p className="purchase__box__des">
+                            For personal, private use.
+                          </p>
+                        </div>
                       </div>
+                      <p className="purchase__box__right">CURRENT PLAN</p>
                     </div>
-                    <p className="purchase__box__right">CURRENT PLAN</p>
-                  </div>
 
-                  <div className="purchase__box purchase__box2">
-                    <div className="purchase__box__left">
-                      <div className="purchase__box__button__sel"></div>
-                      <div className="purchase__box__text">
-                        <p className="purchase__box__title2">
-                          Pro - $15.00/month
-                        </p>
-                        <p className="purchase__box__des2">
-                          Made for proffesionals to invest.
-                        </p>
+                    <div className="purchase__box purchase__box2">
+                      <div className="purchase__box__left">
+                        <div className="purchase__box__button__sel"></div>
+                        <div className="purchase__box__text">
+                          <p className="purchase__box__title2">
+                            Pro - $15.00/month
+                          </p>
+                          <p className="purchase__box__des2">
+                            Made for proffesionals to invest.
+                          </p>
+                        </div>
                       </div>
+                      <p className="purchase__box__right2">
+                        1 MONTH FREE TRIAL
+                      </p>
                     </div>
-                    <p className="purchase__box__right2">1 MONTH FREE TRIAL</p>
-                  </div>
-                  <div className="purchase__box">
-                    <div className="purchase__box__left">
-                      <div className="purchase__box__button__not"></div>
-                      <div className="purchase__box__text">
-                        <p className="purchase__box__title">
-                          Corporation - $15.00/month per member
-                        </p>
-                        <p className="purchase__box__des">
-                          For teams that need 24/7 support.
-                        </p>
+                    <div className="purchase__box">
+                      <div className="purchase__box__left">
+                        <div className="purchase__box__button__not"></div>
+                        <div className="purchase__box__text">
+                          <p className="purchase__box__title">
+                            Corporation - $15.00/month per member
+                          </p>
+                          <p className="purchase__box__des">
+                            For teams that need 24/7 support.
+                          </p>
+                        </div>
                       </div>
+                      <p className="purchase__box__right">COMING SOON</p>
                     </div>
-                    <p className="purchase__box__right">COMING SOON</p>
                   </div>
-                </div>
                 )}
                 <div className="purchase__buttons__div">
-                  {next === false ?
-                  '' : (
+                  {next === false ? (
+                    ""
+                  ) : (
                     <button
-                    className={"purchase__button__next"}
-                    onClick={() => setNext(false)}
-                  >
-                    Back
-                  </button>
-                  )
-                }
-                 
+                      className={"purchase__button__next"}
+                      onClick={() => setNext(false)}
+                    >
+                      Back
+                    </button>
+                  )}
+
                   <button
                     className={"purchase__button__next"}
                     onClick={() => setNext(true)}
                   >
-                    Next
+                    {next ? "Purchase" : "Next"}
                   </button>
                 </div>
               </div>
