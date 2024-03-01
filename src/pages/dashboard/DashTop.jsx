@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./styles/topdash.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-function DashTop({ avatar }) {
+import { purchase } from "../firebase/firebase";
+function DashTop({ avatar, setCategory, category }) {
   return (
     <section className="dashtop" id="dashtop">
       <div className="dashtop__container">
@@ -21,11 +22,40 @@ function DashTop({ avatar }) {
         </div>
         <div className="dashtop__bottom">
           <div className="dashtop__options">
-            <p className="dashtop__options__allowed">Invest</p>
-            <p className="dashtop__options__not">Members</p>
-            <p className="dashtop__options__not">Calls</p>
-            <p className="dashtop__options__not">Billing</p>
-            <p className="dashtop__options__not">Settings</p>
+            <p
+              className={
+                category === "one"
+                  ? "dashtop__options__allowed"
+                  : "dashtop__options__not"
+              }
+              onClick={() => setCategory("one")}
+            >
+              Invest
+            </p>
+            <p
+              className={
+                purchase && category === "two"
+                  ? "dashtop__options__allowed"
+                  : purchase
+                  ? "dashtop__options__not"
+                  : "dashtop__options__not purchase__not__allowed"
+              }
+              onClick={() => setCategory("two")}
+            >
+              Members
+            </p>
+            <p
+              className={
+                purchase && category === "three"
+                  ? "dashtop__options__allowed"
+                  : purchase
+                  ? "dashtop__options__not"
+                  : "dashtop__options__not purchase__not__allowed"
+              }
+              onClick={() => setCategory("three")}
+            >
+              Settings
+            </p>
           </div>
         </div>
       </div>

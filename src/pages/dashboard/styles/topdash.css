@@ -85,10 +85,13 @@
 }
 .dashtop__options__not {
   color: rgb(134, 134, 138);
-  cursor: not-allowed;
+  cursor: pointer;
   @media (max-width: 500px) {
     display: none;
   }
+}
+.purchase__not__allowed{
+  cursor: not-allowed;
 }
 .dashtop__options__allowed,
 .dashtop__options__not {

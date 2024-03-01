@@ -9,6 +9,7 @@ import initials from "./images/initials.jpg";
 function Dashboard() {
   const [loading, setLoading] = useState(true);
   const avatar = initials;
+  const [category, setCategory] = useState("one");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -24,7 +25,7 @@ function Dashboard() {
     return (
       <>
         <DashNav avatar={avatar} />
-        <DashTop avatar={avatar} />
+        <DashTop avatar={avatar} setCategory={setCategory} category={category}/>
         <DashBottom />
         <DashFooter />
       </>
