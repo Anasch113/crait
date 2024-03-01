@@ -20,7 +20,7 @@ function PurchaseMain() {
         return
       }
     } catch (error) {
-      console.error("Error updating purchase status:", error);
+      console.error("Error updating purchase status: ", error);
     }
   };
 

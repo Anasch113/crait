@@ -70,7 +70,6 @@ function SignUp() {
       setSuccess(false);
       document.querySelector(".login__wrong").style.display = "block";
       document.querySelector(".signup__reset").style.display = "none";
-      console.log(error.message);
     }
   };
 

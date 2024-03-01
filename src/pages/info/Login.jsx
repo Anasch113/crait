@@ -28,10 +28,11 @@ function Login() {
       setPassword("");
       setError(null);
       navigate("/dashboard");
+      document.querySelector(".login__wrong").style.display = "none";
     } catch (error) {
+      document.querySelector(".login__wrong").style.display = "block";
       event.preventDefault();
       setError(error.message);
-      console.log(error);
     }
   };
 
