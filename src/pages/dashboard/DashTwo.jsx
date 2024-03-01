@@ -2,12 +2,11 @@ import React from "react";
 import "./styles/dashtwo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faPlus,
   faChevronLeft,
   faChevronRight,
   faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { activeUser } from "../firebase/firebase";
 function DashTwo() {
   return (
     <section className="dashbottom" id="dashbottom">
@@ -17,6 +16,15 @@ function DashTwo() {
             <div className="dashtwo__flex">
               <p>Members</p>
               <span>1/1 Members used</span>
+            </div>
+          </div>
+          <div className="dashtwo__two">
+            <div className="dashtwo__item__container">
+              <div className="dashtwo__title__flex">
+                <p>NAME</p>
+                <p>EMAIL</p>
+                <p>JOINED</p>
+              </div>
             </div>
           </div>
           <div className="dashtwo__three">

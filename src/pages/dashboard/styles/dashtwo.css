@@ -40,3 +40,17 @@
     justify-content: center;
   }
 }
+.dashtwo__two{
+  background-color: #1C1C21;
+}
+.dashtwo__title__flex{
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.dashtwo__title__flex p{
+  color: rgb(195, 195, 198);
+  font-size: 14px;
+  font-weight: 500;
+}
