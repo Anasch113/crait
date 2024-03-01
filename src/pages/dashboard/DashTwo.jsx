@@ -1,0 +1,54 @@
+import React from "react";
+import "./styles/dashtwo.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlus,
+  faChevronLeft,
+  faChevronRight,
+  faAngleDown,
+} from "@fortawesome/free-solid-svg-icons";
+
+function DashTwo() {
+  return (
+    <section className="dashbottom" id="dashbottom">
+      <div className="dash__content">
+        <div className="dashtwo__container">
+          <div className="dashtwo__title">
+            <div className="dashtwo__flex">
+              <p>Members</p>
+              <span>1/1 Members used</span>
+            </div>
+          </div>
+          <div className="dashtwo__three">
+            <button className="dashbottom__selector">
+              1
+              <FontAwesomeIcon
+                icon={faAngleDown}
+                className="dashbottom__icon"
+              />
+            </button>
+            <div className="dashbottom__three__options">
+              <div className="dashbottom__option">
+                <FontAwesomeIcon
+                  icon={faChevronLeft}
+                  className="dashbottom__icon"
+                />
+                <p>Prev</p>
+              </div>
+              <button disabled>1</button>
+              <div className="dashbottom__option">
+                <p>Next</p>
+                <FontAwesomeIcon
+                  icon={faChevronRight}
+                  className="dashbottom__icon"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default DashTwo;

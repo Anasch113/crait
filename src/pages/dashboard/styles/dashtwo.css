@@ -1,0 +1,42 @@
+.dashtwo {
+  background-color: #131315;
+  padding: 0rem 0rem 8rem 0rem;
+}
+.dashtwo__container {
+  margin: auto;
+  max-width: 1200px;
+  padding: 0rem 1rem;
+}
+.dashbottom__one {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3rem;
+}
+.dashtwo__title {
+  padding-top: 4rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.dashtwo__title span {
+  padding: 5px 12px;
+  border: 1px solid rgb(66, 66, 72);
+  background-color: rgb(44, 44, 48);
+  border-radius: 16px;
+  color: rgb(195, 195, 198);
+  font-size: 14px;
+}
+.dashtwo__flex {
+  display: flex;
+  gap: 1rem;
+}
+.dashtwo__three {
+    margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 500px) {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

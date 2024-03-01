@@ -5,6 +5,7 @@ import DashTop from "./DashTop";
 import DashBottom from "./DashBottom";
 import Loading from "./Loading";
 import initials from "./images/initials.jpg";
+import DashTwo from "./DashTwo";
 
 function Dashboard() {
   const [loading, setLoading] = useState(true);
@@ -25,8 +26,18 @@ function Dashboard() {
     return (
       <>
         <DashNav avatar={avatar} />
-        <DashTop avatar={avatar} setCategory={setCategory} category={category}/>
-        <DashBottom />
+        <DashTop
+            avatar={avatar}
+            setCategory={setCategory}
+            category={category}
+          />
+        {category === "one" ? (
+          <DashBottom />
+        ) : category === "two" ? (
+          <DashTwo />
+        ) : (
+          <p>hi</p>
+        )}
         <DashFooter />
       </>
     );
