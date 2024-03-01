@@ -27,6 +27,7 @@ async function getUserByUID(uid) {
     if (snapshot.exists()) {
       activeUser = snapshot.val();
       username = activeUser.username;
+      console.log(activeUser)
       return activeUser;
     } else {
       activeUser = null;

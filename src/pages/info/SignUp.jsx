@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/SignUp.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,10 +8,10 @@ import {
   faLock,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { auth, database } from "../firebase/firebase";
+import { auth, database} from "../firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import {ref, set } from "firebase/database";
-import { useState } from "react";
+import { ref, set} from "firebase/database";
+
 function SignUp() {
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
@@ -64,11 +64,17 @@ function SignUp() {
       setPassword("");
       setError(null);
       setSuccess(true);
+      document.querySelector(".signup__reset").style.display = "block";
+      document.querySelector(".login__wrong").style.display = "none";
     } catch (error) {
       setSuccess(false);
-      console.log(error.message)
+      document.querySelector(".login__wrong").style.display = "block";
+      document.querySelector(".signup__reset").style.display = "none";
+      console.log(error.message);
     }
   };
+
+
 
   return (
     <section className="signup" id="signUp">

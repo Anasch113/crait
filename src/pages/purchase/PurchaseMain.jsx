@@ -2,8 +2,26 @@ import React, { useState } from "react";
 import "./styles/PurchaseMain.css";
 import { Link } from "react-router-dom";
 import Payment from "./Payment";
+import { auth, database } from "../firebase/firebase";
+import { ref, update } from "firebase/database";
+
 function PurchaseMain() {
   const [next, setNext] = useState(false);
+
+  const handlePurchase = async () => {
+    try {
+      const user = auth.currentUser;
+      if (user) {
+        const db = database;
+        await update(ref(db, `users/${user.uid}`), { purchased: true });
+        return
+      } else {
+        return
+      }
+    } catch (error) {
+      console.error("Error updating purchase status:", error);
+    }
+  };
 
   return (
     <>
@@ -177,6 +195,7 @@ function PurchaseMain() {
                   {next === true ? (
                     <button
                       className={"purchase__button__next"}
+                      onClick={handlePurchase}
                     >
                       Purchase
                     </button>
