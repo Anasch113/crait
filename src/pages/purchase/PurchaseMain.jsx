@@ -4,16 +4,17 @@ import { Link } from "react-router-dom";
 import Payment from "./Payment";
 import { auth, database } from "../firebase/firebase";
 import { ref, update } from "firebase/database";
-
+import { useNavigate } from "react-router-dom";
 function PurchaseMain() {
   const [next, setNext] = useState(false);
-
+  const navigate = useNavigate(); 
   const handlePurchase = async () => {
     try {
       const user = auth.currentUser;
       if (user) {
         const db = database;
         await update(ref(db, `users/${user.uid}`), { purchased: true });
+        navigate("/dashboard");
         return
       } else {
         return

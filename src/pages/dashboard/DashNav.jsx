@@ -8,9 +8,9 @@ import {
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, username } from "../firebase/firebase";
+import { auth, username, purchase } from "../firebase/firebase";
 
-function DashNav({ avatar, name }) {
+function DashNav({ avatar }) {
   const navigate = useNavigate();
   const [dropdown, setDropDown] = useState(false);
 
@@ -48,9 +48,14 @@ function DashNav({ avatar, name }) {
             </div>
           </div>
           <div className="dashnav__right">
+          {purchase? 
+          ''
+            :
             <Link to="/purchase" className="dashnav__button">
               Purchase
             </Link>
+          }
+            
             <div className="dashnav__right__container">
               <div
                 className="dashnav__right__flex"
