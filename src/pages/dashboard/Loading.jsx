@@ -2,10 +2,9 @@ import React from "react";
 import "./styles/Loading.css";
 import Dashboard from "./Dashboard";
 function Loading({ signedin }) {
-  
   return (
     <>
-      {signedin === false ? (
+      {signedin === false? (
         <>
           <div className="spinner"></div>
           <div className="loading__opacity">

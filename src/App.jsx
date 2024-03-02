@@ -13,7 +13,6 @@ import Crypto from "./pages/coin/Crypto.jsx";
 import Services from "./pages/service/services.jsx";
 import Login from "./pages/info/Login.jsx";
 import SignUp from "./pages/info/SignUp.jsx";
-import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Purchase from "./pages/purchase/Purchase.jsx";
 import { auth, getUserByUID } from "./pages/firebase/firebase.js";
 import { onAuthStateChanged } from "firebase/auth";
@@ -49,6 +48,7 @@ function App() {
       setSignedIn(false);
     }
   });
+ console.log(signedin)
   useEffect(() => {
     const apiKey = "CG-QnB4KjkznzXPHBQYHU3is4v7";
     const endpoint = "https://api.coingecko.com/api/v3/coins/markets";
@@ -125,7 +125,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         {"private routes"}
-        <Route path="/dashboard" element={<Loading />} />
+        <Route path="/dashboard" element={<Loading signedin={signedin} />} />
         <Route path="/purchase" element={<Purchase />} />
       </Routes>
     </Router>
