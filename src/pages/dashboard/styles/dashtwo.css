@@ -82,6 +82,9 @@
 .dashtwo__user__img img{
   border-radius: 100%;
   width: 40px;
+  @media (max-width: 400px) {
+    display: none;
+  }
 }
 .dashtwo__bottom{
   align-items: center;
