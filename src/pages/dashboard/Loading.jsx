@@ -1,11 +1,9 @@
 import React from "react";
 import "./styles/Loading.css";
 import Dashboard from "./Dashboard";
-function Loading({ signedin }) {
+function Loading() {
   return (
     <>
-      {signedin === false? (
-        <>
           <div className="spinner"></div>
           <div className="loading__opacity">
             <div className="loading__div">
@@ -82,10 +80,7 @@ function Loading({ signedin }) {
             </div>
           </div>
         </>
-      ) : (
-        <Dashboard />
-      )}
-    </>
+       
   );
 }
 
