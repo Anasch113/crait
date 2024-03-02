@@ -76,7 +76,9 @@
 .dashtop__options {
   display: flex;
   gap: 3.5rem;
- 
+  @media (max-width: 350px) {
+    gap: 1rem;
+  }
 }
 .dashtop__options__allowed {
   border-bottom: 1px solid white;
@@ -86,9 +88,6 @@
 .dashtop__options__not {
   color: rgb(134, 134, 138);
   cursor: pointer;
-  @media (max-width: 500px) {
-    display: none;
-  }
 }
 .purchase__not__allowed{
   cursor: not-allowed;
@@ -98,4 +97,7 @@
   font-size: 0.95rem;
   text-align: center;
   width: 70px;
+  @media (max-width: 350px) {
+    font-size: 0.8rem;
+  }
 }
