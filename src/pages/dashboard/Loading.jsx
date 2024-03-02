@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/Loading.css";
-import Dashboard from "./Dashboard";
 function Loading() {
   return (
     <>

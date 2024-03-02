@@ -16,7 +16,6 @@ import SignUp from "./pages/info/SignUp.jsx";
 import Purchase from "./pages/purchase/Purchase.jsx";
 import { auth, getUserByUID } from "./pages/firebase/firebase.js";
 import { onAuthStateChanged } from "firebase/auth";
-import Loading from "./pages/dashboard/Loading.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 
 const ScrollToTop = () => {
@@ -32,23 +31,25 @@ function App() {
   const [topCoins, setTopCoins] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [signedin, setSignedIn] = useState(false);
-
+  const [error, setError] = useState(null);
+  const [load, setLoad] = useState(null);
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
+      if (user) {
+        setSignedIn(true);
+        setLoad(true)
+        setTimeout(() => {
+          getUserByUID(user.uid).catch((error) => {
+            setError(error.message);
+          });
+        }, 500);
+      } else {
+        setLoad(false)
+        setSignedIn(false);
+      }
     });
   }, []);
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setCurrentUser(user);
-      setSignedIn(true);
-      setTimeout(() => {
-        getUserByUID(user.uid);
-      }, 500);
-    } else {
-      setSignedIn(false);
-    }
-  });
 
   useEffect(() => {
     const apiKey = "CG-QnB4KjkznzXPHBQYHU3is4v7";
@@ -64,24 +65,32 @@ function App() {
         Authorization: `Bearer ${apiKey}`,
       },
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        return response.json();
+      })
       .then((data) => {
         setTopCoins(data);
       })
       .catch((error) => {
-        return error;
+        setError(error.message);
       });
   }, []);
+
   const setArrowStyle = (arrow) => () => {
     document.querySelector(`.${arrow}`).style.left = "3px";
   };
   const resetArrowStyle = (arrow) => () => {
     document.querySelector(`.${arrow}`).style.left = "0px";
   };
+
   function toSection(section) {
     const sectionElement = document.querySelector(`.${section}`);
     sectionElement.scrollIntoView({ behavior: "smooth" });
   }
+
   return (
     <Router>
       <ScrollToTop />
@@ -125,11 +134,16 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        {"private routes"}
-        <Route path="/dashboard" element={<Dashboard /> } />
+        {load?(
+          <Route path="/dashboard" element={<Dashboard />} />
+        ): 'adwawd'
+        
+      }
+        
         <Route path="/purchase" element={<Purchase />} />
       </Routes>
     </Router>
   );
 }
+
 export default App;
