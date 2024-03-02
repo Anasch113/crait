@@ -17,7 +17,6 @@ function Dashboard() {
     }, 1500);
     return () => clearTimeout(timer);
   }, []);
-
   if (loading) {
     return <Loading />;
   } else {

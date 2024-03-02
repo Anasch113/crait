@@ -38,14 +38,14 @@ function App() {
       setCurrentUser(user);
       if (user) {
         setSignedIn(true);
-        setLoad(true)
+        setLoad(true);
         setTimeout(() => {
           getUserByUID(user.uid).catch((error) => {
             setError(error.message);
           });
         }, 500);
       } else {
-        setLoad(false)
+        setLoad(false);
         setSignedIn(false);
       }
     });
@@ -134,13 +134,16 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        {load?(
+        {load ? (
           <Route path="/dashboard" element={<Dashboard />} />
-        ): <Route path="/dashboard" element={<Login />} />
-        
-      }
-        
-        <Route path="/purchase" element={<Purchase />} />
+        ) : (
+          <Route path="/dashboard" element={<Login />} />
+        )}
+        {load ? (
+          <Route path="/purchase" element={<Purchase />} />
+        ) : (
+          <Route path="/purchase" element={<Login />} />
+        )}
       </Routes>
     </Router>
   );
