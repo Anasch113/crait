@@ -29,7 +29,7 @@ function DashTop({ avatar, setCategory, category }) {
                   ? "dashtop__options__allowed"
                   : "dashtop__options__not"
               }
-              onClick={() => setCategory("one")}
+              onClick={purchase ? () => setCategory("one") : undefined}
             >
               Invest
             </p>
@@ -41,7 +41,7 @@ function DashTop({ avatar, setCategory, category }) {
                   ? "dashtop__options__not"
                   : "dashtop__options__not purchase__not__allowed"
               }
-              onClick={() => setCategory("two")}
+              onClick={purchase ? () => setCategory("two") : undefined}
             >
               Members
             </p>
