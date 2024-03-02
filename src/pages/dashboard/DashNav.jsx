@@ -48,14 +48,14 @@ function DashNav({ avatar }) {
             </div>
           </div>
           <div className="dashnav__right">
-          {purchase? 
-          ''
-            :
-            <Link to="/purchase" className="dashnav__button">
-              Purchase
-            </Link>
-          }
-            
+            {purchase ? (
+              ""
+            ) : (
+              <Link to="/purchase" className="dashnav__button">
+                Purchase
+              </Link>
+            )}
+
             <div className="dashnav__right__container">
               <div
                 className="dashnav__right__flex"
@@ -63,9 +63,7 @@ function DashNav({ avatar }) {
               >
                 <img src={avatar} alt="Avatar" />
                 <div className="dashnav__right__info">
-                  <p className="dashnav__right__name">
-                    {username.charAt(0).toUpperCase() + username.slice(1)}
-                  </p>
+                  <p className="dashnav__right__name capitalize">{username}</p>
 
                   <p className="dashnav__right__type">All Investments</p>
                 </div>

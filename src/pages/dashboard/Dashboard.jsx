@@ -32,9 +32,9 @@ function Dashboard() {
             category={category}
           />
         {category === "one" ? (
-          <DashBottom />
+          <DashBottom  />
         ) : category === "two" ? (
-          <DashTwo />
+          <DashTwo avatar={avatar} />
         ) : (
           <p>hi</p>
         )}

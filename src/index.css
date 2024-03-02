@@ -25,7 +25,9 @@ a {
   color: white;
   text-decoration: none;
 }
-
+.capitalize {
+  text-transform: capitalize;
+}
 /* Firefox */
 * {
   scrollbar-width: thin;

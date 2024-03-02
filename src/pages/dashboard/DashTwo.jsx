@@ -7,9 +7,9 @@ import {
   faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { activeUser } from "../firebase/firebase";
-function DashTwo() {
+function DashTwo({ avatar }) {
   return (
-    <section className="dashbottom" id="dashbottom">
+    <section className="dashtwo" id="dashtwo">
       <div className="dash__content">
         <div className="dashtwo__container">
           <div className="dashtwo__title">
@@ -24,6 +24,22 @@ function DashTwo() {
                 <p>NAME</p>
                 <p>EMAIL</p>
                 <p>JOINED</p>
+              </div>
+            </div>
+            <div className="dashtwo__item__container">
+              <div className="dashtwo__title__flex">
+                <div className="dashtwo__user__img">
+                  <img src={avatar} alt="Avatar" />
+                  <p className="capitalize">{activeUser.firstName} {activeUser.lastName}</p>
+                </div>
+                <p className="capitalize">{activeUser.email}</p>
+                <p>2024</p>
+              </div>
+            </div>
+            <div className="dashtwo__item__container2">
+              <div className="dashtwo__bottom">
+                <p>Upgrade your plan to add members to your organization</p>
+                <button>Upgrade plan</button>
               </div>
             </div>
           </div>

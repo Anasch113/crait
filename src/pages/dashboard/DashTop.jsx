@@ -10,7 +10,7 @@ function DashTop({ avatar, setCategory, category }) {
         <div className="dashtop__top">
           <div className="dashtop__left">
             <p className="dashtop__title">Personal Investments</p>
-            <p className="dashtop__free">FREE</p>
+            <p className="dashtop__free">{purchase ? "PRO" : "FREE"}</p>
           </div>
           <div className="dashtop__right">
             <img src={avatar} alt="Avatar" />
