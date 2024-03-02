@@ -46,11 +46,9 @@ function DashTop({ avatar, setCategory, category }) {
               Members
             </p>
             <Link
-            to='/terms'
+              to="/terms"
               className={
-                purchase && category === "three"
-                  ? "dashtop__options__allowed"
-                  : purchase
+                purchase
                   ? "dashtop__options__not"
                   : "dashtop__options__not purchase__not__allowed"
               }

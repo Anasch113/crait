@@ -27,16 +27,16 @@ function Dashboard() {
       <>
         <DashNav avatar={avatar} />
         <DashTop
-            avatar={avatar}
-            setCategory={setCategory}
-            category={category}
-          />
+          avatar={avatar}
+          setCategory={setCategory}
+          category={category}
+        />
         {category === "one" ? (
-          <DashBottom  />
+          <DashBottom />
         ) : category === "two" ? (
           <DashTwo avatar={avatar} />
         ) : (
-          <p>hi</p>
+          ""
         )}
         <DashFooter />
       </>
