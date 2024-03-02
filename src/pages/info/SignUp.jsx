@@ -8,9 +8,9 @@ import {
   faLock,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { auth, database} from "../firebase/firebase";
+import { auth, database } from "../firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { ref, set} from "firebase/database";
+import { ref, set } from "firebase/database";
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -72,8 +72,6 @@ function SignUp() {
       document.querySelector(".signup__reset").style.display = "none";
     }
   };
-
-
 
   return (
     <section className="signup" id="signUp">

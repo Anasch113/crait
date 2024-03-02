@@ -20,7 +20,7 @@ const database = getDatabase(app);
 
 let activeUser = null;
 let username = null;
-let purchase = null
+let purchase = null;
 async function getUserByUID(uid) {
   try {
     const snapshot = await get(child(ref(database), `users/${uid}`));
@@ -40,5 +40,13 @@ async function getUserByUID(uid) {
   }
 }
 
-export { auth, firestore, database, getUserByUID, activeUser, username, purchase };
+export {
+  auth,
+  firestore,
+  database,
+  getUserByUID,
+  activeUser,
+  username,
+  purchase,
+};
 export default app;

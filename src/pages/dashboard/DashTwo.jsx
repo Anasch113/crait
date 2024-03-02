@@ -30,7 +30,9 @@ function DashTwo({ avatar }) {
               <div className="dashtwo__title__flex">
                 <div className="dashtwo__user__img">
                   <img src={avatar} alt="Avatar" />
-                  <p className="capitalize">{activeUser.firstName} {activeUser.lastName}</p>
+                  <p className="capitalize">
+                    {activeUser.firstName} {activeUser.lastName}
+                  </p>
                 </div>
                 <p className="capitalize">{activeUser.email}</p>
                 <p>2024</p>
