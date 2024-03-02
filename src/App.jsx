@@ -17,6 +17,7 @@ import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Purchase from "./pages/purchase/Purchase.jsx";
 import { auth, getUserByUID } from "./pages/firebase/firebase.js";
 import { onAuthStateChanged } from "firebase/auth";
+import Loading from "./pages/dashboard/Loading.jsx";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -124,7 +125,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         {"private routes"}
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Loading />} />
         <Route path="/purchase" element={<Purchase />} />
       </Routes>
     </Router>

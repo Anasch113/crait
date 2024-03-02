@@ -8,39 +8,22 @@ import initials from "./images/initials.jpg";
 import DashTwo from "./DashTwo";
 
 function Dashboard() {
-  const [loading, setLoading] = useState(true);
   const avatar = initials;
   const [category, setCategory] = useState("one");
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <Loading />;
-  } else {
-    return (
-      <>
-        <DashNav avatar={avatar} />
-        <DashTop
-          avatar={avatar}
-          setCategory={setCategory}
-          category={category}
-        />
-        {category === "one" ? (
-          <DashBottom />
-        ) : category === "two" ? (
-          <DashTwo avatar={avatar} />
-        ) : (
-          ""
-        )}
-        <DashFooter />
-      </>
-    );
-  }
+  return (
+    <>
+      <DashNav avatar={avatar} />
+      <DashTop avatar={avatar} setCategory={setCategory} category={category} />
+      {category === "one" ? (
+        <DashBottom />
+      ) : category === "two" ? (
+        <DashTwo avatar={avatar} />
+      ) : (
+        ""
+      )}
+      <DashFooter />
+    </>
+  );
 }
 export default Dashboard;
