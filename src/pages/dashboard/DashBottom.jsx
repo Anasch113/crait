@@ -29,7 +29,7 @@ function DashBottom() {
             <div className="dashbottom__box">
               <div className="dashbottom__box__text">
                 <span>NO INVESTMENTS</span>
-                <p>{username.charAt(0).toUpperCase() + username.slice(1)}</p>
+                <p className="capitalize">{username}</p>
               </div>
               <p className="dashbottom__box__location">Boston</p>
             </div>

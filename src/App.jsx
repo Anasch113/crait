@@ -15,12 +15,11 @@ import Login from "./pages/info/Login.jsx";
 import SignUp from "./pages/info/SignUp.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Purchase from "./pages/purchase/Purchase.jsx";
-import { auth, getUserByUID, activeUser } from "./pages/firebase/firebase.js";
+import { auth, getUserByUID } from "./pages/firebase/firebase.js";
 import { onAuthStateChanged } from "firebase/auth";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -32,6 +31,7 @@ function App() {
   const [topCoins, setTopCoins] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [signedin, setSignedIn] = useState(false);
+  const [allowed, setAllowed] = useState(null);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -86,6 +86,7 @@ function App() {
     const sectionElement = document.querySelector(`.${section}`);
     sectionElement.scrollIntoView({ behavior: "smooth" });
   }
+
   return (
     <Router>
       <ScrollToTop />
