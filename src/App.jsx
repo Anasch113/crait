@@ -136,7 +136,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         {load?(
           <Route path="/dashboard" element={<Dashboard />} />
-        ): 'adwawd'
+        ): <Route path="/dashboard" element={<Login />} />
         
       }
         
