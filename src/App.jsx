@@ -15,15 +15,15 @@ import Login from "./pages/info/Login.jsx";
 import SignUp from "./pages/info/SignUp.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Purchase from "./pages/purchase/Purchase.jsx";
-import { auth, getUserByUID } from "./pages/firebase/firebase.js";
+import { auth, getUserByUID, activeUser } from "./pages/firebase/firebase.js";
 import { onAuthStateChanged } from "firebase/auth";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
   return null;
 };
 
@@ -31,7 +31,6 @@ function App() {
   const [topCoins, setTopCoins] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [signedin, setSignedIn] = useState(false);
-  const [allowed, setAllowed] = useState(null);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -49,7 +48,6 @@ function App() {
       setSignedIn(false);
     }
   });
-
   useEffect(() => {
     const apiKey = "CG-QnB4KjkznzXPHBQYHU3is4v7";
     const endpoint = "https://api.coingecko.com/api/v3/coins/markets";
@@ -59,7 +57,6 @@ function App() {
       per_page: 50,
       page: 1,
     };
-
     fetch(endpoint + "?" + new URLSearchParams(params), {
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -73,20 +70,16 @@ function App() {
         return error;
       });
   }, []);
-
   const setArrowStyle = (arrow) => () => {
     document.querySelector(`.${arrow}`).style.left = "3px";
   };
-
   const resetArrowStyle = (arrow) => () => {
     document.querySelector(`.${arrow}`).style.left = "0px";
   };
-
   function toSection(section) {
     const sectionElement = document.querySelector(`.${section}`);
     sectionElement.scrollIntoView({ behavior: "smooth" });
   }
-
   return (
     <Router>
       <ScrollToTop />
@@ -130,7 +123,6 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-
         {"private routes"}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/purchase" element={<Purchase />} />
@@ -138,5 +130,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
