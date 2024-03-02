@@ -105,6 +105,7 @@ function App() {
             />
           }
         >
+          {"Public Routes"}
           <Route
             path="/"
             element={
@@ -134,6 +135,8 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+
+        {"Private Routes"}
         {load ? (
           <Route path="/dashboard" element={<Dashboard />} />
         ) : (
