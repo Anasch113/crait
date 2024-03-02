@@ -42,7 +42,7 @@ function App() {
       setCurrentUser(user);
       setSignedIn(true);
       setTimeout(() => {
-        getUserByUID(currentUser.uid);
+        getUserByUID(user.uid);
       }, 500);
     } else {
       setSignedIn(false);
