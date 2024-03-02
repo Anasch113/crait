@@ -3,6 +3,7 @@ import "./styles/topdash.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { purchase } from "../firebase/firebase";
+import { Link } from "react-router-dom";
 function DashTop({ avatar, setCategory, category }) {
   return (
     <section className="dashtop" id="dashtop">
@@ -44,7 +45,8 @@ function DashTop({ avatar, setCategory, category }) {
             >
               Members
             </p>
-            <p
+            <Link
+            to='/terms'
               className={
                 purchase && category === "three"
                   ? "dashtop__options__allowed"
@@ -52,10 +54,9 @@ function DashTop({ avatar, setCategory, category }) {
                   ? "dashtop__options__not"
                   : "dashtop__options__not purchase__not__allowed"
               }
-              onClick={() => setCategory("three")}
             >
-              Settings
-            </p>
+              Support
+            </Link>
           </div>
         </div>
       </div>
