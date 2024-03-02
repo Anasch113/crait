@@ -3,7 +3,7 @@ import "./styles/Login.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 function Login() {
@@ -36,6 +36,22 @@ function Login() {
     }
   };
 
+  const passwordSubmit = async (e) => {
+    e.preventDefault();
+    const emailInput = document.querySelector(".login__password__email");
+    const email = emailInput.value.trim();
+    try {
+      await sendPasswordResetEmail(auth, email);
+      document.querySelector(".login__reset").style.display = "block";
+      document.querySelector(".login__reset__des").style.display = "none";
+    } catch (error) {
+      document.querySelector(".login__reset__des").style.display = "block";
+      document.querySelector(".login__reset").style.display = "none";
+      console.error("Error sending password reset email: ", error);
+    }
+    emailInput.value = "";
+  };
+
   return (
     <>
       <section id="logIn" className="login">
@@ -53,7 +69,7 @@ function Login() {
           </div>
           <div className="login__content">
             {needReset ? (
-              <form className="login__form">
+              <form className="login__form" onSubmit={passwordSubmit}>
                 <h3>Reset your password</h3>
                 <p className="login__reset__des">
                   Type your registered email to reset password
