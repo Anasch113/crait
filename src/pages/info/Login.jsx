@@ -70,8 +70,8 @@ function Login() {
               </Link>
             </p>
             <Link to="/signup" className="login__link2">
-                Sign up
-              </Link>
+              Sign up
+            </Link>
           </div>
           <div className="login__content">
             {needReset ? (
@@ -97,7 +97,9 @@ function Login() {
                     className="login__input login__password__email"
                   />
                 </div>
-
+                <p className="login__forgot" onClick={() => setNeedReset(false)}>
+                  Remember your password?
+                </p>
                 <button className="login__submit">Submit</button>
               </form>
             ) : (
