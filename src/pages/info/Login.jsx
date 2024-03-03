@@ -69,6 +69,9 @@ function Login() {
                 Sign up
               </Link>
             </p>
+            <Link to="/signup" className="login__link2">
+                Sign up
+              </Link>
           </div>
           <div className="login__content">
             {needReset ? (

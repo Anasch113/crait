@@ -58,6 +58,14 @@
   color: black;
   font-weight: 500;
 }
+.login__link2{
+  display: none;
+  color: black;
+  font-weight: 500;
+  @media (max-width: 500px) {
+    display: block;
+  }
+}
 .login__top__text {
   @media (max-width: 500px) {
     display: none;

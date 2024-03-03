@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles/SignUp.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -20,7 +20,7 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-
+  const navigate = useNavigate();
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -66,6 +66,7 @@ function SignUp() {
       setSuccess(true);
       document.querySelector(".signup__reset").style.display = "block";
       document.querySelector(".login__wrong").style.display = "none";
+      navigate("/login");
     } catch (error) {
       setSuccess(false);
       document.querySelector(".login__wrong").style.display = "block";
