@@ -75,11 +75,11 @@ footer {
   transition: all 0.1s ease-in-out;
   @media (max-width: 500px) {
     font-size: 0.8rem;
-    max-width: 150px;
+    max-width: 9.375rem;
   }
   @media (max-width: 350px) {
     font-size: 0.8rem;
-    max-width: 90px;
+    max-width: 5.625rem;
   }
 }
 .footer__des:hover{
