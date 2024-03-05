@@ -5,7 +5,7 @@
 }
 .dashtwo__container {
   margin: auto;
-  max-width: 1200px;
+  max-width: 75rem;
   padding: 0rem 1rem;
 }
 .dashbottom__one {
@@ -21,12 +21,12 @@
   margin-bottom: 2rem;
 }
 .dashtwo__title span {
-  padding: 5px 12px;
+  padding: 0.3125rem 0.75rem;
   border: 1px solid rgb(66, 66, 72);
   background-color: rgb(44, 44, 48);
-  border-radius: 16px;
+  border-radius: 1rem;
   color: rgb(195, 195, 198);
-  font-size: 14px;
+  font-size: 0.875rem;
   @media (max-width: 400px) {
     display: none;
   }
@@ -46,7 +46,7 @@
   }
 }
 .dashtwo__two{
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background-color: #1C1C21;
 }
 .dashtwo__item__container{
@@ -56,10 +56,10 @@
 .dashtwo__item__container2{
   padding: 1.5rem;
   color: rgb(195, 195, 198);
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .dashtwo__title__flex{
-  max-width: 600px;
+  max-width: 37.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,7 +72,7 @@
 }
 .dashtwo__title__flex p{
   color: rgb(195, 195, 198);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 .dashtwo__user__img{
@@ -82,7 +82,7 @@
 }
 .dashtwo__user__img img{
   border-radius: 100%;
-  width: 40px;
+  width: 2.5rem;
   @media (max-width: 400px) {
     display: none;
   }
@@ -99,9 +99,9 @@
 .dashtwo__bottom button{
   background-color: rgb(28, 28, 33);
   border: 1px solid rgb(66, 66, 72);
-  padding: 10px 16px;
+  padding: 0.625rem 1rem;
   color: rgb(168, 168, 170);
   font-size: 1rem;
-  border-radius: 4px;
+  border-radius: 0.25;
   cursor: not-allowed;
 }

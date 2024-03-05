@@ -22,7 +22,7 @@
   border-right: 1px solid #2c2c30;
   color: #bdbdbd;
   font-size: 0.9rem;
-  padding-right: 20px;
+  padding-right: 1.25rem;
   @media (max-width: 700px) {
     border: none;
     padding-right: 0px;
@@ -46,8 +46,8 @@
   border-right: 1px solid #2c2c30;
   color: #bdbdbd;
   font-size: 0.9rem;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   transition: all 0.15 ease-in-out;
   @media (max-width: 700px) {
     border: none;
@@ -58,7 +58,7 @@
   border-right: none !important;
   color: #bdbdbd;
   font-size: 0.9rem;
-  padding-left: 20px;
+  padding-left: 1.25rem;
   transition: all 0.15 ease-in-out;
   @media (max-width: 700px) {
     padding-left: 0px;

@@ -17,7 +17,7 @@
   padding: 1rem 0rem;
 }
 .dashnav__left__logo img {
-  width: 20px;
+  width: 1.25rem;
 }
 .dashnav__left__logo__name {
   font-size: 1.2rem;
@@ -25,15 +25,15 @@
 }
 .dashnav__beta {
   background-color: #424248;
-  block-size: 28.5469px 25px;
-  border-radius: 20px;
+  block-size: 1.78rem 1.5625rem;
+  border-radius: 1.25rem;
   color: #bfbdc2;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 1.68px;
-  line-height: 18.4px;
+  letter-spacing: 0.105rem;
+  line-height: 1.15rem;
   margin-left: 0.7rem;
-  padding: 4px 12px;
+  padding: 0.25rem 0.75rem;
   @media (max-width: 320px) {
     display: none;
   }
@@ -65,9 +65,9 @@
   font-size: 0.8rem;
   font-weight: 500;
   gap: 0.3rem;
-  line-height: 20px;
+  line-height: 1.25rem;
   margin-right: 1rem;
-  padding: 8px 17px;
+  padding: 0.5rem 1.065rem;
   position: relative;
   text-align: center;
   transition: all 0.3s ease-in-out;
@@ -85,7 +85,7 @@
   padding-left: 1.5rem;
 }
 .dashnav__right__flex img {
-  block-size: 40px;
+  block-size: 2.5rem;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -117,28 +117,28 @@
 }
 .dropdown {
   background-color: #131315;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0.625rem;
+  border-bottom-right-radius: 0.625rem;
   border-top: none;
   border: 1px solid #2c2c30;
   display: none;
   margin-right: 2rem;
   padding: 1rem;
   position: fixed;
-  width: 214px;
+  width: 13.375rem;
   z-index: 100;
   @media (max-width: 500px) {
     margin-right: 1rem;
   }
 }
 .dropdown__item {
-  border-radius: 10px;
+  border-radius: 0.625rem;
   color: #bdbdbd;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   margin: auto;
-  max-width: 170px;
+  max-width: 10.625rem;
   padding: 0.5rem;
   transition: all 0.1s ease-in-out;
 }
