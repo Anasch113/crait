@@ -22,7 +22,7 @@ function Payment() {
               code ? "purchase__box__button__not" : "purchase__box__button__sel"
             }
           ></div>
-          <p className="purchase__box__title2">Add new payment method</p>
+          <p className="purchase__box__title2">Contant for other methods</p>
         </div>
         {code ? (
           ""
@@ -30,7 +30,7 @@ function Payment() {
           <form>
             <div className="payment__flex__form">
               <label htmlFor="cardHolderName">Email</label>
-              <input type="text" id="cardHolderName" name="cardHolderName" className="payment__input" placeholder="Cardholder name"/>
+              <input type="text" id="cardHolderName" name="cardHolderName" className="payment__input" placeholder="Email"/>
             </div>
           </form>
         )}
