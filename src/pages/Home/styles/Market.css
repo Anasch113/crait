@@ -56,7 +56,7 @@
 
 .market__next {
   align-self: end;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   border: 1px solid #776b96;
   color: #f4f0ff;
   cursor: pointer;
@@ -64,7 +64,7 @@
   font-family: "Inter", sans-serif;
   font-weight: 500;
   gap: 0.3rem;
-  line-height: 20px;
+  line-height: 1.2rem;
   margin-top: 1rem;
   position: relative;
   text-align: center;

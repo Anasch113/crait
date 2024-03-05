@@ -82,7 +82,7 @@
 .hero__content__text p {
   font-size: 1.225rem;
   font-weight: 400;
-  max-width: 800px;
+  max-width: 50rem;
   @media (max-width: 1000px) {
     text-align: start;
   }
@@ -114,11 +114,11 @@
   font-size: 0.875rem;
   font-family: "Inter", sans-serif;
   border: 1px solid #726690;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   position: relative;
   color: #f4f0ff;
   text-align: center;
-  line-height: 20px;
+  line-height: 1.2rem;
   font-weight: 500;
   z-index: 1;
   cursor: pointer;
@@ -133,7 +133,7 @@
     0 8px 8px 0 rgba(16, 0, 51, 0.34), 0 19px 11px 0 rgba(16, 0, 51, 0.2),
     0 34px 14px 0 rgba(16, 0, 51, 0.06), 0 53px 15px 0 rgba(16, 0, 51, 0.01),
     inset 0 0 12px 0 hsla(0, 0%, 100%, 0.08), inset 0 -8px 32px 0 #1e0d49;
-  padding: 8px 17px;
+  padding: 0.5rem 1.065rem;
   transition: all 0.3s ease-in-out;
   @media (max-width: 1000px) {
     text-align: start;

@@ -18,7 +18,7 @@
   grid-template-rows: repeat(2, 1fr);
   height: 33rem;
   justify-content: center;
-  margin-top: 48px;
+  margin-top: 3rem;
   @media (max-width: 800px) {
     display: none;
   }
@@ -185,7 +185,7 @@
   .slider__container__3,
   .slider__container__4,
   .slider__container__5 {
-    border-radius: 15px;
+    border-radius: 0.925rem;
     border: 1px solid #302858;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 15rem;
@@ -205,10 +205,10 @@
   background-color: #9c63e6 !important;
   border-radius: 50%;
   cursor: pointer;
-  height: 10px;
+  height: 0.625rem;
   margin: 0 5px;
   transition: background-color 0.3s ease;
-  width: 10px;
+  width: 0.625rem;
 }
 
 .swiper-pagination-bullet-active {
