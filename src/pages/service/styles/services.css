@@ -3,7 +3,7 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    max-width: 2000px;
+    max-width: 125rem;
     padding: 5rem 1rem 0rem 1rem;
     background-image: url(../images/Untitled.png);
     background-position: top;
@@ -22,7 +22,7 @@
   border: 1px solid #313c51;
   background-color: #030316;
   padding: 2rem 4rem 2rem 2rem;
-  max-width: 2000px;
+  max-width: 125rem;
   gap: 10rem;
   border-radius: 20px;
   display: flex;
@@ -63,7 +63,7 @@
   margin-bottom: 1.2rem;
 }
 .service__box__reasons p {
-  max-width: 400px;
+  max-width: 25rem;
   @media (max-width: 400px) {
     font-size: 0.9rem;
   }
@@ -71,7 +71,7 @@
 .services___box__right {
   background-color: #130e22;
   height: auto;
-  max-width: 700px;
+  max-width: 43.75rem;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -91,7 +91,7 @@
   }
 }
 .service__right__div img {
-  width: 35px;
+  width: 2.1875rem;
 }
 .service__right__content{
     display: flex;
