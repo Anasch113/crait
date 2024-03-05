@@ -3,7 +3,6 @@ import "./styles/Loading.css";
 function Loading() {
   return (
     <>
-      <div className="spinner"></div>
       <div className="loading__opacity">
         <div className="loading__div">
           <nav className="dashnav" id="dashNav">
