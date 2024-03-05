@@ -3,11 +3,11 @@
   height: auto;
   background: #10111f;
   border: 1px solid #2a2a30;
-  max-width: 600px;
+  max-width: 37.5rem;
   padding: 2rem;
-  border-radius: 36px;
+  border-radius: 2rem;
   @media (max-width: 1200px) {
-    max-width: 800px;
+    max-width: 50rem;
   }
   @media (max-width: 500px) {
     padding: 1.5rem;
@@ -30,9 +30,9 @@
   }
 }
 .book__info form {
-  max-width: 500px;
+  max-width: 31.25rem;
   @media (max-width: 1200px) {
-    max-width: 800px;
+    max-width: 50rem;
   }
 }
 .book__label {
@@ -40,7 +40,7 @@
 }
 .book__grid {
   margin: 3rem 0rem;
-  max-width: 500px;
+  max-width: 31.25rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -58,13 +58,13 @@
 .book__input {
   background-color: #151623;
   border: 1px solid #2c2d39;
-  border-radius: 8px;
-  padding: 10px 12px;
+  border-radius: 0.5rem;
+  padding: 0.625rem 0.75rem;
   color: white;
   font-weight: 700;
   width: auto;
   @media (max-width: 500px) {
-    padding: 10px 5px;
+    padding: 0.625rem 0.3105rem;
   }
 }
 .book__input::placeholder {
@@ -101,7 +101,7 @@
 }
 .book__radio {
   display: inline-block;
-  width: 20px;
+  width: 1.25rem;
 }
 input[type="radio"] {
   appearance: none;
@@ -109,16 +109,16 @@ input[type="radio"] {
   -moz-appearance: none;
   border: 1px solid #333;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 1.1rem;
+  height: 1.1rem;
   outline: none;
-  margin-right: 5px;
+  margin-right: 0.3105rem;
   background-color: transparent;
   cursor: pointer;
 }
 input[type="radio"]:checked {
   background-image: url(../images/check.png);
-  background-size: 16px;
+  background-size: 1rem;
   background-repeat: no-repeat;
   outline: none;
   appearance: none;
@@ -136,16 +136,16 @@ input[type="checkbox"] {
   -moz-appearance: none;
   border: 1px solid #333;
   border-radius: 20%;
-  width: 18px;
-  height: 18px;
+  width: 1.1rem;
+  height: 1.1rem;
   outline: none;
-  margin-right: 5px;
+  margin-right: 0.3105rem;
   background-color: transparent;
   cursor: pointer;
 }
 input[type="checkbox"]:checked {
   background-image: url(../images/check.png);
-  background-size: 16.5px;
+  background-size: 0.9875rem;
   background-repeat: no-repeat;
   background-position: center;
   outline: none;
@@ -159,15 +159,15 @@ input[type="checkbox"]:checked {
   resize: none;
   font-family: "Inter", sans-serif;
   padding: 0.7rem 1rem 1rem 0.7rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   width: 100%;
-  max-width: 500px;
-  height: 200px;
-  max-height: 200px;
+  max-width: 31.25rem;
+  height: 12.5rem;
+  max-height: 12.5rem;
   color: white;
   margin-bottom: 1rem;
   @media (max-width: 1200px) {
-    max-width: 800px;
+    max-width: 50rem;
   }
 }
 .book__textarea::placeholder {
@@ -187,10 +187,10 @@ input[type="checkbox"]:checked {
   font-size: 0.875rem;
   font-family: "Inter", sans-serif;
   border: 1px solid #726690;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   color: #f4f0ff;
   text-align: center;
-  line-height: 20px;
+  line-height: 1.25rem;
   font-weight: 500;
   z-index: 1;
   cursor: pointer;
@@ -205,7 +205,7 @@ input[type="checkbox"]:checked {
     0 8px 8px 0 rgba(16, 0, 51, 0.34), 0 19px 11px 0 rgba(16, 0, 51, 0.2),
     0 34px 14px 0 rgba(16, 0, 51, 0.06), 0 53px 15px 0 rgba(16, 0, 51, 0.01),
     inset 0 0 12px 0 hsla(0, 0%, 100%, 0.08), inset 0 -8px 32px 0 #1e0d49;
-  padding: 8px 17px;
+  padding: 0.5rem 1.05rem;
   transition: all 0.3s ease-in-out;
 }
 .book__submit:hover {

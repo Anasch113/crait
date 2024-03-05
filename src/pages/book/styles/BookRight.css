@@ -3,9 +3,9 @@
   height: auto;
   background-color: #000014;
   border: 1px solid #1A1A27;
-  max-width: 600px;
+  max-width: 37.5rem;
   padding: 1.5rem 2rem;
-  border-radius: 36px;
+  border-radius: 2.25rem;
   @media (max-width: 1200px) {
     max-width: 800px;
   }
@@ -42,7 +42,7 @@
   }
 }
 .book__logo__grid {
-  max-width: 500px;
+  max-width: 31.25rem;
   display: grid;
   column-gap: 2rem;
   justify-content: center;
@@ -57,9 +57,9 @@
   }
 }
 .book__logo__grid img {
-  width: 100px;
+  width: 6.25rem;
   display: inline-block;
   @media (max-width: 500px) {
-    width: 70px;
+    width: 4.375rem;
   }
 }
