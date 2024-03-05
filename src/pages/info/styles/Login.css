@@ -27,7 +27,7 @@
 }
 .login__container {
   margin: auto;
-  max-width: 1300px;
+  max-width: 81.25rem;
   padding: 0rem 2rem 5rem 2rem;
   text-align: right;
   @media (max-width: 450px) {
@@ -85,7 +85,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 400px;
+  width: 25rem;
 }
 .login__form h3 {
   font-weight: 400;
@@ -104,11 +104,11 @@
 .login__form__options {
   align-items: center;
   background-color: white;
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
+  border-bottom-left-radius: 1.25rem;
+  border-top-left-radius: 1.25rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: flex;
-  height: 42px;
+  height: 2.625rem;
   justify-content: center;
   padding-left: 0.5rem;
 }
@@ -118,16 +118,16 @@
 }
 .login__form__option__image {
   margin-right: 0.5rem;
-  width: 20px;
+  width: 1.25rem;
 }
 .login__form__option__text {
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
+  border-bottom-right-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
   color: white;
   cursor: pointer;
   font-size: 0.95rem;
   font-weight: 500;
-  max-width: 290px;
+  max-width: 18.125rem;
   padding-left: 1.3rem;
   padding-right: 5rem;
   padding: 0.7rem;
@@ -167,7 +167,7 @@ input:focus {
 }
 .login__input__div {
   background-color: #edf2f7;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
   padding: 0.7rem 1rem;
@@ -193,16 +193,16 @@ input:focus {
 .login__button,
 .login__submit {
   background: #000;
-  border-radius: 24px;
+  border-radius: 1.5rem;
   border: 0;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
-  height: 46px;
-  line-height: 46px;
-  margin: 32px 0 0;
+  height: 2.875rem;
+  line-height: 2.875rem;
+  margin: 2rem 0 0;
   padding: 0rem 9rem;
   text-align: center;
   transition: all 0.2s ease-in-out;
@@ -229,10 +229,10 @@ input:focus {
   margin-bottom: 1rem;
 }
 .login__submit {
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 .login__password__email {
   @media (max-width: 400px) {
-    max-width: 150px;
+    max-width: 9.375rem;
   }
 }
