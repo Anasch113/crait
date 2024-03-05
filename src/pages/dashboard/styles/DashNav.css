@@ -124,7 +124,7 @@
   display: none;
   margin-right: 2rem;
   padding: 1rem;
-  position: fixed;
+  position: absolute;
   width: 13.375rem;
   z-index: 100;
   @media (max-width: 500px) {
