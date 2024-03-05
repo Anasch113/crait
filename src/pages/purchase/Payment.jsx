@@ -16,7 +16,7 @@ function Payment() {
         </div>
       </div>
       <div className="payment__new">
-        <div className="payment__flex">
+        <div className="payment__flex" onClick={() => setCode(false)}>
           <div
             className={
               code ? "purchase__box__button__not" : "purchase__box__button__sel"
