@@ -1,13 +1,22 @@
-.loading__opacity {
-  background-color: black;
-}
 .loading__div {
-  filter: blur(2px);
   height: 100vh;
-  opacity: 0.7;
   width: 100vw;
+  background-color: #101011;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.dash__filler {
-  background-color: #131315;
-  height: 16.1vh;
+.loading__flex img {
+  width: 100px;
+  @media (max-width: 400px) {
+    width: 80px;
+  }
+}
+
+.loading__flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
 }
