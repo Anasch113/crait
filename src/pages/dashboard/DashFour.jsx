@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/dashfour.css";
 import { auth, database, activeUser } from "../firebase/firebase";
+import { disableNetwork } from "firebase/firestore";
 function DashFour({ avatar }) {
-    console.log(auth.currentUser)
+  const [del, setDel] = useState(false);
   const handleDeleteAccount = async () => {
     try {
       await auth.currentUser.delete();
@@ -11,10 +12,10 @@ function DashFour({ avatar }) {
         await database.ref(`users/${auth.currentUser.uid}`).remove();
       }
     } catch (error) {
-      return
+      return;
     }
   };
-  
+
   return (
     <div className="dashfour" id="dashfour">
       <div className="dashfour__container">
@@ -64,7 +65,17 @@ function DashFour({ avatar }) {
                 </div>
               </div>
               <div className="dashfour__bottom">
-                <button >Delete</button>
+                {del ? (
+                  <div className="dashfour__del__div">
+                    <p className="dashfour__del__p">Are you sure?</p>
+                    <div>
+                      <button onClick={() => setDel(false)} className="dashfour__margin">Cancel</button>
+                      <button onClick={handleDeleteAccount}>Delete</button>
+                    </div>
+                  </div>
+                ) : (
+                  <button onClick={() => setDel(true)}>Delete</button>
+                )}
               </div>
             </div>
           </div>

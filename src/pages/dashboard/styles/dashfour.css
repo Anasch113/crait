@@ -96,3 +96,22 @@
 .dashfour__bottom button:hover {
   border-color: rgb(117, 117, 119);
 }
+.dashfour__del__div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.dashfour__bottom{
+    display: flex;
+    justify-content: end;
+}
+.dashfour__del__p {
+  color: rgb(195, 195, 198);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.dashfour__margin{
+    margin-right: 0.5rem;
+}
