@@ -76,7 +76,7 @@
 .dashtop__options {
   display: flex;
   gap: 3.5rem;
-  @media (max-width: 350px) {
+  @media (max-width: 500px) {
     gap: 1rem;
   }
 }
