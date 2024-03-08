@@ -33,7 +33,7 @@ function Dashboard() {
         ) : category === "two" ? (
           <DashTwo avatar={avatar} />
         ) : category === "four" ?(
-          ''
+          <DashTwo avatar={avatar} />
         ):''}
         <DashFooter />
       </>
