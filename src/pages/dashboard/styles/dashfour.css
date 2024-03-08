@@ -2,12 +2,16 @@
   background-color: #131315;
   height: 65vh;
 }
+.dashfour__container {
+  padding-top: 2rem;
+}
 .dashfour__flex {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   max-width: 75rem;
   gap: 2rem;
+  padding: 0rem 1rem;
 }
 .dashfour__del {
   border-radius: 0.9rem;
@@ -35,6 +39,15 @@
   padding: 1rem 0.5rem;
   border: 1px solid #424248;
   border-radius: 0.6rem;
+  @media (max-width: 900px) {
+    max-width: 20rem;
+  }
+  @media (max-width: 750px) {
+    max-width: 10rem;
+  }
+  @media (max-width: 500px) {
+    display: none;
+  }
 }
 .dashfour__image p {
   color: rgb(195, 195, 198);
@@ -63,11 +76,20 @@
 .dashfour__bottom {
   padding: 2rem 0rem 2rem 0rem;
   text-align: end;
+  @media (max-width: 500px) {
+    text-align: center;
+  }
 }
 .dashfour__bottom button {
   border: 1px solid rgb(66, 66, 72);
+  border-radius: 0.2rem;
   background-color: transparent;
   font-weight: 500;
   color: rgb(249, 249, 250);
   padding: 0.7rem 1rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.dashfour__bottom button:hover {
+  border-color: rgb(117, 117, 119);
 }
