@@ -1,7 +1,20 @@
 import React from "react";
 import "./styles/dashfour.css";
-import { activeUser } from "../firebase/firebase";
+import { auth, database, activeUser } from "../firebase/firebase";
 function DashFour({ avatar }) {
+    console.log(auth.currentUser)
+  const handleDeleteAccount = async () => {
+    try {
+      await auth.currentUser.delete();
+
+      if (activeUser) {
+        await database.ref(`users/${auth.currentUser.uid}`).remove();
+      }
+    } catch (error) {
+      return
+    }
+  };
+  
   return (
     <div className="dashfour" id="dashfour">
       <div className="dashfour__container">
@@ -51,7 +64,7 @@ function DashFour({ avatar }) {
                 </div>
               </div>
               <div className="dashfour__bottom">
-                <button>Delete</button>
+                <button >Delete</button>
               </div>
             </div>
           </div>
