@@ -16,7 +16,7 @@ function DashTop({ avatar, setCategory, category }) {
                 : category === "two"
                 ? "Current Members"
                 : category === "four"
-                ? "Account"
+                ? "Account Settings"
                 : ""}
             </p>
             <p className="dashtop__free">{purchase ? "PRO" : "FREE"}</p>
@@ -52,6 +52,18 @@ function DashTop({ avatar, setCategory, category }) {
               onClick={purchase ? () => setCategory("two") : undefined}
             >
               Members
+            </p>
+            <p
+              className={
+                purchase && category === "four"
+                  ? "dashtop__options__allowed"
+                  : purchase
+                  ? "dashtop__options__not"
+                  : "dashtop__options__not purchase__not__allowed"
+              }
+              onClick={purchase ? () => setCategory("four") : undefined}
+            >
+              Account
             </p>
             <Link
               to={purchase ? "/terms" : ""}
