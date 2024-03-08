@@ -15,6 +15,8 @@ function DashTop({ avatar, setCategory, category }) {
                 ? "Personal Investments"
                 : category === "two"
                 ? "Current Members"
+                : category === "four"
+                ? "Current Members"
                 : ""}
             </p>
             <p className="dashtop__free">{purchase ? "PRO" : "FREE"}</p>
