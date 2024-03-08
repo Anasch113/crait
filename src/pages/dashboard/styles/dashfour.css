@@ -1,0 +1,73 @@
+.dashfour {
+  background-color: #131315;
+  height: 65vh;
+}
+.dashfour__flex {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 75rem;
+  gap: 2rem;
+}
+.dashfour__del {
+  border-radius: 0.9rem;
+  border: 1px solid #2c2c30;
+  background-color: #1c1c21;
+  padding: 1rem 1rem;
+}
+.dashfour__div__container {
+  border-left: 2px solid #ff4238;
+  padding: 0rem 1rem 0rem 1rem;
+}
+.dashfour__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0rem 2rem 0rem;
+  align-items: center;
+  border-bottom: 1px solid #2c2c30;
+}
+.dashfour__image {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  width: 100%;
+  max-width: 30rem;
+  padding: 1rem 0.5rem;
+  border: 1px solid #424248;
+  border-radius: 0.6rem;
+}
+.dashfour__image p {
+  color: rgb(195, 195, 198);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.dashfour__image img {
+  border-radius: 100%;
+  width: 2.5rem;
+  @media (max-width: 400px) {
+    display: none;
+  }
+}
+.dashfour__left__des {
+  color: rgb(195, 195, 198);
+  font-size: 0.875rem;
+  font-weight: 500;
+  max-width: 20rem;
+}
+.dashfour__delete__title {
+  color: #ff4238;
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.dashfour__bottom {
+  padding: 2rem 0rem 2rem 0rem;
+  text-align: end;
+}
+.dashfour__bottom button {
+  border: 1px solid rgb(66, 66, 72);
+  background-color: transparent;
+  font-weight: 500;
+  color: rgb(249, 249, 250);
+  padding: 0.7rem 1rem;
+}
