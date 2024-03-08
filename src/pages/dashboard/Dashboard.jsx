@@ -6,6 +6,7 @@ import DashBottom from "./DashBottom";
 import initials from "./images/initials.jpg";
 import DashTwo from "./DashTwo";
 import Loading from "./Loading";
+import DashFour from "./DashFour";
 
 function Dashboard() {
   const avatar = initials;
@@ -33,7 +34,7 @@ function Dashboard() {
         ) : category === "two" ? (
           <DashTwo avatar={avatar} />
         ) : category === "four" ?(
-          <DashTwo avatar={avatar} />
+          <DashFour avatar={avatar}/>
         ):''}
         <DashFooter />
       </>
