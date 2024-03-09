@@ -41,6 +41,17 @@ function DashTop({ avatar, setCategory, category }) {
             >
               Invest
             </p>
+
+            <p
+              className={
+                category === "four"
+                  ? "dashtop__options__allowed"
+                  : "dashtop__options__not"
+              }
+              onClick={() => setCategory("four")}
+            >
+              Account
+            </p>
             {purchase ? (
               <>
                 <p
@@ -65,17 +76,6 @@ function DashTop({ avatar, setCategory, category }) {
             ) : (
               ""
             )}
-
-            <p
-              className={
-                category === "four"
-                  ? "dashtop__options__allowed"
-                  : "dashtop__options__not"
-              }
-              onClick={() => setCategory("four")}
-            >
-              Account
-            </p>
           </div>
         </div>
       </div>
