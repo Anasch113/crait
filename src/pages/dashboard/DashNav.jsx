@@ -7,6 +7,8 @@ import {
   faRightFromBracket,
   faAngleUp,
   faUser,
+  faMoneyBillTrendUp,
+  faPeopleGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, username, purchase } from "../firebase/firebase";
@@ -78,6 +80,26 @@ function DashNav({ avatar, setCategory }) {
       </nav>
       <div className="dropdown__div">
         <div className="dropdown">
+        <div
+            className="dropdown__item"
+            onClick={() => {
+              setDropDown(!dropdown),
+              setCategory('one')
+            }}
+          >
+            <p>Invest</p>
+            <FontAwesomeIcon icon={faMoneyBillTrendUp} />
+          </div>
+          <div
+            className="dropdown__item"
+            onClick={() => {
+              setDropDown(!dropdown),
+              setCategory('one')
+            }}
+          >
+            <p>Members</p>
+            <FontAwesomeIcon icon={faPeopleGroup} />
+          </div>
           <div
             className="dropdown__item"
             onClick={() => {
