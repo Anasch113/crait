@@ -10,7 +10,6 @@ import {
   faMoneyBillTrendUp,
   faPeopleGroup,
   faPhone,
-
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, username, purchase } from "../firebase/firebase";
@@ -82,11 +81,19 @@ function DashNav({ avatar, setCategory }) {
       </nav>
       <div className="dropdown__div">
         <div className="dropdown">
-        <div
+          <div
             className="dropdown__item"
             onClick={() => {
-              setDropDown(!dropdown),
-              setCategory('one')
+              setDropDown(!dropdown), setCategory("four");
+            }}
+          >
+            <p>Account</p>
+            <FontAwesomeIcon icon={faUser} />
+          </div>
+          <div
+            className="dropdown__item"
+            onClick={() => {
+              setDropDown(!dropdown), setCategory("one");
             }}
           >
             <p>Invest</p>
@@ -95,28 +102,18 @@ function DashNav({ avatar, setCategory }) {
           <div
             className="dropdown__item"
             onClick={() => {
-              setDropDown(!dropdown),
-              setCategory('two')
+              setDropDown(!dropdown), setCategory("two");
             }}
           >
             <p>Members</p>
             <FontAwesomeIcon icon={faPeopleGroup} />
           </div>
-          <div
+
+          <Link
+            to="/terms"
             className="dropdown__item"
             onClick={() => {
-              setDropDown(!dropdown),
-              setCategory('four')
-            }}
-          >
-            <p>Account</p>
-            <FontAwesomeIcon icon={faUser} />
-          </div>
-          <Link to='/terms'
-            className="dropdown__item"
-            onClick={() => {
-              setDropDown(!dropdown),
-              setCategory('four')
+              setDropDown(!dropdown), setCategory("four");
             }}
           >
             <p>Support</p>
