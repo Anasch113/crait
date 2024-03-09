@@ -41,17 +41,6 @@ function DashTop({ avatar, setCategory, category }) {
             >
               Invest
             </p>
-
-            <p
-              className={
-                category === "four"
-                  ? "dashtop__options__allowed"
-                  : "dashtop__options__not"
-              }
-              onClick={() => setCategory("four")}
-            >
-              Account
-            </p>
             {purchase ? (
               <>
                 <p
@@ -64,15 +53,29 @@ function DashTop({ avatar, setCategory, category }) {
                 >
                   Members
                 </p>
-                <Link
-                  to={"/terms"}
-                  className={
-                    purchase ? "dashtop__options__not" : "dashtop__options__not"
-                  }
-                >
-                  Support
-                </Link>
               </>
+            ) : (
+              ""
+            )}
+            <p
+              className={
+                category === "four"
+                  ? "dashtop__options__allowed"
+                  : "dashtop__options__not"
+              }
+              onClick={() => setCategory("four")}
+            >
+              Account
+            </p>
+            {purchase ? (
+              <Link
+                to={"/terms"}
+                className={
+                  purchase ? "dashtop__options__not" : "dashtop__options__not"
+                }
+              >
+                Support
+              </Link>
             ) : (
               ""
             )}
