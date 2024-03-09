@@ -37,44 +37,45 @@ function DashTop({ avatar, setCategory, category }) {
                   ? "dashtop__options__allowed"
                   : "dashtop__options__not"
               }
-              onClick={purchase ? () => setCategory("one") : undefined}
+              onClick={() => setCategory("one")}
             >
               Invest
             </p>
+            {purchase ? (
+              <>
+                <p
+                  className={
+                    purchase && category === "two"
+                      ? "dashtop__options__allowed"
+                      : "dashtop__options__not"
+                  }
+                  onClick={purchase ? () => setCategory("two") : undefined}
+                >
+                  Members
+                </p>
+                <Link
+                  to={"/terms"}
+                  className={
+                    purchase ? "dashtop__options__not" : "dashtop__options__not"
+                  }
+                >
+                  Support
+                </Link>
+              </>
+            ) : (
+              ""
+            )}
+
             <p
               className={
-                purchase && category === "two"
+                category === "four"
                   ? "dashtop__options__allowed"
-                  : purchase
-                  ? "dashtop__options__not"
-                  : "dashtop__options__not purchase__not__allowed"
+                  : "dashtop__options__not"
               }
-              onClick={purchase ? () => setCategory("two") : undefined}
-            >
-              Members
-            </p>
-            <p
-              className={
-                purchase && category === "four"
-                  ? "dashtop__options__allowed"
-                  : purchase
-                  ? "dashtop__options__not"
-                  : "dashtop__options__not purchase__not__allowed"
-              }
-              onClick={purchase ? () => setCategory("four") : undefined}
+              onClick={() => setCategory("four")}
             >
               Account
             </p>
-            <Link
-              to={purchase ? "/terms" : ""}
-              className={
-                purchase
-                  ? "dashtop__options__not"
-                  : "dashtop__options__not purchase__not__allowed"
-              }
-            >
-              Support
-            </Link>
           </div>
         </div>
       </div>
