@@ -13,7 +13,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, username, purchase } from "../firebase/firebase";
-
 function DashNav({ avatar, setCategory }) {
   const navigate = useNavigate();
   const [dropdown, setDropDown] = useState(false);
@@ -90,35 +89,42 @@ function DashNav({ avatar, setCategory }) {
             <p>Account</p>
             <FontAwesomeIcon icon={faUser} />
           </div>
-          <div
-            className="dropdown__item"
-            onClick={() => {
-              setDropDown(!dropdown), setCategory("one");
-            }}
-          >
-            <p>Invest</p>
-            <FontAwesomeIcon icon={faMoneyBillTrendUp} />
-          </div>
-          <div
-            className="dropdown__item"
-            onClick={() => {
-              setDropDown(!dropdown), setCategory("two");
-            }}
-          >
-            <p>Members</p>
-            <FontAwesomeIcon icon={faPeopleGroup} />
-          </div>
+          {purchase ? (
+            <>
+              <div
+                className="dropdown__item"
+                onClick={() => {
+                  setDropDown(!dropdown), setCategory("one");
+                }}
+              >
+                <p>Invest</p>
+                <FontAwesomeIcon icon={faMoneyBillTrendUp} />
+              </div>
+              <div
+                className="dropdown__item"
+                onClick={() => {
+                  setDropDown(!dropdown), setCategory("two");
+                }}
+              >
+                <p>Members</p>
+                <FontAwesomeIcon icon={faPeopleGroup} />
+              </div>
 
-          <Link
-            to="/terms"
-            className="dropdown__item"
-            onClick={() => {
-              setDropDown(!dropdown), setCategory("four");
-            }}
-          >
-            <p>Support</p>
-            <FontAwesomeIcon icon={faPhone} />
-          </Link>
+              <Link
+                to="/terms"
+                className="dropdown__item"
+                onClick={() => {
+                  setDropDown(!dropdown), setCategory("four");
+                }}
+              >
+                <p>Support</p>
+                <FontAwesomeIcon icon={faPhone} />
+              </Link>
+            </>
+          ) : (
+            ""
+          )}
+
           <div className="dropdown__item" onClick={handleSignOut}>
             <p>Sign Out</p>
             <FontAwesomeIcon icon={faRightFromBracket} />
