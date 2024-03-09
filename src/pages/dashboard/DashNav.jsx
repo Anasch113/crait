@@ -94,7 +94,7 @@ function DashNav({ avatar, setCategory }) {
             className="dropdown__item"
             onClick={() => {
               setDropDown(!dropdown),
-              setCategory('one')
+              setCategory('two')
             }}
           >
             <p>Members</p>
