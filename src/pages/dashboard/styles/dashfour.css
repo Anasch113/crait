@@ -9,17 +9,17 @@
   padding-top: 2rem;
 }
 .dashfour__flex {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  max-width: 75rem;
   gap: 2rem;
+  margin: 0 auto;
+  max-width: 75rem;
   padding: 0rem 1rem;
 }
 .dashfour__del {
+  background-color: #1c1c21;
   border-radius: 0.9rem;
   border: 1px solid #2c2c30;
-  background-color: #1c1c21;
   padding: 1rem 1rem;
 }
 .dashfour__div__container {
@@ -27,21 +27,21 @@
   padding: 0rem 1rem 0rem 1rem;
 }
 .dashfour__top {
+  align-items: center;
+  border-bottom: 1px solid #2c2c30;
   display: flex;
   justify-content: space-between;
   padding: 1rem 0rem 2rem 0rem;
-  align-items: center;
-  border-bottom: 1px solid #2c2c30;
 }
 .dashfour__image {
+  align-items: center;
+  border-radius: 0.6rem;
+  border: 1px solid #424248;
   display: flex;
   gap: 0.7rem;
-  align-items: center;
-  width: 100%;
   max-width: 30rem;
   padding: 1rem 0.5rem;
-  border: 1px solid #424248;
-  border-radius: 0.6rem;
+  width: 100%;
   @media (max-width: 900px) {
     max-width: 20rem;
   }
@@ -72,8 +72,8 @@
 }
 .dashfour__delete__title {
   color: #ff4238;
-  font-weight: 500;
   font-size: 1.3rem;
+  font-weight: 500;
   margin-bottom: 1rem;
 }
 .dashfour__bottom {
@@ -84,23 +84,23 @@
   }
 }
 .dashfour__bottom button {
-  border: 1px solid rgb(66, 66, 72);
-  border-radius: 0.2rem;
   background-color: transparent;
-  font-weight: 500;
+  border-radius: 0.2rem;
+  border: 1px solid rgb(66, 66, 72);
   color: rgb(249, 249, 250);
+  cursor: pointer;
+  font-weight: 500;
   padding: 0.7rem 1rem;
   transition: all 0.2s ease-in-out;
-  cursor: pointer;
 }
 .dashfour__bottom button:hover {
   border-color: rgb(117, 117, 119);
 }
 .dashfour__del__div{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .dashfour__bottom{
     display: flex;
