@@ -89,9 +89,6 @@
   color: rgb(134, 134, 138);
   cursor: pointer;
 }
-.purchase__not__allowed{
-  cursor: not-allowed;
-}
 .dashtop__options__allowed,
 .dashtop__options__not {
   font-size: 0.95rem;
