@@ -9,6 +9,8 @@ import {
   faUser,
   faMoneyBillTrendUp,
   faPeopleGroup,
+  faPhone,
+
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, username, purchase } from "../firebase/firebase";
@@ -110,6 +112,16 @@ function DashNav({ avatar, setCategory }) {
             <p>Account</p>
             <FontAwesomeIcon icon={faUser} />
           </div>
+          <Link to='/terms'
+            className="dropdown__item"
+            onClick={() => {
+              setDropDown(!dropdown),
+              setCategory('four')
+            }}
+          >
+            <p>Support</p>
+            <FontAwesomeIcon icon={faPhone} />
+          </Link>
           <div className="dropdown__item" onClick={handleSignOut}>
             <p>Sign Out</p>
             <FontAwesomeIcon icon={faRightFromBracket} />
