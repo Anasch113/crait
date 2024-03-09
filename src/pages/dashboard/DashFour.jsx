@@ -41,10 +41,6 @@ function DashFour({ avatar }) {
               </div>
             </div>
             <div className="dashtwo__item__container2">
-              <div className="dashtwo__bottom">
-                <p>Upgrade your plan to add members to your organization</p>
-                <button>Upgrade plan</button>
-              </div>
             </div>
           </div>
           <div className="dashfour__del">
