@@ -23,7 +23,7 @@ function Dashboard() {
   } else {
     return (
       <>
-        <DashNav avatar={avatar} />
+        <DashNav avatar={avatar} setCategory={setCategory}/>
         <DashTop
           avatar={avatar}
           setCategory={setCategory}

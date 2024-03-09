@@ -137,6 +137,7 @@
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: auto;
   max-width: 10.625rem;
   padding: 0.5rem;
