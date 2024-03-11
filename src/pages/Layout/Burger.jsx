@@ -8,8 +8,6 @@ import doc from "./images/doc.png";
 import flag2 from "./images/flag2.png";
 import tool from "./images/tool.png";
 import comment from "./images/comment.png";
-import light from "./images/light.png";
-import pop from "./images/pop.png";
 import speed from "./images/speed.png";
 import flag from "./images/flag.png";
 import wash from "./images/wash.png";

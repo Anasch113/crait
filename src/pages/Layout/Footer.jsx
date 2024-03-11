@@ -1,33 +1,14 @@
 import { Link } from "react-router-dom";
 import "./styles/Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComments, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faComments } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import Support from "./Support";
 function Footer() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      {open ? (
-        <div className="support" id="support">
-          <div className="support__top">
-            <div></div>
-            <p className="support__title">Support Center</p>
-            <FontAwesomeIcon
-              icon={faXmark}
-              className="support__close"
-              onClick={() => setOpen(false)}
-            />
-          </div>
-          <div className="support__middle">
-            <p>Content</p>
-            <div className="support__grid">
-            
-            </div>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
+      {open ? <Support setOpen={setOpen}/> : ""}
       <div className="support__button" onClick={() => setOpen(true)}>
         <FontAwesomeIcon icon={faComments} />
       </div>
