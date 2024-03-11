@@ -7,15 +7,27 @@ function Footer() {
   const [open, setOpen] = useState(false);
   return (
     <>
-    
-      {open ? <div className="support" id="support">
-      <div className="support__top">
-        <div></div>
-        <p className="support__title">Support Center</p>
-        <FontAwesomeIcon icon={faXmark} className="support__close" onClick={() => setOpen(false)}/>
-      </div>
-
-      </div> : ""}
+      {open ? (
+        <div className="support" id="support">
+          <div className="support__top">
+            <div></div>
+            <p className="support__title">Support Center</p>
+            <FontAwesomeIcon
+              icon={faXmark}
+              className="support__close"
+              onClick={() => setOpen(false)}
+            />
+          </div>
+          <div className="support__middle">
+            <p>Content</p>
+            <div className="support__grid">
+            
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
       <div className="support__button" onClick={() => setOpen(true)}>
         <FontAwesomeIcon icon={faComments} />
       </div>
