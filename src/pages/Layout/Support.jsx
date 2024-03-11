@@ -26,35 +26,35 @@ function Support({ setOpen, setArrowStyle, resetArrowStyle }) {
       <div className="support__middle">
         <p>Content</p>
         <div className="support__grid">
-          <div className="support__item">
+          <Link to="/dashboard" className="support__item">
             <img src={data} alt="Dashboard" />
             <p className="support__subject">Dashboard</p>
-          </div>
-          <div className="support__item">
+          </Link>
+          <Link to="/services" className="support__item">
             <img src={cir} alt="Dashboard" />
             <p className="support__subject">Services</p>
-          </div>
-          <div className="support__item">
+          </Link>
+          <Link to="/purchase" className="support__item">
             <img src={octo} alt="Dashboard" />
             <p className="support__subject">Purchase</p>
-          </div>
-          <div className="support__item">
+          </Link>
+          <Link to="/demo" className="support__item">
             <img src={speed} alt="Dashboard" />
             <p className="support__subject">Demo</p>
-          </div>
-          <div className="support__item">
+          </Link>
+          <Link to="/terms" className="support__item">
             <img src={tool} alt="Dashboard" />
             <p className="support__subject">Terms</p>
-          </div>
-          <div className="support__item">
+          </Link>
+          <Link to="/" className="support__item">
             <img src={basket} alt="Dashboard" />
             <p className="support__subject">Market</p>
-          </div>
-          <Link to='/signup' className="support__item">
+          </Link>
+          <Link to="/signup" className="support__item">
             <img src={multi} alt="Dashboard" />
             <p className="support__subject">Sign up</p>
           </Link>
-          <Link to='/login' className="support__item">
+          <Link to="/login" className="support__item">
             <img src={light} alt="Dashboard" />
             <p className="support__subject">Login</p>
           </Link>
