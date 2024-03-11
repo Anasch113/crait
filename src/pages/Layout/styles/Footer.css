@@ -119,10 +119,12 @@ footer {
   background-color: #131315;
 }
 .support__top{
+  background-color: #714dff;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem;
+  padding: 0.7rem;
 }
 .support__close{
   cursor: pointer;
+  font-size: 1.2rem;
 }
