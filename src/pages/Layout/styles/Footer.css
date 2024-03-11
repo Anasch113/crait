@@ -95,6 +95,7 @@ footer {
   }
 }
 .support__button {
+  z-index: 100;
   position: fixed;
   background-color: rgb(103, 79, 238);
   bottom: 1.25rem;
