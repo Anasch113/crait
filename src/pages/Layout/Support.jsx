@@ -12,6 +12,7 @@ import speed from "../Layout/images/speed.png";
 import tool from "../Layout/images/tool.png";
 import basket from "../Layout/images/basket.png";
 function Support({ setOpen, setArrowStyle, resetArrowStyle }) {
+
   return (
     <div className="support" id="support">
       <div>

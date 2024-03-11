@@ -2,10 +2,17 @@ import { Link } from "react-router-dom";
 import "./styles/Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Support from "./Support";
 function Footer({ setArrowStyle, resetArrowStyle }) {
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("stop-scrolling");
+    } else {
+      document.body.classList.remove("stop-scrolling");
+    }
+  }, [open]);
   return (
     <>
       {open ? (
