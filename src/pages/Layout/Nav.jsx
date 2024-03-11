@@ -20,14 +20,15 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection, signedin }) {
           <img src={logo} alt="logo" width={25} />
           <p className="nav__intro__text">
             Introducing YouCoin’s Personally Automated Investments
-            <span
+            <Link
+            to='/services'
               className="nav__intro__learnmore"
               onClick={() => toSection("market-section")}
               onMouseOver={setArrowStyle("nav__intro__arrow")}
               onMouseOut={resetArrowStyle("nav__intro__arrow")}
             >
               Learn More <span className="nav__intro__arrow">→</span>
-            </span>
+            </Link>
           </p>
         </div>
 
