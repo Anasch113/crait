@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import "./styles/Footer.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faComments } from "@fortawesome/free-solid-svg-icons";
 function Footer() {
   return (
     <>
+      <div className="support" id="support">
+        <FontAwesomeIcon icon={faComments} />
+      </div>
       <footer>
         <div className="footer__container">
           <div className="footer__top">
@@ -89,8 +93,13 @@ function Footer() {
             <div className="footer__bottom__text">
               <p>Copyright © 2024 YouCoin, Inc. All rights reserved.</p>
               <p>
-                <Link to='/Terms' className="footer__terms">Terms of Use</Link> &{" "}
-                <Link to='/Terms' className="footer__terms">Privacy Policy</Link>
+                <Link to="/Terms" className="footer__terms">
+                  Terms of Use
+                </Link>{" "}
+                &{" "}
+                <Link to="/Terms" className="footer__terms">
+                  Privacy Policy
+                </Link>
               </p>
             </div>
           </div>
