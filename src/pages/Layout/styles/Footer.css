@@ -94,7 +94,7 @@ footer {
     margin-bottom: 1rem;
   }
 }
-.support {
+.support__button {
   position: fixed;
   background-color: rgb(103, 79, 238);
   bottom: 20px;
@@ -105,5 +105,24 @@ footer {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 100%;
+  cursor: pointer;
+}
+.support{
+  border-left: 1px solid rgb(44, 44, 48);
+  position: fixed;
+  max-width: 30rem;
+  width: 25%;
+  z-index: 10000;
+  height: 100vh;
+  bottom: 0px;
+  right: 0px;
+  background-color: #131315;
+}
+.support__top{
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.support__close{
   cursor: pointer;
 }
