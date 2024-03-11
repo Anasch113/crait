@@ -4,11 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Support from "./Support";
-function Footer() {
+function Footer({ setArrowStyle, resetArrowStyle }) {
   const [open, setOpen] = useState(false);
   return (
     <>
-      {open ? <Support setOpen={setOpen}/> : ""}
+      {open ? (
+        <Support
+          setOpen={setOpen}
+          setArrowStyle={setArrowStyle}
+          resetArrowStyle={resetArrowStyle}
+        />
+      ) : (
+        ""
+      )}
       <div className="support__button" onClick={() => setOpen(true)}>
         <FontAwesomeIcon icon={faComments} />
       </div>

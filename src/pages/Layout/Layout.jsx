@@ -13,7 +13,7 @@ function Layout({ setArrowStyle, resetArrowStyle, toSection, signedin }) {
         signedin={signedin}
       />
       <Outlet />
-      <Footer />
+      <Footer setArrowStyle={setArrowStyle} resetArrowStyle={resetArrowStyle} />
     </>
   );
 }

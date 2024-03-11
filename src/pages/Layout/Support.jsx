@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles/Support.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +11,7 @@ import multi from "../Layout/images/multi.png";
 import speed from "../Layout/images/speed.png";
 import tool from "../Layout/images/tool.png";
 import basket from "../Layout/images/basket.png";
-function Support({ setOpen }) {
+function Support({ setOpen, setArrowStyle, resetArrowStyle }) {
   return (
     <div className="support" id="support">
       <div className="support__top">
@@ -49,18 +50,27 @@ function Support({ setOpen }) {
             <img src={basket} alt="Dashboard" />
             <p className="support__subject">Market</p>
           </div>
-          <div className="support__item">
+          <Link to='/signup' className="support__item">
             <img src={multi} alt="Dashboard" />
             <p className="support__subject">Sign up</p>
-          </div>
-          <div className="support__item">
+          </Link>
+          <Link to='/login' className="support__item">
             <img src={light} alt="Dashboard" />
             <p className="support__subject">Login</p>
-          </div>
+          </Link>
         </div>
       </div>
-      <div className="support__bottom"> 
-
+      <div className="support__bottom">
+        <Link
+          className="support__demo__buttom"
+          onClick={() => setOpen(false)}
+          to="/demo"
+          onMouseOver={setArrowStyle("support__arrow")}
+          onMouseOut={resetArrowStyle("support__arrow")}
+        >
+          Start Investing
+          <span className="support__arrow">→</span>
+        </Link>
       </div>
     </div>
   );
