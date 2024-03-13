@@ -6,13 +6,7 @@ import { useEffect, useState } from "react";
 import Support from "./Support";
 function Footer({ setArrowStyle, resetArrowStyle }) {
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    if (open) {
-      document.body.classList.add("stop-scrolling");
-    } else {
-      document.body.classList.remove("stop-scrolling");
-    }
-  }, [open]);
+
   return (
     <>
       {open ? (
