@@ -49,6 +49,7 @@
   @media (max-width: 325px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  margin-bottom: 2rem;
 }
 .support__item {
   align-items: center;

@@ -11,6 +11,10 @@ import multi from "../Layout/images/multi.png";
 import speed from "../Layout/images/speed.png";
 import tool from "../Layout/images/tool.png";
 import basket from "../Layout/images/basket.png";
+import comment from "../Layout/images/comment.png";
+import arm from "../Layout/images/arm.png";
+import flag2 from "../Layout/images/flag2.png";
+import doc from "../Layout/images/doc.png";
 function Support({ setOpen, setArrowStyle, resetArrowStyle }) {
   return (
     <div className="support" id="support">
@@ -92,7 +96,41 @@ function Support({ setOpen, setArrowStyle, resetArrowStyle }) {
               <p className="support__subject">Login</p>
             </Link>
           </div>
-
+          <p>Support</p>
+          <div className="support__grid">
+            <Link
+              to="/terms"
+              className="support__item"
+              onClick={() => setOpen(false)}
+            >
+              <img src={doc} alt="Dashboard" />
+              <p className="support__subject">Terms</p>
+            </Link>
+            <Link
+              to="/terms"
+              className="support__item"
+              onClick={() => setOpen(false)}
+            >
+              <img src={flag2} alt="Dashboard" />
+              <p className="support__subject">Support</p>
+            </Link>
+            <Link
+              to="/terms"
+              className="support__item"
+              onClick={() => setOpen(false)}
+            >
+              <img src={comment} alt="Dashboard" />
+              <p className="support__subject">Contact</p>
+            </Link>
+            <Link
+              to="/terms"
+              className="support__item"
+              onClick={() => setOpen(false)}
+            >
+              <img src={arm} alt="Dashboard" />
+              <p className="support__subject">Privacy</p>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="support__bottom">
