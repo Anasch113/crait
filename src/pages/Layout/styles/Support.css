@@ -60,9 +60,13 @@
   justify-content: space-between;
   padding: 1rem;
   width: 6rem;
+  transition: all 0.3s ease-in-out ;
   @media (max-width: 350px) {
     width: 4.5rem;
   }
+}
+.support__item:hover{
+  border-color: rgb(177, 176, 176);
 }
 .support__subject {
   color: rgb(203, 203, 209);
