@@ -1,19 +1,19 @@
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import "./styles/Burger.css";
-import octagon from "./images/octagon.png";
-import multi from "./images/multi.png";
-import crate from "./images/crate.png";
-import doc from "./images/doc.png";
-import flag2 from "./images/flag2.png";
-import tool from "./images/tool.png";
-import comment from "./images/comment.png";
-import speed from "./images/speed.png";
-import flag from "./images/flag.png";
-import wash from "./images/wash.png";
-import eagle from "./images/eagle.png";
-import arm from "./images/arm.png";
-import brow from "./images/brow.png";
+import octagon from "../images/octagon.png";
+import multi from "../images/multi.png";
+import crate from "../images/crate.png";
+import doc from "../images/doc.png";
+import flag2 from "../images/flag2.png";
+import tool from "../images/tool.png";
+import comment from "../images/comment.png";
+import speed from "../images/speed.png";
+import flag from "../images/flag.png";
+import wash from "../images/wash.png";
+import eagle from "../images/eagle.png";
+import arm from "../images/arm.png";
+import brow from "../images/brow.png";
 function Burger({ burgerOnOrOff, toSection }) {
   return (
     <div className="burger__container">

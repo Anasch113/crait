@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 import "./styles/Support.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import light from "../service/images/light.png";
-import cir from "../service/images/cir.png";
-import data from "../service/images/data.png";
-import octo from "../service/images/octo.png";
-import multi from "../Layout/images/multi.png";
-import speed from "../Layout/images/speed.png";
-import tool from "../Layout/images/tool.png";
-import basket from "../Layout/images/basket.png";
-import comment from "../Layout/images/comment.png";
-import arm from "../Layout/images/arm.png";
-import flag2 from "../Layout/images/flag2.png";
-import doc from "../Layout/images/doc.png";
+import light from "../images/light.png";
+import cir from "../images/cir.png";
+import data from "../images/data.png";
+import octo from "../images/octo.png";
+import multi from "../images/multi.png";
+import speed from "../images/speed.png";
+import tool from "../images/tool.png";
+import basket from "../images/basket.png";
+import comment from "../images/comment.png";
+import arm from "../images/arm.png";
+import flag2 from "../images/flag2.png";
+import doc from "../images/doc.png";
 function Support({ setOpen, setArrowStyle, resetArrowStyle }) {
   return (
     <div className="support" id="support">

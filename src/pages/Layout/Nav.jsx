@@ -2,7 +2,7 @@ import { IconMenu2, IconX } from "@tabler/icons-react";
 import "./styles/Nav.css";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
-import logo from "./images/logo.png";
+import logo from "../images/logo.png";
 
 function Nav({ setArrowStyle, resetArrowStyle, toSection, signedin }) {
 

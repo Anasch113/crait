@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Loading.css";
 import { BarLoader } from "react-spinners";
-import logo from "./images/logo.png";
+import dashlogo from "../images/dashlogo.png";
 
 function Loading() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -23,7 +23,7 @@ function Loading() {
       
         <div className="loading__div">
           <div className="loading__flex">
-            <img src={logo} alt="Logo" />
+            <img src={dashlogo} alt="Logo" />
             {windowWidth > 400? (
             <BarLoader
               color="#E688A6"

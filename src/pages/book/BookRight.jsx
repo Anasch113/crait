@@ -1,9 +1,9 @@
 import "./styles/BookRight.css";
-import chat from './images/chat.png'
-import micro from './images/mircro.png'
-import meta from './images/meta.png'
-import coh from './images/coh.png'
-import car from './images/car.png'
+import chat from '../images/chat.png'
+import micro from '../images/mircro.png'
+import meta from '../images/meta.png'
+import coh from '../images/coh.png'
+import car from '../images/car.png'
 function BookRight() {
   return (
     <div className="book__right">

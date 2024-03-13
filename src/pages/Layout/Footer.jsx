@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./styles/Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Support from "./Support";
 function Footer({ setArrowStyle, resetArrowStyle }) {
   const [open, setOpen] = useState(false);

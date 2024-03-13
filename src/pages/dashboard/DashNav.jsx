@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles/DashNav.css";
-import logo from "./images/logo.png";
+import logo from "../images/dashlogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDown,

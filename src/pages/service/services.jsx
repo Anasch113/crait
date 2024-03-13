@@ -9,10 +9,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Join from "../Home/Join";
-import light from './images/light.png'
-import cir from './images/cir.png'
-import data from './images/data.png'
-import octo from './images/octo.png'
+import light from '../images/light.png'
+import cir from '../images/cir.png'
+import data from '../images/data.png'
+import octo from '../images/octo.png'
 function Services({ setArrowStyle, resetArrowStyle }) {
   return (
     <section className="services" id="services">
