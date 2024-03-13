@@ -25,7 +25,7 @@ function Support({ setOpen, setArrowStyle, resetArrowStyle }) {
           />
         </div>
         <div className="support__middle">
-          <p>Content</p>
+          <p>Navigate</p>
           <div className="support__grid">
             <Link
               to="/dashboard"
@@ -92,6 +92,7 @@ function Support({ setOpen, setArrowStyle, resetArrowStyle }) {
               <p className="support__subject">Login</p>
             </Link>
           </div>
+
         </div>
       </div>
       <div className="support__bottom">
