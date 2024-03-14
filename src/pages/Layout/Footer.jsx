@@ -18,9 +18,14 @@ function Footer({ setArrowStyle, resetArrowStyle }) {
       ) : (
         ""
       )}
-      <div className="support__button" onClick={() => setOpen(true)}>
-        <FontAwesomeIcon icon={faComments} />
-      </div>
+      {!open ? (
+        <div className="support__button" onClick={() => setOpen(true)}>
+          <FontAwesomeIcon icon={faComments} />
+        </div>
+      ) : (
+        ""
+      )}
+
       <footer>
         <div className="footer__container">
           <div className="footer__top">
