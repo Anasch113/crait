@@ -96,40 +96,42 @@ function Support({ setOpen, setArrowStyle, resetArrowStyle }) {
               <p className="support__subject">Login</p>
             </Link>
           </div>
-          <p>Support</p>
-          <div className="support__grid">
-            <Link
-              to="/terms"
-              className="support__item"
-              onClick={() => setOpen(false)}
-            >
-              <img src={doc} alt="Dashboard" />
-              <p className="support__subject">Terms</p>
-            </Link>
-            <Link
-              to="/terms"
-              className="support__item"
-              onClick={() => setOpen(false)}
-            >
-              <img src={flag2} alt="Dashboard" />
-              <p className="support__subject">Support</p>
-            </Link>
-            <Link
-              to="/terms"
-              className="support__item"
-              onClick={() => setOpen(false)}
-            >
-              <img src={comment} alt="Dashboard" />
-              <p className="support__subject">Contact</p>
-            </Link>
-            <Link
-              to="/terms"
-              className="support__item"
-              onClick={() => setOpen(false)}
-            >
-              <img src={arm} alt="Dashboard" />
-              <p className="support__subject">Privacy</p>
-            </Link>
+          <div className="support__two">
+            <p>Support</p>
+            <div className="support__grid">
+              <Link
+                to="/terms"
+                className="support__item"
+                onClick={() => setOpen(false)}
+              >
+                <img src={doc} alt="Dashboard" />
+                <p className="support__subject">Terms</p>
+              </Link>
+              <Link
+                to="/terms"
+                className="support__item"
+                onClick={() => setOpen(false)}
+              >
+                <img src={flag2} alt="Dashboard" />
+                <p className="support__subject">Support</p>
+              </Link>
+              <Link
+                to="/terms"
+                className="support__item"
+                onClick={() => setOpen(false)}
+              >
+                <img src={comment} alt="Dashboard" />
+                <p className="support__subject">Contact</p>
+              </Link>
+              <Link
+                to="/terms"
+                className="support__item"
+                onClick={() => setOpen(false)}
+              >
+                <img src={arm} alt="Dashboard" />
+                <p className="support__subject">Privacy</p>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

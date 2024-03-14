@@ -1,5 +1,5 @@
 .support {
-  background-color: #131315;
+  background-color: #000000;
   border-left: 1px solid rgb(44, 44, 48);
   bottom: 0;
   display: flex;
@@ -12,8 +12,14 @@
   width: 30rem;
   z-index: 10000;
   @media (max-width: 500px) {
-    width: 100vw;
     max-width: 100%;
+    border-radius: 0.5rem;
+    width: 95.5%;
+    height: 90vh;
+    top: 0.7rem;
+    left: 0;
+    right: 0;
+    margin: 0rem auto;
   }
 }
 .support__top {
@@ -61,12 +67,12 @@
   justify-content: space-between;
   padding: 1rem;
   width: 6rem;
-  transition: all 0.3s ease-in-out ;
+  transition: all 0.3s ease-in-out;
   @media (max-width: 350px) {
     width: 4.5rem;
   }
 }
-.support__item:hover{
+.support__item:hover {
   border-color: rgb(177, 176, 176);
 }
 .support__subject {
@@ -125,4 +131,9 @@
   left: 0;
   position: relative;
   transition: all 0.3s ease-in-out;
+}
+.support__two {
+  @media (max-width: 500px) {
+    display: none;
+  }
 }
