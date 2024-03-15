@@ -29,7 +29,8 @@ function Hero({ setArrowStyle, resetArrowStyle, toSection }) {
               optimizing your information.
             </p>
             <div className="hero__arrow__buttons">
-              <Link to="/demo"
+              <Link
+                to="/demo"
                 onMouseOver={setArrowStyle("hero__invest__arrow")}
                 onMouseOut={resetArrowStyle("hero__invest__arrow")}
               >
