@@ -13,7 +13,7 @@ function Join({ setArrowStyle, resetArrowStyle }) {
             </h1>
             <div className="join__arrow__buttons">
               <Link
-                to="/demo"
+                to="/signup"
                 onMouseOver={setArrowStyle("join__invest__arrow")}
                 onMouseOut={resetArrowStyle("join__invest__arrow")}
               >
