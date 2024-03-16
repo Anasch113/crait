@@ -67,18 +67,6 @@ function DashTop({ avatar, setCategory, category }) {
             >
               Account
             </p>
-            {purchase ? (
-              <Link
-                to={"/terms"}
-                className={
-                  purchase ? "dashtop__options__not" : "dashtop__options__not"
-                }
-              >
-                Support
-              </Link>
-            ) : (
-              ""
-            )}
           </div>
         </div>
       </div>
