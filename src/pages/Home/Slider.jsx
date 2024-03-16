@@ -10,7 +10,7 @@ function Slider({ toSection }) {
     <section id="slider" className="slider-section">
       <div className="slider__content">
         <div className="slider__grid">
-          <Link to='/Terms' className="slider__1">
+          <Link to="/login" className="slider__1">
             <div className="slider__container__1">
               <div>
                 <p className="slider__1__title"> Get back up to</p>
@@ -23,7 +23,7 @@ function Slider({ toSection }) {
               </p>
             </div>
           </Link>
-          <Link to='/Terms' className="slider__2">
+          <Link to="/login" className="slider__2">
             <div className="slider__container__2">
               <div className="slider__text">
                 <p className="slider__title">YouCoin Mobile App</p>{" "}
@@ -33,7 +33,7 @@ function Slider({ toSection }) {
               </div>
             </div>
           </Link>
-          <Link  to='/Terms' className="slider__3">
+          <Link to="/login" className="slider__3">
             <div className="slider__container__3">
               <div className="slider__text">
                 <p className="slider__title">Immediately purchase</p>{" "}
@@ -44,7 +44,7 @@ function Slider({ toSection }) {
               </div>
             </div>
           </Link>
-          <Link to='/Terms' className="slider__4">
+          <Link to="/login" className="slider__4">
             <div className="slider__container__4">
               <div className="slider__text">
                 <p className="slider__title">YouCoin Wallet</p>{" "}
@@ -54,7 +54,7 @@ function Slider({ toSection }) {
               </div>
             </div>
           </Link>
-          <Link to='/Terms' className="slider__5">
+          <Link to="/login" className="slider__5">
             <div className="slider__container__5">
               <div className="slider__text">
                 <p className="slider__title">Trade and Buy</p>{" "}
@@ -76,7 +76,7 @@ function Slider({ toSection }) {
           className="mySwiper"
         >
           <SwiperSlide>
-            <Link to='/Terms' className="slider__1">
+            <Link to="/login" className="slider__1">
               <div className="slider__container__1">
                 <div>
                   <p className="slider__1__title"> Get back up to</p>
@@ -91,7 +91,7 @@ function Slider({ toSection }) {
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to='/Terms' className="slider__2">
+            <Link to="/login" className="slider__2">
               <div className="slider__container__2">
                 <div className="slider__text">
                   <p className="slider__title">YouCoin Mobile App</p>{" "}
@@ -103,7 +103,7 @@ function Slider({ toSection }) {
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to='/Terms' className="slider__3">
+            <Link to="/login" className="slider__3">
               <div className="slider__container__3">
                 <div className="slider__text">
                   <p className="slider__title">Immediately purchase</p>{" "}
@@ -116,7 +116,7 @@ function Slider({ toSection }) {
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to='/Terms' className="slider__4">
+            <Link to="/login" className="slider__4">
               <div className="slider__container__4">
                 <div className="slider__text">
                   <p className="slider__title">YouCoin Wallet</p>{" "}
@@ -128,7 +128,7 @@ function Slider({ toSection }) {
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to='/Terms' className="slider__5">
+            <Link to="/login" className="slider__5">
               <div className="slider__container__5">
                 <div className="slider__text">
                   <p className="slider__title">Trade and Buy</p>{" "}
