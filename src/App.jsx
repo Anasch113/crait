@@ -106,6 +106,7 @@ function App() {
           }
         >
           {"Public Routes"}
+          
           <Route
             path="/"
             element={
@@ -133,6 +134,7 @@ function App() {
             element={<Crypto topCoins={topCoins} />}
           />
         </Route>
+        <Route path="*" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
 
