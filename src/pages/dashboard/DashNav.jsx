@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, username, purchase } from "../firebase/firebase";
-function DashNav({ avatar, setCategory }) {
+function DashNav({ setCategory }) {
   const navigate = useNavigate();
   const [dropdown, setDropDown] = useState(false);
 
@@ -62,7 +62,9 @@ function DashNav({ avatar, setCategory }) {
                 className="dashnav__right__flex"
                 onClick={() => setDropDown(!dropdown)}
               >
-                <img src={avatar} alt="Avatar" />
+                <div className="dash__avatar">
+                  <p className="capitalize dash__avatar__p">{username[0]}</p>
+                </div>
                 <div className="dashnav__right__info">
                   <p className="dashnav__right__name capitalize">{username}</p>
 

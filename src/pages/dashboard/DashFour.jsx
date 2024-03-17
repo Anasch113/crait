@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./styles/dashfour.css";
-import { auth, database, activeUser } from "../firebase/firebase";
-import { disableNetwork } from "firebase/firestore";
-function DashFour({ avatar }) {
+import { auth, database, activeUser, username } from "../firebase/firebase";
+function DashFour() {
   const [del, setDel] = useState(false);
   const handleDeleteAccount = async () => {
     try {
@@ -31,7 +30,9 @@ function DashFour({ avatar }) {
             <div className="dashtwo__item__container">
               <div className="dashtwo__title__flex">
                 <div className="dashtwo__user__img">
-                  <img src={avatar} alt="Avatar" />
+                  <div className="dash__avatar">
+                    <p className="capitalize dash__avatar__p">{username[0]}</p>
+                  </div>
                   <p className="capitalize">
                     {activeUser.firstName} {activeUser.lastName}
                   </p>
@@ -40,8 +41,7 @@ function DashFour({ avatar }) {
                 <p>2024</p>
               </div>
             </div>
-            <div className="dashtwo__item__container2">
-            </div>
+            <div className="dashtwo__item__container2"></div>
           </div>
           <div className="dashfour__del">
             <div className="dashfour__div__container">
@@ -54,7 +54,9 @@ function DashFour({ avatar }) {
                   </p>
                 </div>
                 <div className="dashfour__image">
-                  <img src={avatar} alt="Avatar" />
+                  <div className="dash__avatar">
+                    <p className="capitalize dash__avatar__p">{username[0]}</p>
+                  </div>
                   <p className="capitalize">
                     {activeUser.firstName} {activeUser.lastName}
                   </p>
@@ -65,7 +67,12 @@ function DashFour({ avatar }) {
                   <div className="dashfour__del__div">
                     <p className="dashfour__del__p">Are you sure?</p>
                     <div>
-                      <button onClick={() => setDel(false)} className="dashfour__margin">Cancel</button>
+                      <button
+                        onClick={() => setDel(false)}
+                        className="dashfour__margin"
+                      >
+                        Cancel
+                      </button>
                       <button onClick={handleDeleteAccount}>Delete</button>
                     </div>
                   </div>

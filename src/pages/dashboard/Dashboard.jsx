@@ -3,13 +3,11 @@ import DashNav from "./DashNav";
 import DashFooter from "./DashFooter";
 import DashTop from "./DashTop";
 import DashBottom from "./DashBottom";
-import initials from "../images/initials.jpg";
 import DashTwo from "./DashTwo";
 import Loading from "./Loading";
 import DashFour from "./DashFour";
 
 function Dashboard() {
-  const avatar = initials;
   const [category, setCategory] = useState("one");
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -23,18 +21,17 @@ function Dashboard() {
   } else {
     return (
       <>
-        <DashNav avatar={avatar} setCategory={setCategory}/>
+        <DashNav setCategory={setCategory}/>
         <DashTop
-          avatar={avatar}
           setCategory={setCategory}
           category={category}
         />
         {category === "one" ? (
           <DashBottom />
         ) : category === "two" ? (
-          <DashTwo avatar={avatar} />
+          <DashTwo />
         ) : category === "four" ?(
-          <DashFour avatar={avatar}/>
+          <DashFour />
         ):''}
         <DashFooter />
       </>

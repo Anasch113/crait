@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles/topdash.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { purchase } from "../firebase/firebase";
-import { Link } from "react-router-dom";
-function DashTop({ avatar, setCategory, category }) {
+import { purchase, username } from "../firebase/firebase";
+function DashTop({ setCategory, category }) {
   return (
     <section className="dashtop" id="dashtop">
       <div className="dashtop__container">
@@ -22,7 +21,9 @@ function DashTop({ avatar, setCategory, category }) {
             <p className="dashtop__free">{purchase ? "PRO" : "FREE"}</p>
           </div>
           <div className="dashtop__right">
-            <img src={avatar} alt="Avatar" />
+            <div className="dash__avatar">
+              <p className="capitalize dash__avatar__p">{username[0]}</p>
+            </div>
             <button className="dashtop__button">
               <FontAwesomeIcon icon={faPlus} />
               <span>Invite</span>

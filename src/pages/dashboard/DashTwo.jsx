@@ -6,8 +6,8 @@ import {
   faChevronRight,
   faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
-import { activeUser } from "../firebase/firebase";
-function DashTwo({ avatar }) {
+import { activeUser, username } from "../firebase/firebase";
+function DashTwo() {
   return (
     <section className="dashtwo" id="dashtwo">
       <div className="dash__content">
@@ -29,7 +29,9 @@ function DashTwo({ avatar }) {
             <div className="dashtwo__item__container">
               <div className="dashtwo__title__flex">
                 <div className="dashtwo__user__img">
-                  <img src={avatar} alt="Avatar" />
+                  <div className="dash__avatar">
+                    <p className="capitalize dash__avatar__p">{username[0]}</p>
+                  </div>
                   <p className="capitalize">
                     {activeUser.firstName} {activeUser.lastName}
                   </p>
