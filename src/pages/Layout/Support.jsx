@@ -143,7 +143,7 @@ function Support({ setOpen, setArrowStyle, resetArrowStyle }) {
           onMouseOver={setArrowStyle("support__arrow")}
           onMouseOut={resetArrowStyle("support__arrow")}
         >
-          Start Investing
+          Contact Us
           <span className="support__arrow">→</span>
         </Link>
       </div>
