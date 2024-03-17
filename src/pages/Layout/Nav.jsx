@@ -37,7 +37,7 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection, signedin }) {
             <p className="nav__name">YouCoin</p>
           </Link>
           <ul>
-            <li onClick={() => toSection("hero-section")}>
+            <li>
               <Link to="/">Home</Link>
             </li>
             <li onClick={() => toSection("text-section")}>
