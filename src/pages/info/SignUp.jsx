@@ -82,7 +82,7 @@ function SignUp() {
             <div className="signup__left__flex">
               <div className="signup__left__title">
                 <h3>YouCoin</h3>
-                <p>Create a YouCoin account and begin investing smart!</p>
+                <p>Create a YouCoin account and begin your investments!</p>
               </div>
               <div className="signup__box">
                 <FontAwesomeIcon
