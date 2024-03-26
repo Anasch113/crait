@@ -57,12 +57,12 @@
   <img src='./readme/book.png'/>
 </div>
 <br><br>
-<h3 align='center'> Services Page 📞</h3>
+<h3 align='center'>Services Page 📞</h3>
 <div align='center'>
   <img src='./readme/service.png'/>
 </div>
 <br><br>
-<h3 align='center'> Coin Page 🪙</h3>
+<h3 align='center'>Coin Page 🪙</h3>
 
 <div align='center'>
   <img src='./readme/coin.png'/>
