@@ -11,8 +11,8 @@
 <h3>Built using:</h3>
 
 » CoinGecko API <br>
-» Firebase <br>
 » React JS <br>
+» Firebase <br>
 » CSS <br>
 » HTML<br>
 
