@@ -1,4 +1,4 @@
-import { IconMenu2, IconX } from "@tabler/icons-react";
+import { IconX } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import "./styles/Burger.css";
 import octagon from "../images/octagon.png";
