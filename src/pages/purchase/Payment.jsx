@@ -2,7 +2,6 @@ import "./styles/Payment.css";
 import React, { useState } from "react";
 function Payment() {
   const [code, setCode] = useState(true);
-  const [form, setForm] = useState(false);
   return (
     <div className="payment__container">
       <div className="payment__code" onClick={() => setCode(true)}>
