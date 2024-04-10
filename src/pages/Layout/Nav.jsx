@@ -47,12 +47,12 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection, signedin }) {
               <Link to="/services">Services</Link>
             </li>
             <li>
-              <Link to="/terms">Contact</Link>
-            </li>
-            <li>
             <Link to={signedin? "/dashboard" : '/login'}>
               Dashboard
             </Link>
+            </li>
+              <li>
+              <Link to="/terms">Contact</Link>
             </li>
           </ul>
           <span>
