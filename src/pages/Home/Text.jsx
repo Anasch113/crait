@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/Text.css";
-import { Link } from "react-router-dom";
 
 function Text() {
   return (
