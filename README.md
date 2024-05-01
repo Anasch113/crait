@@ -2,7 +2,7 @@
 
 <h2>About the project</h2>
 
-<p>This project integrates the Coingecko API to provide the user with real-time data on the top 50 cryptocurrencies. State management techniques were applied in React to boost application performance and user interactivity. Additionally, strategies like lazy loading for images and other optimization techniques were incorporated to enhance loading times and overall user experience. These efforts collectively aimed to create a more seamless and responsive platform for users interacting with cryptocurrency data.
+<p>YouCoin was developed using React for the frontend, coupled with JavaScript, HTML, and CSS. The application utilizes the CoinGecko API to fetch cryptocurrency data. Additionally, Firebase was implemented to provide secure authentication functionality and enable storing data into a Realtime database.
 
 </p>
 
