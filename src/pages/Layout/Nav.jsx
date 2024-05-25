@@ -46,11 +46,6 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection, signedin }) {
             <li onClick={() => toSection("slider-section")}>
               <Link to="/services">Services</Link>
             </li>
-            <li>
-            <Link to={signedin? "/dashboard" : '/login'}>
-              Dashboard
-            </Link>
-            </li>
               <li>
               <Link to="/terms">Contact</Link>
             </li>
