@@ -5,49 +5,24 @@
   top: 0;
   z-index: 100;
 }
-.nav__intro {
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  height: 4rem;
-  justify-content: center;
-  width: 100%;
-  @media (max-width: 600px) {
-    display: none;
-  }
-}
-.nav__intro img {
-  margin-right: 0.5rem;
-}
-.nav__intro__learnmore {
-  margin-left: 1rem;
-  cursor: pointer;
-}
-.nav__intro__arrow {
-  cursor: pointer;
-  font-size: 0.8rem;
-  left: 0;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-}
 .navbar {
   align-items: center;
-  border-bottom: 1px solid #10101E;
+  border-bottom: 1px solid rgb(32, 32, 32, 0.6);
   display: flex;
   font-size: 2rem;
   justify-content: space-around;
   margin: 0 auto;
-  max-width: 120rem;
-  padding: 1rem 2rem 1rem 2rem;
+  max-width: 100rem;
+  padding: 1rem 2rem 0.9rem 2rem;
   z-index: 100;
   @media (max-width: 1000px) {
     justify-content: space-between;
   }
   @media (max-width: 600px) {
-    padding: 1.4rem 1rem;
+    padding: 1rem 1rem;
   }
 }
-.nav__name{
+.nav__name {
   font-weight: 500;
   font-size: 1.5rem;
 }
@@ -67,7 +42,7 @@
   justify-content: center;
 }
 .navbar ul a {
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: all 0.2s ease-in-out;
 }
 
@@ -83,8 +58,6 @@
 
 .nav__button {
   border-radius: 0.625rem;
-  border: 1px solid #776b96;
-  color: #f4f0ff;
   cursor: pointer;
   display: flex;
   font-family: "Inter", sans-serif;
@@ -94,33 +67,25 @@
   position: relative;
   text-align: center;
   z-index: 1;
-  background: radial-gradient(
-      231.94% 231.94% at 50% 100%,
-      #8a6cff 0,
-      rgba(53, 41, 128, 0) 25.24%
-    ),
-    linear-gradient(180deg, rgba(175, 29, 219, 0), rgba(243, 238, 255, 0.04)),
-    rgba(147, 130, 255, 0.01);
-  box-shadow: 0 0 0 0 rgba(16, 0, 51, 0.4), 0 2px 5px 0 rgba(16, 0, 51, 0.39),
-    0 8px 8px 0 rgba(16, 0, 51, 0.34), 0 19px 11px 0 rgba(16, 0, 51, 0.2),
-    0 34px 14px 0 rgba(16, 0, 51, 0.06), 0 53px 15px 0 rgba(16, 0, 51, 0.01),
-    inset 0 0 12px 0 hsla(0, 0%, 100%, 0.08), inset 0 -8px 32px 0 #361b7a;
-  padding: 0.3rem 1.0625rem;
+  border: 1px solid #fff;
+  background: #fff;
+  padding: 8px 17px;
   transition: all 0.3s ease-in-out;
+  color: black;
   font-weight: 500;
   @media (max-width: 500px) {
     display: none;
   }
 }
 .nav__button:hover {
-  background-color: #513f96;
+  background: #e7c8f5;
 }
-.nav__login{
+.nav__login {
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
-.nav__login:hover{
+.nav__login:hover {
   color: rgb(209, 207, 207);
 }
 .nav__arrow {
@@ -138,5 +103,10 @@
     display: flex !important;
   }
 }
-
-
+.nav__a {
+  display: flex;
+  align-items: center;
+}
+.nav__logo {
+  width: 30px;
+}

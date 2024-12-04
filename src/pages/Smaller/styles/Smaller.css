@@ -1,0 +1,28 @@
+.smaller {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.smaller p {
+  max-width: 500px;
+  padding: 1rem;
+  text-align: center;
+}
+.smaller-return {
+  background-color: transparent;
+  color: #e5b7eb;
+  border: 1px solid #e5b7eb;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.smaller-return:hover {
+  background-color: #e5b7eb;
+  color: #141314;
+}
+

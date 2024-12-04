@@ -1,0 +1,102 @@
+.create {
+  padding: 1rem;
+  position: fixed;
+  right: 50%;
+  left: 41%;
+  top: 100px;
+  width: 30rem;
+  border: 2px solid #e5b7eb;
+  background: rgb(6, 6, 6);
+  border-radius: 10px;
+  height: 39rem;
+}
+.create-close {
+  position: absolute;
+  right: 15px;
+  transition: 0.2s ease-in-out all;
+  cursor: pointer;
+}
+.create-close:hover {
+  color: #e5b7eb;
+}
+.create h3 {
+  text-align: center;
+  font-weight: 500;
+}
+.create-flex {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.create-flex2 {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.create-flex div,
+.create-flex2 div {
+  display: inline-block;
+  width: 190px;
+}
+
+.create-intext {
+  background-color: transparent;
+  border: 1px solid #e5b7eb;
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: white;
+  outline: none;
+  margin-top: 0.3rem;
+}
+
+.create-div {
+  margin-left: 1.5rem;
+}
+.create-inarea {
+  margin-top: 0.3rem;
+  background-color: transparent;
+  border: 1px solid #e5b7eb;
+  padding: 0.5rem;
+  width: 390px;
+  border-radius: 4px;
+  resize: none;
+  outline: none;
+  color: white;
+  height: 220px;
+  overflow: auto;
+}
+.create-twitter {
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  width: 32%;
+  background-color: #e5b7eb;
+  color: #141314;
+  border: 1px solid #e5b7eb;
+  padding: 0.5rem 0.5rem;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.create-twitter:hover {
+  background-color: #ad86b3;
+}
+.create-submit-button {
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  width: 87.5%;
+  background-color: transparent;
+  color: #e5b7eb;
+  border: 1px solid #e5b7eb;
+  padding: 0.7rem 0rem;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.create-submit-button:hover {
+  background-color: #e5b7eb;
+  color: #141314;
+}

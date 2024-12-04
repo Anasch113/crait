@@ -1,25 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: #000016;
+  background-color: rgb(6, 6, 6);
   color: white;
-  font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
 }
 #root {
-  --primary: #927ce9;
+  --primary: #e7c8f5;
 }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-.green-text {
-  color: rgb(12, 189, 51);
-}
-.red-text {
-  color: rgb(212, 16, 16);
 }
 a {
   color: white;

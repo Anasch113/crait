@@ -1,7 +1,6 @@
 .join-section {
   margin-top: 3rem;
   padding: 2rem;
-  background-image: url("../images/home/join.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -51,77 +50,40 @@
   background-clip: text;
   background-image: linear-gradient(
     50deg,
-    #714dff,
-    #9c83ff 31.28%,
-    #e151ff 77.97%,
-    #fff759 95.64%
+    #a279e7,
+    #b68bf5 20%,
+    #c89cfb 40%,
+    #d7aef8 60%,
+    #e4c1fc 80%,
+    #f0d6ff 100%
   );
   color: transparent;
 }
-.join__arrow__buttons button {
-  cursor: pointer;
-}
-.join__arrow__buttons p {
-  cursor: pointer;
-}
-.join__arrow__buttons p {
-  font-size: 1rem;
-}
-.join__arrow__buttons {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  @media (max-width: 310px) {
-    gap: 1rem;
-  }
-}
-.join__arrow__buttons a {
+
+.join__buttons a {
   display: flex;
   gap: 0.3rem;
+  font-size: 0.875rem;
   font-family: "Inter", sans-serif;
-  border: 1px solid #776b96;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   position: relative;
-  color: #f4f0ff;
   text-align: center;
   line-height: 1.2rem;
   font-weight: 500;
   z-index: 1;
-  font-size: 0.9rem;
   cursor: pointer;
-  background: radial-gradient(
-      231.94% 231.94% at 50% 100%,
-      #947bf7 0,
-      rgba(53, 41, 128, 0) 25.24%
-    ),
-    linear-gradient(180deg, rgba(175, 29, 219, 0), rgba(243, 238, 255, 0.04)),
-    rgba(147, 130, 255, 0.01);
-  box-shadow: 0 0 0 0 rgba(16, 0, 51, 0.4), 0 2px 5px 0 rgba(16, 0, 51, 0.39),
-    0 8px 8px 0 rgba(16, 0, 51, 0.34), 0 19px 11px 0 rgba(16, 0, 51, 0.2),
-    0 34px 14px 0 rgba(16, 0, 51, 0.06), 0 53px 15px 0 rgba(16, 0, 51, 0.01),
-    inset 0 0 12px 0 hsla(0, 0%, 100%, 0.08), inset 0 -8px 32px 0 #4e3197;
-  padding: 0.5rem 1.065rem;
+  background: #fff;
+  padding: 0.6rem 1.1rem;
   transition: all 0.3s ease-in-out;
+  color: black;
   @media (max-width: 1000px) {
     text-align: start;
     padding: 0.7rem 1.5rem;
   }
-  @media (max-width: 350px) {
-    padding: 0.5rem 0.8rem;
-  }
-  @media (max-width: 300px) {
-    padding: 0.7rem 1rem;
+  @media (max-width: 400px) {
+    padding: 0.7rem 0.7rem;
   }
 }
-.join__arrow__buttons a:hover {
-  background-color: #513f96;
-}
-.join__invest__arrow,
-.join__AI__arrow {
-  position: relative;
-  left: 0;
-  transition: all 0.3s ease-in-out;
-}
-.join__AI__arrow {
-  font-size: 0.8rem;
+.join__buttons a:hover {
+  background: #e7c8f5;
 }

@@ -2,10 +2,9 @@ import { IconMenu2 } from "@tabler/icons-react";
 import "./styles/Nav.css";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
-import logo from "../images/logo.png";
+import logo from "./Logo.png";
 
-function Nav({ setArrowStyle, resetArrowStyle, toSection, signedin }) {
-
+function Nav({ setArrowStyle, resetArrowStyle }) {
   function burgerOnOrOff(val) {
     if (val === false) {
       document.querySelector(".burger__container").style.display = "none";
@@ -13,54 +12,46 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection, signedin }) {
       document.querySelector(".burger__container").style.display = "block";
     }
   }
+
+  function scrollToTextSection(e) {
+    e.preventDefault(); 
+    const target = document.querySelector(".text-section");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   return (
     <>
       <nav>
-        <div className="nav__intro">
-          <img src={logo} alt="logo" width={25} />
-          <p className="nav__intro__text">
-            Introducing YouCoin’s Personally Automated Investments
-            <Link
-            to='/services'
-              className="nav__intro__learnmore"
-              onClick={() => toSection("market-section")}
-              onMouseOver={setArrowStyle("nav__intro__arrow")}
-              onMouseOut={resetArrowStyle("nav__intro__arrow")}
-            >
-              Learn More <span className="nav__intro__arrow">→</span>
-            </Link>
-          </p>
-        </div>
-
         <div className="navbar">
-          <Link to="/">
-            <p className="nav__name">YouCoin</p>
+          <Link to="/" className="nav__a">
+            <img src={logo} alt="Craift logo" className="nav__logo" />
           </Link>
           <ul>
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li onClick={() => toSection("text-section")}>
-              <Link to="/">Prices</Link>
+            <li>
+              <a href="#text" onClick={scrollToTextSection}>
+                Automate
+              </a>
             </li>
-            <li onClick={() => toSection("slider-section")}>
-              <Link to="/services">Services</Link>
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
             </li>
-              <li>
-              <Link to="/terms">Contact</Link>
+            <li>
+              <Link to="/documentation">Documentation</Link>
             </li>
           </ul>
           <span>
             <Link
-              to="/demo"
+              to="/dashboard"
               className="nav__button"
               onMouseOver={setArrowStyle("nav__arrow")}
               onMouseOut={resetArrowStyle("nav__arrow")}
             >
-              Start Investing<span className="nav__arrow">→</span>
-            </Link>
-            <Link to={signedin? "/dashboard" : '/login'} className="nav__login">
-              {signedin? "Dashboard" : 'Log In'}
+              Start Automating<span className="nav__arrow">→</span>
             </Link>
             <IconMenu2
               className="hamburger-menu"
@@ -70,7 +61,7 @@ function Nav({ setArrowStyle, resetArrowStyle, toSection, signedin }) {
         </div>
       </nav>
       <div className="burger" id="burger">
-        <Burger toSection={toSection} />
+        <Burger />
       </div>
     </>
   );

@@ -1,0 +1,84 @@
+.dashboard-nav {
+  width: 280px;
+  background: rgb(5,5, 5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 15px 30px 15px;
+  border-right: 1px solid #202225;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+}
+.nav-section .nav-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #9ca3af;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.nav-section {
+  margin-bottom: 1rem;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d1d5db;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.nav-links li:hover {
+  background-color: #ffb8ff;
+  color: #041d1e;
+}
+
+.nav-links li.active {
+  background-color: #ffb8ff;
+  color: #041d1e;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links .nav-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.nav-footer {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #202225;
+}
+.nav-footer a:hover {
+  color: #ffb8ff;
+}
+.nav-footer a {
+  font-weight: 500;
+}
+.dash-nav__logo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 3rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.dash-nav__logo img {
+  width: 40px;
+}
+.dash-nav__logo p {
+  font-weight: 300;
+  font-size: 2rem;
+}
