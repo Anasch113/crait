@@ -6,6 +6,7 @@ import Agents from "./Agents";
 import Create from "./Create";
 import { ref, get, set, getDatabase } from "firebase/database";
 import { database } from "../../firebase";
+import toast from "react-hot-toast";
 
 
 const Dashboard = () => {
@@ -19,8 +20,16 @@ const Dashboard = () => {
   const [balance, setBalance] = useState(null);
 
   const handleNavClick = (subject) => {
+
     if (subject === "Create AI Agent") {
-      setShowCreatePopup(true);
+      if (!walletAddress) {
+        toast("Please connect your wallet first")
+      }
+      else {
+        setShowCreatePopup(true);
+      }
+
+
     } else {
       setCurrentSubject(subject);
     }
@@ -39,12 +48,12 @@ const Dashboard = () => {
       let agents = [];
 
       if (snapshot.exists()) {
-        agents = snapshot.val(); 
+        agents = snapshot.val();
       }
       const updatedAgents = [...agents, newAgent];
 
       await set(userAgentsRef, updatedAgents);
-window.location.reload()
+      window.location.reload()
       console.log("New agent created and saved:", newAgent);
       console.log("Updated agents list:", updatedAgents);
       setShowCreatePopup(false);
@@ -104,7 +113,7 @@ window.location.reload()
           walletAddress={walletAddress}
           setWalletAddress={setWalletAddress}
           handleWalletLogin={handleWalletLogin}
-          setIsDisconnect = {setIsDisconnect}
+          setIsDisconnect={setIsDisconnect}
         />
         {currentSubject === "AI Agents" && (
           <Agents
@@ -113,7 +122,7 @@ window.location.reload()
             onNavClick={handleNavClick}
             walletAddress={walletAddress}
             balance={balance}
-            isDiconnect = {isDiconnect}
+            isDiconnect={isDiconnect}
           />
         )}
       </main>

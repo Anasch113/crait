@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Agents.css";
 import Create from "./Create";
-import { FaX } from "react-icons/fa6";
-import { ref, set, get } from "firebase/database";
+
+import { ref, set, get, update } from "firebase/database";
 import { database } from "../../firebase";
+import toast from "react-hot-toast";
+import ManageAgent from "../../components/ManageAgent";
 const Agents = ({
   walletAddress,
   balance,
@@ -15,11 +17,13 @@ const Agents = ({
   const [showPopup, setShowPopup] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [showCreatePopup, setShowCreatePopup] = useState(false);
+  const [agentId, setAgentId] = useState("");
 
-  const handleManageClick = (agent) => {
+  const handleManageClick = (agent, index) => {
     setCurrentAgent(agent);
     setUpdatedAgent(agent);
     setShowPopup(true);
+    setAgentId(index)
   };
 
   const handleCreateClose = () => {
@@ -64,25 +68,26 @@ const Agents = ({
     setUpdatedAgent((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleUpdate = () => {
-    if (JSON.stringify(currentAgent) !== JSON.stringify(updatedAgent)) {
-      setAgents((prevAgents) =>
-        prevAgents.map((agent) =>
-          agent === currentAgent ? updatedAgent : agent
-        )
-      );
-      setCurrentAgent(updatedAgent);
-      setShowPopup(false);
-    }
-  };
+  // const handleUpdate = () => {
 
-  const handleDelete = () => {
-    setAgents((prevAgents) =>
-      prevAgents.filter((agent) => agent !== currentAgent)
-    );
-    setShowPopup(false);
-    setConfirmDelete(false);
-  };
+  //   if (JSON.stringify(currentAgent) !== JSON.stringify(updatedAgent)) {
+  //     setAgents((prevAgents) =>
+  //       prevAgents.map((agent) =>
+  //         agent === currentAgent ? updatedAgent : agent
+  //       )
+  //     );
+  //     setCurrentAgent(updatedAgent);
+  //     setShowPopup(false);
+  //   }
+  // };
+
+  // const handleDelete = () => {
+  //   setAgents((prevAgents) =>
+  //     prevAgents.filter((agent) => agent !== currentAgent)
+  //   );
+  //   setShowPopup(false);
+  //   setConfirmDelete(false);
+  // };
 
   const handleCancelDelete = () => {
     setConfirmDelete(false);
@@ -127,147 +132,108 @@ const Agents = ({
     }
   }, [isDiconnect, walletAddress])
 
-  console.log("is disconnect", isDiconnect)
+
+
+  const handleUpdate = async () => {
+    if (JSON.stringify(currentAgent) !== JSON.stringify(updatedAgent)) {
+
+      try {
+
+        setAgents((prevAgents) =>
+          prevAgents.map((agent) =>
+            agent === currentAgent ? updatedAgent : agent
+          )
+        );
+
+        // Get the wallet address
+        const userAddress = walletAddress;
+
+        // Update agent in Firebase
+        const agentIndex = agents.findIndex((agent) => agent === currentAgent);
+        console.log("agent Index", agentIndex)
+       
+        if (agentIndex !== -1) {
+
+          const agentRef = ref(
+            database,
+            `users/${userAddress}/agents/${agentIndex}`
+          );
+
+          await update(agentRef, updatedAgent);
+          console.log("Agent updated successfully in Database");
+        }
+
+        // Update current agent in local state
+        setCurrentAgent(updatedAgent);
+        toast.success("Agent updated!")
+        setShowPopup(false);
+        // window.location.reload()
+      } catch (error) {
+        console.error("Failed to update agent:", error);
+      }
+    }
+  };
+
+
+
+  const handleDelete = async () => {
+    try {
+      // Get the wallet address
+      const userAddress = walletAddress;
+
+      // Find the agent index in the local state
+      const agentIndex = agents.findIndex((agent) => agent === currentAgent);
+
+      if (agentIndex !== -1) {
+
+        const updatedAgents = agents.filter((_, index) => index !== agentIndex);
+        setAgents(updatedAgents);
+
+
+        const userAgentsRef = ref(database, `users/${userAddress}/agents`);
+        await set(userAgentsRef, updatedAgents);
+
+        console.log("Agent deleted successfully from Firebase");
+        toast.success("Agent deleted")
+        setShowPopup(false);
+      } else {
+        console.error("Agent not found");
+      }
+    } catch (error) {
+      console.error("Failed to delete agent:", error);
+    }
+  };
+
+
+  const handleCreateAgent = () => {
+    if (!walletAddress) {
+      toast("Please connect your wallet first")
+    }
+    else {
+      setShowCreatePopup(true)
+    }
+  }
+console.log("agentId", agentId)
+
   return (
     <>
       {agents.length > 0 ? (
         <>
-          {showPopup && (
-            <div className="agents-manage">
-              <FaX className="agents-close" onClick={handleClosePopup} />
-              <h3>Your Agent</h3>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  handleUpdate();
-                }}
-              >
-                <div className="agents-manage-flex">
-                  <div>
-                    <label htmlFor="manage-name" className="manage-label">
-                      Agent Name*
-                    </label>
-                    <input
-                      type="text"
-                      className="manage-intext"
-                      id="manage-name"
-                      value={updatedAgent?.name || ""}
-                      onChange={(e) =>
-                        handleInputChange("name", e.target.value)
-                      }
-                    />
-                  </div>
+          <ManageAgent
 
-                  <div>
-                    <label htmlFor="manage-twitter" className="manage-label">
-                      Twitter*
-                    </label>
-                    <input
-                      type="text"
-                      className="manage-intext"
-                      id="manage-twitter"
-                      readOnly
-                      value={updatedAgent?.twitter || ""}
-                    />
-                  </div>
-                </div>
-                <div className="agents-manage-flex2">
-                  <div>
-                    <label htmlFor="manage-age" className="manage-label">
-                      Agent Age*
-                    </label>
-                    <input
-                      type="number"
-                      className="manage-intext"
-                      id="manage-age"
-                      value={updatedAgent?.age || ""}
-                      onChange={(e) =>
-                        handleInputChange(
-                          "age",
-                          e.target.value.replace(/[^0-9]/g, "")
-                        )
-                      }
-                      step="1"
-                      min="0"
-                      required
-                    />
-                  </div>
+            showPopup={showPopup}
+            handleClosePopup={handleClosePopup}
+            handleUpdate={handleUpdate}
+            handleInputChange={handleInputChange}
+            updatedAgent={updatedAgent}
+            confirmDelete={confirmDelete}
+            handleDelete={handleDelete}
+            handleCancelDelete={handleCancelDelete}
+            setConfirmDelete={setConfirmDelete}
+            agentId = {agentId}
 
-                  <div>
-                    <label
-                      htmlFor="manage-personality"
-                      className="manage-label"
-                    >
-                      Personality*
-                    </label>
-                    <input
-                      type="text"
-                      className="manage-intext"
-                      id="manage-personality"
-                      value={updatedAgent?.personality || ""}
-                      onChange={(e) =>
-                        handleInputChange("personality", e.target.value)
-                      }
-                    />
-                  </div>
-                </div>
-                <div className="manage-text-div">
-                  <label htmlFor="manage-prompt" className="manage-label">
-                    Prompt*
-                  </label>
-                  <textarea
-                    id="manage-prompt"
-                    className="manage-inarea"
-                    value={updatedAgent?.prompt || ""}
-                    onChange={(e) =>
-                      handleInputChange("prompt", e.target.value)
-                    }
-                  ></textarea>
-                </div>
 
-                {confirmDelete ? (
-                  <div>
-                    <p className="confirm-text">
-                      Are you sure you want to delete this agent?
-                    </p>
-                    <div className="confirm-buttons">
-                      <button
-                        type="button"
-                        className="confirm-button confirm-yes"
-                        onClick={handleDelete}
-                      >
-                        Yes
-                      </button>
-                      <button
-                        type="button"
-                        className="confirm-button confirm-no"
-                        onClick={handleCancelDelete}
-                      >
-                        No
-                      </button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="manage-button-div">
-                    <button
-                      type="button"
-                      className="manage-button manage-delete"
-                      onClick={() => setConfirmDelete(true)}
-                    >
-                      Delete
-                    </button>
-                    <button
-                      type="submit"
-                      className="manage-button manage-update"
-                    >
-                      Update
-                    </button>
-                  </div>
-                )}
-              </form>
-            </div>
-          )}
-
+          />
           <div className="agents">
             <div className="agent-top">
               <p>Agent</p>
@@ -275,6 +241,7 @@ const Agents = ({
               <p>Twitter</p>
               <p>Manage</p>
             </div>
+
             {agents.map((agent, index) => (
               <div key={index} className="agent-item">
                 <p className="agent-name">{agent.name}</p>
@@ -282,12 +249,14 @@ const Agents = ({
                 <p className="agent-at">{agent.twitter}</p>
                 <button
                   className="agent-manage"
-                  onClick={() => handleManageClick(agent)}
+                  onClick={() => handleManageClick(agent, index)}
                 >
                   Manage
                 </button>
               </div>
             ))}
+
+
           </div>
 
         </>
@@ -297,7 +266,7 @@ const Agents = ({
           <p>Start building your first AI agent to bring your ideas to life.</p>
           <button
             className="create-character-btn"
-            onClick={() => setShowCreatePopup(true)}
+            onClick={handleCreateAgent}
           >
             Create AI Agent
           </button>

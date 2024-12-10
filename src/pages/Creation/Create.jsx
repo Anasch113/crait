@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./styles/Create.css";
 import { FaX } from "react-icons/fa6";
+import axios from "axios";
+
+
 
 const Create = ({ onClose, onSubmit }) => {
 
@@ -10,6 +13,10 @@ const Create = ({ onClose, onSubmit }) => {
   const [age, setAge] = useState("");
   const [personality, setPersonality] = useState("");
   const [prompt, setPrompt] = useState("");
+
+
+
+
 
   const handleCreate = () => {
 
@@ -40,6 +47,8 @@ const Create = ({ onClose, onSubmit }) => {
   };
 
 
+  
+
 
   return (
     <div className="create">
@@ -48,7 +57,9 @@ const Create = ({ onClose, onSubmit }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleCreate();
+          handleCreate(
+
+          )
         }}
       >
         <div className="create-flex">

@@ -5,7 +5,21 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+
+        'bg-pink': '#ffb8ff',
+        'bg-black': '#141314',
+        'bg-light-pink': '#e5b7eb'
+
+      },
+      colors: {
+        'text-pink': '#ffb8ff'
+      },
+      borderColor: {
+        'border-pink': '#e5b7eb',
+      }
+    },
   },
   plugins: [],
 }

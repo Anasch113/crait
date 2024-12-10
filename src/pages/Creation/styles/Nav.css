@@ -71,12 +71,12 @@
   display: flex;
   align-items: center;
   justify-content: start;
-  margin-left: 3rem;
+  margin-left: 2.5rem;
   gap: 1rem;
   margin-bottom: 2rem;
 }
 .dash-nav__logo img {
-  width: 40px;
+  width: 150px;
 }
 .dash-nav__logo p {
   font-weight: 300;

@@ -7,10 +7,9 @@ import logo from "./logo2.png";
 const Nav = ({ activeSubject, onNavClick }) => {
   return (
     <nav className="dashboard-nav">
-      <div className="dash-nav__logo">
-        <img src={logo} alt="Craift Logo" />
-        <p>Craift</p>
-      </div>
+      <Link to='/' className="dash-nav__logo">
+        <img src = {logo} alt="Craift Logo" />
+      </ Link>
       <div className="nav-section">
         <p className="nav-title">MENU</p>
         <ul className="nav-links">
