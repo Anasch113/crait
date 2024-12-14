@@ -151,7 +151,7 @@ const Agents = ({
         // Update agent in Firebase
         const agentIndex = agents.findIndex((agent) => agent === currentAgent);
         console.log("agent Index", agentIndex)
-       
+
         if (agentIndex !== -1) {
 
           const agentRef = ref(
@@ -213,7 +213,7 @@ const Agents = ({
       setShowCreatePopup(true)
     }
   }
-console.log("agentId", agentId)
+  console.log("agentId", agentId)
 
   return (
     <>
@@ -230,8 +230,8 @@ console.log("agentId", agentId)
             handleDelete={handleDelete}
             handleCancelDelete={handleCancelDelete}
             setConfirmDelete={setConfirmDelete}
-            agentId = {agentId}
-
+            agentId={agentId}
+            walletAddress={walletAddress}
 
           />
           <div className="agents">

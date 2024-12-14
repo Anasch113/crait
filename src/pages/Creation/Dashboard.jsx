@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import "./styles/Dashboard.css";
 import Nav from "./Nav";
 import Top from "./Top";
@@ -7,6 +7,7 @@ import Create from "./Create";
 import { ref, get, set, getDatabase } from "firebase/database";
 import { database } from "../../firebase";
 import toast from "react-hot-toast";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 const Dashboard = () => {
@@ -15,6 +16,10 @@ const Dashboard = () => {
   const [showCreatePopup, setShowCreatePopup] = useState(false);
   const [walletAddress, setWalletAddress] = useState(null);
   const [isDiconnect, setIsDisconnect] = useState(false);
+  const [twitterConnected, setTwitterConnected] = useState(false);
+
+  const navigate = useNavigate()
+  const location = useLocation()
 
 
   const [balance, setBalance] = useState(null);
@@ -100,6 +105,22 @@ const Dashboard = () => {
   };
 
 
+  useEffect(() => {
+
+    const searchParams = new URLSearchParams(location.search)
+    const status = searchParams.get('status');
+
+    console.log("status", status)
+
+    if (status === "twitter-connected") {
+      setShowCreatePopup(true)
+    setTwitterConnected(true)
+
+    }
+
+  }, [location, navigate]);
+
+
 
   return (
     <div className="dashboard">
@@ -129,7 +150,7 @@ const Dashboard = () => {
 
       {showCreatePopup && (
         <div className="popup-overlay">
-          <Create onClose={handleClosePopup} onSubmit={handleCreateSubmit} />
+          <Create onClose={handleClosePopup} onSubmit={handleCreateSubmit} twitterConnected = {twitterConnected} />
         </div>
       )}
     </div>

@@ -10,7 +10,8 @@ export default {
 
         'bg-pink': '#ffb8ff',
         'bg-black': '#141314',
-        'bg-light-pink': '#e5b7eb'
+        'bg-light-pink': '#e5b7eb',
+        'bg-brown-light' : 'rgb(56 45 45)'
 
       },
       colors: {

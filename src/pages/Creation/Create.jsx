@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 
-const Create = ({ onClose, onSubmit }) => {
+const Create = ({ onClose, onSubmit, twitterConnected }) => {
 
 
   const [name, setName] = useState("");
@@ -47,7 +47,12 @@ const Create = ({ onClose, onSubmit }) => {
   };
 
 
-  
+
+  const handleTwitterConnection = () => {
+    const authUrl = `${import.meta.env.VITE_SERVER_HOST_URL}/twitter/auth`;
+    window.open(authUrl, '_blank', 'noopener,noreferrer');
+  };
+
 
 
   return (
@@ -140,7 +145,9 @@ const Create = ({ onClose, onSubmit }) => {
           ></textarea>
         </div>
         <div className="create-submit-div">
-          <p className="create-twitter">Connect Twitter</p>
+
+          <button onClick={handleTwitterConnection} className={`${twitterConnected ? 'bg-green-500' : ''} create-twitter`}>{twitterConnected === true ? 'Connected' : 'Connect Twitter'}</button>
+
           <button type="submit" className="create-submit-button">
             Create Agent
           </button>
