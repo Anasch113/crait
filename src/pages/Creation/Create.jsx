@@ -48,10 +48,10 @@ const Create = ({ onClose, onSubmit, twitterConnected }) => {
 
 
 
-  const handleTwitterConnection = () => {
-    const authUrl = `${import.meta.env.VITE_SERVER_HOST_URL}/twitter/auth`;
-    window.open(authUrl, '_blank', 'noopener,noreferrer');
-  };
+  // const handleTwitterConnection = () => {
+  //   const authUrl = `${import.meta.env.VITE_SERVER_HOST_URL}/twitter/auth`;
+  //   window.open(authUrl, '_blank', 'noopener,noreferrer');
+  // };
 
 
 
@@ -146,7 +146,7 @@ const Create = ({ onClose, onSubmit, twitterConnected }) => {
         </div>
         <div className="create-submit-div">
 
-          <button onClick={handleTwitterConnection} className={`${twitterConnected ? 'bg-green-500' : ''} create-twitter`}>{twitterConnected === true ? 'Connected' : 'Connect Twitter'}</button>
+          {/* <button onClick={handleTwitterConnection} className={`${twitterConnected ? 'bg-green-500' : ''} create-twitter`}>{twitterConnected === true ? 'Connected' : 'Connect Twitter'}</button> */}
 
           <button type="submit" className="create-submit-button">
             Create Agent

@@ -6,10 +6,13 @@ import { ref, set, get, update } from "firebase/database";
 import { database } from "../../firebase";
 import toast from "react-hot-toast";
 import ManageAgent from "../../components/ManageAgent";
+import Cookies from "js-cookie";
+
 const Agents = ({
   walletAddress,
   balance,
-  isDiconnect
+  isDiconnect,
+  twitterConnected
 }) => {
   const [agents, setAgents] = useState([]);
   const [currentAgent, setCurrentAgent] = useState(null);
@@ -215,6 +218,15 @@ const Agents = ({
   }
   console.log("agentId", agentId)
 
+
+  const handleTwitterConnection = () => {
+    Cookies.set("agentId", agentId, {expires: 0.1})
+    const authUrl = `${import.meta.env.VITE_SERVER_HOST_URL}/twitter/auth`;
+    window.open(authUrl, '_blank', 'noopener,noreferrer');
+  };
+
+
+
   return (
     <>
       {agents.length > 0 ? (
@@ -232,6 +244,8 @@ const Agents = ({
             setConfirmDelete={setConfirmDelete}
             agentId={agentId}
             walletAddress={walletAddress}
+            handleTwitterConnection={handleTwitterConnection}
+            twitterConnected={twitterConnected}
 
           />
           <div className="agents">

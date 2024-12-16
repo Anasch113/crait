@@ -18,6 +18,7 @@ import {
 } from "@solana/wallet-adapter-wallets";
 import { UserAuthContextProvider } from "./context/UserAuthContext.jsx";
 import toast, { Toaster } from 'react-hot-toast';
+import Agents from "./pages/Creation/Agents.jsx";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -86,6 +87,7 @@ function App() {
                 path="/dashboard"
                 element={isSmallScreen ? <Smaller /> : <Dashboard />}
               />
+            
             </Routes>
           </Router>
         </WalletModalProvider>

@@ -62,14 +62,14 @@ const Top = ({
         <div className=" flex flex-col gap-2 p-2">
           <WalletMultiButton />
 
-          <span className="">
+          {/* <span className="">
             {wallet.connected && (
               <div className=" bg-purple-900 p-4 rounded-md">
-                {/* <p>Wallet Address: {wallet.publicKey.toBase58()}</p> */}
+               
                 <p>Balance: {balance} SOL</p>
               </div>
             )}
-          </span>
+          </span> */}
 
         </div>
 

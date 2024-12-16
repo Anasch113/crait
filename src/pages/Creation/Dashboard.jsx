@@ -1,13 +1,14 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/Dashboard.css";
 import Nav from "./Nav";
 import Top from "./Top";
 import Agents from "./Agents";
 import Create from "./Create";
-import { ref, get, set, getDatabase } from "firebase/database";
+import { ref, get, set, getDatabase, update } from "firebase/database";
 import { database } from "../../firebase";
 import toast from "react-hot-toast";
 import { useNavigate, useLocation } from "react-router-dom";
+import Cookies from "js-cookie"
 
 
 const Dashboard = () => {
@@ -104,21 +105,47 @@ const Dashboard = () => {
     }
   };
 
-
   useEffect(() => {
-
-    const searchParams = new URLSearchParams(location.search)
+    const searchParams = new URLSearchParams(location.search);
     const status = searchParams.get('status');
+    const twitterSessionId = searchParams.get('twitterSessionId');
 
-    console.log("status", status)
+    console.log("twitter session id", twitterSessionId)
 
-    if (status === "twitter-connected") {
-      setShowCreatePopup(true)
-    setTwitterConnected(true)
+    const handleTwiterSetup = async () => {
+      try {
+        if (status === 'twitter-connected' && twitterSessionId) {
+          console.log('Twitter connected, sessionId:', twitterSessionId);
 
+          const agentId = Cookies.get("agentId")
+          console.log("agentId", agentId)
+
+          if (walletAddress && agentId) {
+            
+            Cookies.remove("agentId")
+            // Reference to the specific user's data in Firebase
+            const userRef = ref(
+              database,
+              `users/${walletAddress}/agents/${agentId}/twitterSessionId`
+            );
+            const data = {
+              twitterSessionId: twitterSessionId
+            }
+            await set(userRef, twitterSessionId)
+            toast.success("Twitter Connected")
+
+          }
+          setShowCreatePopup(true);
+          setTwitterConnected(true);
+        }
+      } catch (error) {
+        console.log("error", error)
+      }
     }
 
-  }, [location, navigate]);
+    handleTwiterSetup()
+  }, [walletAddress]);
+
 
 
 
@@ -144,13 +171,14 @@ const Dashboard = () => {
             walletAddress={walletAddress}
             balance={balance}
             isDiconnect={isDiconnect}
+            twitterConnected={twitterConnected}
           />
         )}
       </main>
 
       {showCreatePopup && (
         <div className="popup-overlay">
-          <Create onClose={handleClosePopup} onSubmit={handleCreateSubmit} twitterConnected = {twitterConnected} />
+          <Create onClose={handleClosePopup} onSubmit={handleCreateSubmit} twitterConnected={twitterConnected} />
         </div>
       )}
     </div>

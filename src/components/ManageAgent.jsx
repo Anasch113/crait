@@ -12,7 +12,9 @@ const ManageAgent = ({
   handleCancelDelete,
   setConfirmDelete,
   agentId,
-  walletAddress
+  walletAddress,
+  handleTwitterConnection,
+  twitterConnected
 }) => {
 
 
@@ -166,6 +168,9 @@ const ManageAgent = ({
               </div>
             )}
           </form>
+
+
+          <button onClick={handleTwitterConnection} className={`${twitterConnected ? 'bg-green-500' : ''} create-twitter`}>{twitterConnected === true ? 'Connected' : 'Connect Twitter'}</button>
           <ManageTweets
 
             agentId={agentId}
