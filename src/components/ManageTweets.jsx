@@ -4,12 +4,13 @@ const ManageTweets = ({
     agentId,
     walletAddress,
     prompt,
-    personality
+    personality,
+    twitterSessionId
 }) => {
 
-    const { loading, error, generatedTweet, handleGenerateTweet, fetchAllTweets } = useUserAuth();
+    const { loading, error, generatedTweet, handleGenerateTweet, fetchAllTweets, handdlePostTweets } = useUserAuth();
     console.log("loading in manage tweets", loading)
-    
+
     const [tweetsData, setTweetsData] = useState([])
 
     useEffect(() => {
@@ -31,6 +32,10 @@ const ManageTweets = ({
     // console.log("generated tweet", generatedTweet)
     console.log("tweets", tweetsData)
     console.log("promt and personality", prompt, personality)
+
+
+
+
     return (
         <div className='border p-4 w-full m-4'>
             <button
@@ -53,6 +58,9 @@ const ManageTweets = ({
                             <div className='my-2 bg-bg-brown-light bg- p-4 rounded-md ' key={i}>
                                 <p className='mb-1 font-semibold'>{data.name}</p>
                                 <p className=''>{data.content}</p>
+                                <button onClick={async () => {
+                                    await handdlePostTweets(twitterSessionId, data.content)
+                                }} className='bg-yellow-600 p-2 rounded-md my-2 hover:bg-yellow-600/70'>Post Tweet</button>
                             </div>
                         ))
                     }

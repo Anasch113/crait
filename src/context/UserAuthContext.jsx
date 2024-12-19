@@ -5,7 +5,7 @@ const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
   
-const { loading, error, generatedTweet, handleGenerateTweet, fetchAllTweets, fetchTweetByIndex } = useAgent();
+const { loading, error, generatedTweet, handleGenerateTweet, fetchAllTweets, fetchTweetByIndex, handdlePostTweets } = useAgent();
 
 
     // Define the functions here or import from contextFiles. Currently importing from contextFiles
@@ -17,7 +17,7 @@ const { loading, error, generatedTweet, handleGenerateTweet, fetchAllTweets, fet
 
     return (
         <userAuthContext.Provider
-            value={{loading, error, generatedTweet, handleGenerateTweet, fetchAllTweets, fetchTweetByIndex }}
+            value={{loading, error, generatedTweet, handleGenerateTweet, fetchAllTweets, fetchTweetByIndex, handdlePostTweets }}
 
         >
             {children}

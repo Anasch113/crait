@@ -14,7 +14,8 @@ const ManageAgent = ({
   agentId,
   walletAddress,
   handleTwitterConnection,
-  twitterConnected
+  twitterConnected,
+  twitterSessionId
 }) => {
 
 
@@ -176,7 +177,9 @@ const ManageAgent = ({
             agentId={agentId}
             walletAddress={walletAddress}
             prompt={updatedAgent?.prompt || ""}
+
             personality={updatedAgent?.personality || ""}
+            twitterSessionId = {twitterSessionId}
             
 
           />

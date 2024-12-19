@@ -21,12 +21,14 @@ const Agents = ({
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [showCreatePopup, setShowCreatePopup] = useState(false);
   const [agentId, setAgentId] = useState("");
+  const [twitterSessionId, setTwitterSessionId] = useState("");
 
   const handleManageClick = (agent, index) => {
     setCurrentAgent(agent);
     setUpdatedAgent(agent);
     setShowPopup(true);
     setAgentId(index)
+    setTwitterSessionId(agent.twitterSessionId)
   };
 
   const handleCreateClose = () => {
@@ -216,7 +218,7 @@ const Agents = ({
       setShowCreatePopup(true)
     }
   }
-  console.log("agentId", agentId)
+  
 
 
   const handleTwitterConnection = () => {
@@ -246,6 +248,7 @@ const Agents = ({
             walletAddress={walletAddress}
             handleTwitterConnection={handleTwitterConnection}
             twitterConnected={twitterConnected}
+            twitterSessionId ={twitterSessionId}
 
           />
           <div className="agents">
