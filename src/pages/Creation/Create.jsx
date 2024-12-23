@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import "./styles/Create.css";
 import { FaX } from "react-icons/fa6";
 import axios from "axios";
+import {Transaction, SystemProgram  } from "@solana/web3.js"
+import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
 
 
 
-const Create = ({ onClose, onSubmit, twitterConnected }) => {
+
+
+const Create = ({ onClose, onSubmit, walletAddress, balance , connection, wallet}) => {
 
 
   const [name, setName] = useState("");
@@ -13,29 +17,90 @@ const Create = ({ onClose, onSubmit, twitterConnected }) => {
   const [age, setAge] = useState("");
   const [personality, setPersonality] = useState("");
   const [prompt, setPrompt] = useState("");
+ 
 
 
 
+  const handleCreate = async () => {
+    try {
+        // Check wallet connection
+        if (!walletAddress) {
+            alert("Please connect your wallet to proceed.");
+            return;
+        }
 
+        // Mock coin burn function
+        const burnCoinsMock = async (walletAddress, amount) => {
+            console.log(`Mock: Burning ${amount} coins for wallet ${walletAddress}`);
+            return { status: 200 }; // Simulate success response
+        };
 
-  const handleCreate = () => {
+        const solRecipientAddress = import.meta.env.VITE_RECIPIENT_WALLET_ADDRESS;
 
-    const newAgent = {
-      name,
-      twitter,
-      age,
-      personality,
-      prompt,
-      date: new Date().toLocaleDateString(),
-    };
+        // Check SOL balance
+        if (balance < 0.2) {
+            alert("Insufficient SOL balance. Please add more SOL to your wallet.");
+            return;
+        }
 
-    onSubmit(newAgent);
-    setName("");
-    setTwitter("");
-    setAge("");
-    setPersonality("");
-    setPrompt("");
-  };
+        // Burn 1000 coins (mocked for now)
+        const burnResponse = await burnCoinsMock(walletAddress, 1000);
+        if (burnResponse.status !== 200) {
+            alert("Failed to burn coins. Please try again.");
+            return;
+        }
+
+        // Get the latest blockhash
+        const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash();
+
+        // Create and send SOL transaction
+        const transaction = new Transaction().add(
+            SystemProgram.transfer({
+                fromPubkey: wallet.publicKey,
+                toPubkey: new PublicKey(solRecipientAddress),
+                lamports: 0.2 * 1e9, // Convert SOL to lamports
+            })
+        );
+
+        transaction.recentBlockhash = blockhash;
+        transaction.feePayer = wallet.publicKey;
+
+        // Sign and send transaction
+        const signedTransaction = await wallet.signTransaction(transaction);
+        const txId = await connection.sendRawTransaction(signedTransaction.serialize());
+        await connection.confirmTransaction({
+            signature: txId,
+            blockhash,
+            lastValidBlockHeight,
+        });
+
+        console.log("Transaction successful. TX ID:", txId);
+
+        // Proceed with agent creation
+        const newAgent = {
+            name,
+            twitter,
+            age,
+            personality,
+            prompt,
+            date: new Date().toLocaleDateString(),
+        };
+
+        onSubmit(newAgent);
+        setName("");
+        setTwitter("");
+        setAge("");
+        setPersonality("");
+        setPrompt("");
+
+        alert("Agent created successfully!");
+    } catch (error) {
+        console.error("Error during agent creation:", error);
+        alert("Failed to process the payment. Please try again.");
+    }
+};
+
+  
 
   const handleClose = () => {
     setName("");
@@ -62,9 +127,7 @@ const Create = ({ onClose, onSubmit, twitterConnected }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleCreate(
-
-          )
+          handleCreate()
         }}
       >
         <div className="create-flex">

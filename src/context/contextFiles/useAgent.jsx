@@ -116,18 +116,58 @@ export function useAgent() {
 
 
   const handdlePostTweets = async (twitterSessionId, tweetContent) => {
-    console.log("twitter session id and tweetContent", {twitterSessionId, tweetContent})
+    console.log("twitter session id and tweetContent", { twitterSessionId, tweetContent })
     try {
       const response = await axios.post(`${import.meta.env.VITE_SERVER_HOST_URL}/twitter/tweet`, {
         twitterSessionId: twitterSessionId && twitterSessionId,
         tweetContent
       })
       const data = response.data;
+      toast.success("Tweet Posted")
       return data;
     } catch (error) {
       console.log("error", error)
+      toast.error("Error while posting tweets")
     }
   }
+
+  async function checkTwitterConnection(twitterSessionId) {
+    try {
+     // Initialize Firebase Realtime Database
+      const twitterRef = ref(database, `twitterTokens/${twitterSessionId}`);
+      const snapshot = await get(twitterRef);
+
+      if (snapshot.exists()) {
+        const twitterData = snapshot.val();
+        const { accessToken } = twitterData;
+
+        // Check if the accessToken is present and valid
+        if (accessToken) {
+          return {
+            connected: true,
+            message: "Twitter account is connected.",
+          };
+        } else {
+          return {
+            connected: false,
+            message: "Twitter account is not connected.",
+          };
+        }
+      } else {
+        return {
+          connected: false,
+          message: "No Twitter session found.",
+        };
+      }
+    } catch (error) {
+      console.error("Error checking Twitter connection:", error);
+      return {
+        connected: false,
+        message: "An error occurred while checking the Twitter connection.",
+      };
+    }
+  }
+
 
   return {
     loading,
@@ -136,6 +176,7 @@ export function useAgent() {
     handleGenerateTweet,
     fetchAllTweets,
     fetchTweetByIndex,
-    handdlePostTweets
+    handdlePostTweets,
+    checkTwitterConnection
   }
 }

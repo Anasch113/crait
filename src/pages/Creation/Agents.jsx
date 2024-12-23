@@ -12,7 +12,8 @@ const Agents = ({
   walletAddress,
   balance,
   isDiconnect,
-  twitterConnected
+  twitterConnected,
+  setTwitterConnected
 }) => {
   const [agents, setAgents] = useState([]);
   const [currentAgent, setCurrentAgent] = useState(null);
@@ -249,6 +250,7 @@ const Agents = ({
             handleTwitterConnection={handleTwitterConnection}
             twitterConnected={twitterConnected}
             twitterSessionId ={twitterSessionId}
+            setTwitterConnected = {setTwitterConnected}
 
           />
           <div className="agents">

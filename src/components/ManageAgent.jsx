@@ -15,7 +15,8 @@ const ManageAgent = ({
   walletAddress,
   handleTwitterConnection,
   twitterConnected,
-  twitterSessionId
+  twitterSessionId,
+  setTwitterConnected
 }) => {
 
 
@@ -171,7 +172,6 @@ const ManageAgent = ({
           </form>
 
 
-          <button onClick={handleTwitterConnection} className={`${twitterConnected ? 'bg-green-500' : ''} create-twitter`}>{twitterConnected === true ? 'Connected' : 'Connect Twitter'}</button>
           <ManageTweets
 
             agentId={agentId}
@@ -180,9 +180,12 @@ const ManageAgent = ({
 
             personality={updatedAgent?.personality || ""}
             twitterSessionId = {twitterSessionId}
-            
-
+            handleTwitterConnection = {handleTwitterConnection}
+            twitterConnected = {twitterConnected}
+            setTwitterConnected = {setTwitterConnected}
           />
+          
+         
         </div>
       )}
 

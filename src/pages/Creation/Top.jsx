@@ -20,13 +20,15 @@ const Top = ({
   walletAddress,
   setWalletAddress,
   handleWalletLogin,
-  setIsDisconnect }) => {
+  setIsDisconnect,
+  connection,
+  wallet
+ }) => {
 
-  const wallet = useWallet();
+  
   const [hasReloaded, setHasReloaded] = useState(false);
 
-  // Connect to the Solana cluster
-  const connection = new Connection(network);
+ 
 
   // Fetch wallet balance
   const fetchBalance = async (publicKey) => {
@@ -62,14 +64,14 @@ const Top = ({
         <div className=" flex flex-col gap-2 p-2">
           <WalletMultiButton />
 
-          {/* <span className="">
+          <span className="">
             {wallet.connected && (
               <div className=" bg-purple-900 p-4 rounded-md">
                
                 <p>Balance: {balance} SOL</p>
               </div>
             )}
-          </span> */}
+          </span>
 
         </div>
 

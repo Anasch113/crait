@@ -5,13 +5,20 @@ const ManageTweets = ({
     walletAddress,
     prompt,
     personality,
-    twitterSessionId
+    twitterSessionId,
+    handleTwitterConnection,
+    twitterConnected,
+    setTwitterConnected
 }) => {
 
-    const { loading, error, generatedTweet, handleGenerateTweet, fetchAllTweets, handdlePostTweets } = useUserAuth();
+    const { loading, error, generatedTweet, handleGenerateTweet, fetchAllTweets, handdlePostTweets, checkTwitterConnection } = useUserAuth();
+
+
     console.log("loading in manage tweets", loading)
 
     const [tweetsData, setTweetsData] = useState([])
+
+    const [statusMessage, setStatusMessage] = useState("");
 
     useEffect(() => {
         try {
@@ -26,28 +33,58 @@ const ManageTweets = ({
         }
     }, [agentId, walletAddress])
 
+    useEffect(() => {
 
+        async function fetchTwitterStatus() {
+
+            if (twitterSessionId) {
+                const result = await checkTwitterConnection(twitterSessionId);
+                setTwitterConnected(true)
+                setStatusMessage(result.message);
+            }
+
+        }
+
+        fetchTwitterStatus();
+    }, [twitterSessionId]);
 
 
     // console.log("generated tweet", generatedTweet)
     console.log("tweets", tweetsData)
     console.log("promt and personality", prompt, personality)
 
+    useEffect(() => {
+        async function fetchTwitterStatus() {
+            const result = await checkTwitterConnection(twitterSessionId);
+            setIsConnected(result.connected);
+            setStatusMessage(result.message);
+        }
+
+        fetchTwitterStatus();
+    }, [twitterSessionId]);
+
 
 
 
     return (
         <div className='border p-4 w-full m-4'>
-            <button
-                onClick={() => {
-                    handleGenerateTweet(walletAddress, agentId, prompt, personality)
-                }}
+            <span>
+                <h1 className='text-3xl my-2 font-semibold  text-center'>Manage Tweets</h1>
+                <button
+                    onClick={() => {
+                        handleGenerateTweet(walletAddress, agentId, prompt, personality)
+                    }}
 
-                className="manage-button manage-update"
+                    className="manage-button manage-update"
 
-            >
-                Generate Tweet
-            </button>
+                >
+                    Generate Tweet
+                </button>
+
+                <button onClick={handleTwitterConnection} className={`${twitterConnected ? 'bg-green-500' : ''} w-40 create-twitter`}>{twitterConnected === true ? 'Connected' : 'Connect Twitter'}</button>
+               
+            </span>
+
 
 
             {

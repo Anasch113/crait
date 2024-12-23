@@ -9,9 +9,15 @@ import { database } from "../../firebase";
 import toast from "react-hot-toast";
 import { useNavigate, useLocation } from "react-router-dom";
 import Cookies from "js-cookie"
-
-
+import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
+import { useWallet } from "@solana/wallet-adapter-react";
+const network = 'https://api.devnet.solana.com';
 const Dashboard = () => {
+
+
+   // Connect to the Solana cluster
+   const connection = new Connection(network);
+   const wallet = useWallet();
 
   const [currentSubject, setCurrentSubject] = useState("AI Agents");
   const [showCreatePopup, setShowCreatePopup] = useState(false);
@@ -162,6 +168,8 @@ const Dashboard = () => {
           setWalletAddress={setWalletAddress}
           handleWalletLogin={handleWalletLogin}
           setIsDisconnect={setIsDisconnect}
+          connection = {connection}
+          wallet = {wallet}
         />
         {currentSubject === "AI Agents" && (
           <Agents
@@ -172,15 +180,18 @@ const Dashboard = () => {
             balance={balance}
             isDiconnect={isDiconnect}
             twitterConnected={twitterConnected}
+            setTwitterConnected = {setTwitterConnected}
           />
         )}
       </main>
 
       {showCreatePopup && (
         <div className="popup-overlay">
-          <Create onClose={handleClosePopup} onSubmit={handleCreateSubmit} twitterConnected={twitterConnected} />
+          <Create onClose={handleClosePopup} onSubmit={handleCreateSubmit} twitterConnected={twitterConnected} walletAddress = {walletAddress} balance = {balance} connection = {connection} wallet = {wallet}/>
         </div>
       )}
+
+
     </div>
   );
 };
