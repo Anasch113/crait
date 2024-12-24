@@ -13,7 +13,8 @@ const Agents = ({
   balance,
   isDiconnect,
   twitterConnected,
-  setTwitterConnected
+  setTwitterConnected,
+  handleCreateSubmit
 }) => {
   const [agents, setAgents] = useState([]);
   const [currentAgent, setCurrentAgent] = useState(null);
@@ -28,46 +29,49 @@ const Agents = ({
     setCurrentAgent(agent);
     setUpdatedAgent(agent);
     setShowPopup(true);
-    setAgentId(index)
+    setAgentId(agent.id)
     setTwitterSessionId(agent.twitterSessionId)
+    console.log("agent in manage click", agent)
   };
 
   const handleCreateClose = () => {
     setShowCreatePopup(false);
   };
 
-  const handleCreateSubmit = async (newAgent) => {
-    try {
-      // Reference to the user's agents in Firebase
-      const userAgentsRef = ref(database, `users/${walletAddress}/agents`);
+  // const handleCreateSubmit = async (newAgent) => {
+  //   try {
+  //     // Reference to the user's agents in Firebase
+  //     const userAgentsRef = ref(database, `users/${walletAddress}/agents`);
 
-      // Retrieve existing agents (if any) from Firebase
-      const snapshot = await get(userAgentsRef);
-      let agents = [];
+  //     // Retrieve existing agents (if any) from Firebase
+  //     const snapshot = await get(userAgentsRef);
+  //     let agents = [];
 
-      if (snapshot.exists()) {
-        agents = snapshot.val(); // Get existing agents as an array
-      }
+  //     if (snapshot.exists()) {
+  //       agents = snapshot.val(); // Get existing agents as an array
+  //     }
 
-      // Add the new agent to the agents array
-      const updatedAgents = [...agents, newAgent];
+  //     // Add the new agent to the agents array
+  //     const updatedAgents = [...agents, newAgent];
 
-      // Update the Firebase database with the new agents array
-      await set(userAgentsRef, updatedAgents);
+  //     // Update the Firebase database with the new agents array
+  //     await set(userAgentsRef, updatedAgents);
 
-      console.log("New agent created and saved:", newAgent);
-      console.log("Updated agents list:", updatedAgents);
+  //     console.log("New agent created and saved:", newAgent);
+  //     console.log("Updated agents list:", updatedAgents);
 
-      // Update the local state (if required)
-      setAgents(updatedAgents);
+  //     // Update the local state (if required)
+  //     setAgents(updatedAgents);
 
-      // Close the popup
-      setShowCreatePopup(false);
-    } catch (error) {
-      console.error("Error saving agent to Firebase:", error);
-    }
-  };
+  //     // Close the popup
+  //     setShowCreatePopup(false);
+  //   } catch (error) {
+  //     console.error("Error saving agent to Firebase:", error);
+  //   }
+  // };
+  
   console.log("agent", agents)
+  console.log("agentId", agentId)
 
 
   const handleInputChange = (field, value) => {
@@ -133,7 +137,7 @@ const Agents = ({
 
   useEffect(() => {
     if (isDiconnect === true) {
-      console.log("working........")
+      
       setAgents([])
     }
   }, [isDiconnect, walletAddress])
@@ -155,7 +159,7 @@ const Agents = ({
         const userAddress = walletAddress;
 
         // Update agent in Firebase
-        const agentIndex = agents.findIndex((agent) => agent === currentAgent);
+        const agentIndex = agents.findIndex((agent) => agent.id === agentId);
         console.log("agent Index", agentIndex)
 
         if (agentIndex !== -1) {
@@ -188,7 +192,7 @@ const Agents = ({
       const userAddress = walletAddress;
 
       // Find the agent index in the local state
-      const agentIndex = agents.findIndex((agent) => agent === currentAgent);
+      const agentIndex = agents.findIndex((agent) => agent.id === agentId);
 
       if (agentIndex !== -1) {
 

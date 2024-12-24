@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaX } from "react-icons/fa6";
 import ManageTweets from './ManageTweets';
+import ManageAutomation from './ManageAutomation';
 const ManageAgent = ({
   showPopup,
   handleClosePopup,
@@ -170,7 +171,14 @@ const ManageAgent = ({
               </div>
             )}
           </form>
+          <ManageAutomation
+            agentId={agentId}
+            walletAddress={walletAddress}
+            prompt={updatedAgent?.prompt || ""}
 
+            personality={updatedAgent?.personality || ""}
+            twitterSessionId={twitterSessionId}
+          />
 
           <ManageTweets
 
@@ -179,13 +187,13 @@ const ManageAgent = ({
             prompt={updatedAgent?.prompt || ""}
 
             personality={updatedAgent?.personality || ""}
-            twitterSessionId = {twitterSessionId}
-            handleTwitterConnection = {handleTwitterConnection}
-            twitterConnected = {twitterConnected}
-            setTwitterConnected = {setTwitterConnected}
+            twitterSessionId={twitterSessionId}
+            handleTwitterConnection={handleTwitterConnection}
+            twitterConnected={twitterConnected}
+            setTwitterConnected={setTwitterConnected}
           />
-          
-         
+
+
         </div>
       )}
 

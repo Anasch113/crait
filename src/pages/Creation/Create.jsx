@@ -38,7 +38,7 @@ const Create = ({ onClose, onSubmit, walletAddress, balance , connection, wallet
         const solRecipientAddress = import.meta.env.VITE_RECIPIENT_WALLET_ADDRESS;
 
         // Check SOL balance
-        if (balance < 0.2) {
+        if (balance < 0.02) {
             alert("Insufficient SOL balance. Please add more SOL to your wallet.");
             return;
         }
@@ -58,7 +58,7 @@ const Create = ({ onClose, onSubmit, walletAddress, balance , connection, wallet
             SystemProgram.transfer({
                 fromPubkey: wallet.publicKey,
                 toPubkey: new PublicKey(solRecipientAddress),
-                lamports: 0.2 * 1e9, // Convert SOL to lamports
+                lamports: 0.02 * 1e9, // Convert SOL to lamports
             })
         );
 
@@ -75,6 +75,43 @@ const Create = ({ onClose, onSubmit, walletAddress, balance , connection, wallet
         });
 
         console.log("Transaction successful. TX ID:", txId);
+
+        // Proceed with agent creation
+        const newAgent = {
+            name,
+            twitter,
+            age,
+            personality,
+            prompt,
+            date: new Date().toLocaleDateString(),
+        };
+
+        onSubmit(newAgent);
+        setName("");
+        setTwitter("");
+        setAge("");
+        setPersonality("");
+        setPrompt("");
+
+        alert("Agent created successfully!");
+    } catch (error) {
+        console.error("Error during agent creation:", error);
+        alert("Failed to process the payment. Please try again.");
+    }
+};
+console.log("wallet address in create", walletAddress)
+  const handleCreate2 = async () => {
+    try {
+        // Check wallet connection
+        // if (!walletAddress) {
+       
+        //     alert("Please connect your wallet to proceed.");
+        //     return;
+        // }
+
+      
+
+       
 
         // Proceed with agent creation
         const newAgent = {
@@ -127,7 +164,7 @@ const Create = ({ onClose, onSubmit, walletAddress, balance , connection, wallet
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleCreate()
+          handleCreate2()
         }}
       >
         <div className="create-flex">

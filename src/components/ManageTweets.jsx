@@ -14,7 +14,7 @@ const ManageTweets = ({
     const { loading, error, generatedTweet, handleGenerateTweet, fetchAllTweets, handdlePostTweets, checkTwitterConnection } = useUserAuth();
 
 
-    console.log("loading in manage tweets", loading)
+    // console.log("loading in manage tweets", loading)
 
     const [tweetsData, setTweetsData] = useState([])
 
@@ -56,7 +56,7 @@ const ManageTweets = ({
     useEffect(() => {
         async function fetchTwitterStatus() {
             const result = await checkTwitterConnection(twitterSessionId);
-            setIsConnected(result.connected);
+        
             setStatusMessage(result.message);
         }
 

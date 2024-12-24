@@ -10,7 +10,6 @@ export function useAgent() {
   const [error, setError] = useState(null);
 
 
-
   const handleGenerateTweet = async (walletAddress, agentId, prompt, personality) => {
     setLoading(true);
     setError(null);
@@ -20,38 +19,52 @@ export function useAgent() {
       // Generate the tweet using the backend
       const response = await axios.post(`${import.meta.env.VITE_SERVER_HOST_URL}/agent/generate`, {
         prompt,
-        personality
+        personality,
       });
 
       console.log("response", response.data);
-      const tweetContent = response.data.tweet
+      const tweetContent = response.data.tweet;
+
       // Set the generated tweet in state
       setGeneratedTweet(response.data.tweet);
 
-      // Reference to the specific agent in Firebase
-      const agentRef = ref(database, `users/${walletAddress}/agents/${agentId}/tweets`);
+      // Reference to the specific agent in Firebase using its unique ID
+      const agentsRef = ref(database, `users/${walletAddress}/agents`);
+      const snapshot = await get(agentsRef);
 
-      // Retrieve existing tweets for the agent (if any)
-      const snapshot = await get(agentRef);
-      let tweets = [];
-
-      if (snapshot.exists()) {
-        tweets = snapshot.val(); // Existing tweets array
+      if (!snapshot.exists()) {
+        throw new Error("Agents data not found.");
       }
 
-      // Add a new tweet reference (e.g., "Tweet 1")
+      // Retrieve the existing agents array
+      const agents = snapshot.val();
+
+      // Find the specific agent by its id
+      const agentIndex = agents.findIndex((agent) => agent.id === agentId);
+
+      if (agentIndex === -1) {
+        throw new Error(`Agent with id ${agentId} not found.`);
+      }
+
+      // Retrieve the agent's current tweets or initialize an empty array
+      const agent = agents[agentIndex];
+      const tweets = agent.tweets ? agent.tweets.filter(Boolean) : []; // Filter out any undefined entries
+
+      // Add a new tweet to the tweets array
       const newTweet = {
         name: `Tweet ${tweets.length + 1}`,
         content: tweetContent,
       };
-      const updatedTweets = [...tweets, newTweet];
 
-      // Update Firebase with the new tweets array
-      await set(agentRef, updatedTweets);
+      agent.tweets = [...tweets, newTweet]; // Update tweets for the specific agent
+      agents[agentIndex] = agent; // Update the agents array with the modified agent
 
-      console.log(`Tweet reference added to agent ${agentId}:`, newTweet);
-      toast.success("Tweet generated")
-      window.location.reload()
+      // Save the updated agents array back to Firebase
+      await set(agentsRef, agents);
+
+      console.log(`Tweet added to agent ${agentId}:`, newTweet);
+      toast.success("Tweet generated");
+      window.location.reload();
     } catch (err) {
       setError("Failed to generate tweet. Please try again.");
       console.error("Error:", err);
@@ -60,21 +73,31 @@ export function useAgent() {
     }
   };
 
-
   const fetchAllTweets = async (agentId, walletAddress) => {
     try {
-      // Reference to the agent's tweets in Firebase
-      const agentTweetsRef = ref(database, `users/${walletAddress}/agents/${agentId}/tweets`);
+      // Reference to the user's agents in Firebase
+      const agentsRef = ref(database, `users/${walletAddress}/agents`);
 
-      // Retrieve tweets from Firebase
-      const snapshot = await get(agentTweetsRef);
+      // Retrieve the agents array from Firebase
+      const snapshot = await get(agentsRef);
 
       if (snapshot.exists()) {
-        const tweets = snapshot.val(); // Array of tweets
+        const agents = snapshot.val(); // Array of agents
+
+        // Find the specific agent by its unique id
+        const agent = agents.find((agent) => agent.id === agentId);
+
+        if (!agent) {
+          console.log(`Agent with id ${agentId} not found.`);
+          return [];
+        }
+
+        // Return the tweets array or an empty array if no tweets exist
+        const tweets = agent.tweets || [];
         console.log("All tweets fetched:", tweets);
         return tweets;
       } else {
-        console.log("No tweets found for this agent.");
+        console.log("No agents found for this user.");
         return [];
       }
     } catch (error) {
@@ -82,6 +105,7 @@ export function useAgent() {
       throw error;
     }
   };
+
 
 
 
@@ -133,7 +157,7 @@ export function useAgent() {
 
   async function checkTwitterConnection(twitterSessionId) {
     try {
-     // Initialize Firebase Realtime Database
+      // Initialize Firebase Realtime Database
       const twitterRef = ref(database, `twitterTokens/${twitterSessionId}`);
       const snapshot = await get(twitterRef);
 
@@ -167,7 +191,34 @@ export function useAgent() {
       };
     }
   }
-
+  const checkAutomation = async (walletAddress, agentId) => {
+    try {
+      // Reference to the specific agent's automation data
+      // Initialize the database
+      const automationRef = ref(database, `twitterAutomation/${walletAddress}/${agentId}`);
+  
+      // Get the snapshot of the data
+      const snapshot = await get(automationRef);
+  
+      if (!snapshot.exists()) {
+        console.log('No automation data found.');
+        return { isActive: false }; // Default to inactive if no data exists
+      }
+  
+      const automationData = snapshot.val();
+  
+      console.log('Automation Data:', automationData);
+  
+      // Return the isActive status or relevant info
+      return {
+        isActive: automationData.isActive || false,
+        ...automationData, // Return other info if needed
+      };
+    } catch (error) {
+      console.log('Error checking automation:', error);
+      throw error; // Optionally rethrow the error if needed
+    }
+  };
 
   return {
     loading,
@@ -177,6 +228,7 @@ export function useAgent() {
     fetchAllTweets,
     fetchTweetByIndex,
     handdlePostTweets,
-    checkTwitterConnection
+    checkTwitterConnection,
+    checkAutomation
   }
 }
